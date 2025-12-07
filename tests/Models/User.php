@@ -11,6 +11,7 @@ use OfflineAgency\MongoAutoSync\Http\Models\MDModel;
 
 /**
  * Class User.
+ *
  * @property string $_id
  * @property string $name
  * @property string $title
@@ -24,7 +25,9 @@ class User extends MDModel implements AuthenticatableContract, CanResetPasswordC
     use Authenticatable, CanResetPassword, Notifiable;
 
     protected $connection = 'mongodb';
+
     protected $dates = ['birthday', 'entry.date'];
+
     protected static $unguarded = true;
 
     public function addresses()

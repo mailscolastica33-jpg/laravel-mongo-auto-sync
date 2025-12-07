@@ -13,11 +13,11 @@ use Tests\Models\Item;
 use Tests\Models\Navigation;
 use Tests\Models\SubItem;
 
-class SyncTestCase extends TestCase
+trait SyncHelpers
 {
     /**
-     * @param array $data
      * @return SubItem
+     *
      * @throws Exception
      */
     public function createSubItems(array $data = [])
@@ -42,8 +42,8 @@ class SyncTestCase extends TestCase
     }
 
     /**
-     * @param array $data
      * @return Item
+     *
      * @throws Exception
      */
     public function createItems(array $data = [])
@@ -69,8 +69,8 @@ class SyncTestCase extends TestCase
     }
 
     /**
-     * @param array $data
      * @return Navigation
+     *
      * @throws Exception
      */
     public function createNavigation(
@@ -104,8 +104,8 @@ class SyncTestCase extends TestCase
     }
 
     /**
-     * @param string $navigation_id
      * @return false|string
+     *
      * @throws Exception
      */
     public function getMiniNavigation(string $navigation_id = '')
@@ -134,7 +134,6 @@ class SyncTestCase extends TestCase
     }
 
     /**
-     * @param $navigation
      * @return bool
      */
     public function isNavigationCreated($navigation)
@@ -143,7 +142,6 @@ class SyncTestCase extends TestCase
     }
 
     /**
-     * @param $item
      * @return bool
      */
     public function isItemCreated($item)
@@ -152,8 +150,6 @@ class SyncTestCase extends TestCase
     }
 
     /**
-     * @param Navigation $navigation
-     * @param SubItem $sub_item
      * @throws Exception
      */
     public function cleanUp(Navigation $navigation, SubItem $sub_item)
@@ -163,7 +159,6 @@ class SyncTestCase extends TestCase
     }
 
     /**
-     * @param $item
      * @return bool
      */
     public function isItemUpdatedCorrectly($item)
@@ -172,7 +167,6 @@ class SyncTestCase extends TestCase
     }
 
     /**
-     * @param $navigation
      * @return bool
      */
     public function isNavigationUpdatedCorrectly($navigation)
@@ -181,7 +175,6 @@ class SyncTestCase extends TestCase
     }
 
     /**
-     * @param $navigation
      * @return bool
      */
     public function isUpdated($navigation)
@@ -190,8 +183,6 @@ class SyncTestCase extends TestCase
     }
 
     /**
-     * @param $navigation_id
-     * @param $item_id
      * @return bool
      */
     public function isItemAddedInNavigationCollection($navigation_id, $item_id)
@@ -208,7 +199,6 @@ class SyncTestCase extends TestCase
     }
 
     /**
-     * @param $navigation_code
      * @return false|string
      */
     public function getNavigation($navigation_code)

@@ -2,26 +2,28 @@
 
 namespace Tests;
 
-use Jenssegers\Mongodb\MongodbQueueServiceProvider;
-use Jenssegers\Mongodb\MongodbServiceProvider;
+use Illuminate\Database\Eloquent\Model;
 use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
+use MongoDB\Laravel\MongoDBQueueServiceProvider;
+use MongoDB\Laravel\MongoDBServiceProvider;
 use OfflineAgency\MongoAutoSync\MongoAutoSyncServiceProvider;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
-    use CreatesApplication, MockeryPHPUnitIntegration;
+    use MockeryPHPUnitIntegration;
 
     protected function setUp(): void
     {
         parent::setUp();
+        Model::setConnectionResolver($this->app['db']);
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            MongodbServiceProvider::class,
-            MongodbQueueServiceProvider::class,
+            MongoDBServiceProvider::class,
+            MongoDBQueueServiceProvider::class,
             MongoAutoSyncServiceProvider::class,
         ];
     }

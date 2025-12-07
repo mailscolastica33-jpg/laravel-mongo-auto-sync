@@ -6,6 +6,7 @@ use OfflineAgency\MongoAutoSync\Http\Models\MDModel;
 
 /**
  * Class Book.
+ *
  * @property string $title
  * @property string $author
  * @property array $chapters
@@ -13,7 +14,10 @@ use OfflineAgency\MongoAutoSync\Http\Models\MDModel;
 class Book extends MDModel
 {
     protected $connection = 'mongodb';
+
     protected $collection = 'books';
+
     protected static $unguarded = true;
+
     protected $primaryKey = 'title';
 }

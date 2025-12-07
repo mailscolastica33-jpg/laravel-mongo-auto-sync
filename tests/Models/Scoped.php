@@ -7,7 +7,9 @@ use OfflineAgency\MongoAutoSync\Http\Models\MDModel;
 class Scoped extends MDModel
 {
     protected $connection = 'mongodb';
+
     protected $collection = 'scoped';
+
     protected $fillable = ['name', 'favorite'];
 
     protected static function boot()
