@@ -10,10 +10,11 @@ trait EmbedsRelationships
 {
     /**
      * Define an embedded one-to-many relationship.
-     * @param string $related
-     * @param string $localKey
-     * @param string $foreignKey
-     * @param string $relation
+     *
+     * @param  string  $related
+     * @param  string  $localKey
+     * @param  string  $foreignKey
+     * @param  string  $relation
      * @return EmbedsMany
      */
     protected function embedsMany($related, $localKey = null, $foreignKey = null, $relation = null)
@@ -44,10 +45,11 @@ trait EmbedsRelationships
 
     /**
      * Define an embedded one-to-many relationship.
-     * @param string $related
-     * @param string $localKey
-     * @param string $foreignKey
-     * @param string $relation
+     *
+     * @param  string  $related
+     * @param  string  $localKey
+     * @param  string  $foreignKey
+     * @param  string  $relation
      * @return EmbedsOne
      */
     protected function embedsOne($related, $localKey = null, $foreignKey = null, $relation = null)

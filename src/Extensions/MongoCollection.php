@@ -3,13 +3,15 @@
 namespace OfflineAgency\MongoAutoSync\Extensions;
 
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use OfflineAgency\MongoAutoSync\Helpers\SyncHelper;
 
 class MongoCollection extends Collection
 {
-    //Method to retrieve a collection by slug, very useful for frontend
+    // Method to retrieve a collection by slug, very useful for frontend
     public function getBySlugAndStatus($category = null, $myslug = null)
     {
-        $cl = cl();
+        $cl = SyncHelper::cl();
 
         $out = $this->filter(function ($col) use ($category, $myslug, $cl) {
             if ($col->slug[$cl] == $myslug && $col->status == 'published' && $col->primarycategory->slug[$cl] == $category) {
@@ -18,38 +20,37 @@ class MongoCollection extends Collection
                 return false;
             }
         })->first();
-        if (! $out) {//Handler 404 Object Not Found
-            $obj_name = get_class($this->first());
-            $message = __('error.'.$obj_name);
-            abort(404, $message);
+        if (! $out) {// Handler 404 Object Not Found
+            $first = $this->first();
+            $obj_name = $first ? get_class($first) : 'Unknown Model';
+            throw (new ModelNotFoundException)->setModel($obj_name);
         } else {
             return $out;
         }
     }
 
     /**
-     * @param null $myslug
-     *
+     * @param  null  $myslug
      * @return mixed
      */
     public function getBySlug($myslug = null)
     {
-        $cl = cl();
+        $cl = SyncHelper::cl();
         $out = $this->filter(function ($col) use ($myslug, $cl) {
             if ($col->slug[$cl] == $myslug) {
                 return true;
             }
         })->first();
-        if (! $out) {//Handler 404 Object Not Found
-            $obj_name = get_class($this->first());
-            $message = __('error.'.$obj_name);
-            abort(404, $message);
+        if (! $out) {// Handler 404 Object Not Found
+            $first = $this->first();
+            $obj_name = $first ? get_class($first) : 'Unknown Model';
+            throw (new ModelNotFoundException)->setModel($obj_name);
         } else {
             return $out;
         }
     }
 
-    //Method to retrieve only not deleted item of a collection - Check on is_deleted custom property added on MDMODEL ovverriding init, delete
+    // Method to retrieve only not deleted item of a collection - Check on is_deleted custom property added on MDMODEL ovverriding init, delete
 
     /**
      * @return MongoCollection
@@ -57,15 +58,11 @@ class MongoCollection extends Collection
     public function getNotDeleted()
     {
         return $this->filter(function ($col) {
-            if ($col->is_deleted) {
-                return false;
-            } else {
-                return false;
-            }
+            return ! $col->is_deleted;
         });
     }
 
-    //Method to retrieve only published item of a collection - Check on status entry
+    // Method to retrieve only published item of a collection - Check on status entry
 
     /**
      * @return MongoCollection
@@ -81,7 +78,7 @@ class MongoCollection extends Collection
         });
     }
 
-    //Method to retrieve only public item of a collection - Check on status entry
+    // Method to retrieve only public item of a collection - Check on status entry
 
     /**
      * @return MongoCollection
@@ -97,11 +94,9 @@ class MongoCollection extends Collection
         });
     }
 
-    //Check if the collection has an item with ref_id equal to id of the obj pass in to the parameter, useful to mark a category already selected in edit
+    // Check if the collection has an item with ref_id equal to id of the obj pass in to the parameter, useful to mark a category already selected in edit
 
     /**
-     * @param $obj
-     *
      * @return bool
      */
     public function hasItem($obj)
@@ -128,11 +123,9 @@ class MongoCollection extends Collection
         }
     }
 
-    //Move the item with ref_id equal to the parameter, useful for edit primary category
+    // Move the item with ref_id equal to the parameter, useful for edit primary category
 
     /**
-     * @param $id
-     *
      * @return $this
      */
     public function moveFirst($id)
@@ -167,8 +160,6 @@ class MongoCollection extends Collection
     }
 
     /**
-     * @param string $aid
-     *
      * @return mixed
      */
     public function findByAID(string $aid)
@@ -179,7 +170,6 @@ class MongoCollection extends Collection
     }
 
     /**
-     * @param $id
      * @return bool
      */
     public function hasPermission($id)
@@ -202,7 +192,6 @@ class MongoCollection extends Collection
     }
 
     /**
-     * @param $name
      * @return bool
      */
     public function hasRole($name)
@@ -225,7 +214,6 @@ class MongoCollection extends Collection
     }
 
     /**
-     * @param $name
      * @return bool
      */
     public function checkPermission($name)

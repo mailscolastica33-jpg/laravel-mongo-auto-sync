@@ -5,7 +5,7 @@ namespace OfflineAgency\MongoAutoSync\Eloquent;
 use Illuminate\Database\Eloquent\Model as BaseModel;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
-use Jenssegers\Mongodb\Eloquent\Model as MongoDbModel;
+use MongoDB\Laravel\Eloquent\Model as MongoDbModel;
 
 class Model extends MongoDbModel
 {

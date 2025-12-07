@@ -11,9 +11,10 @@ use OfflineAgency\MongoAutoSync\Traits\RelationshipMongoTrait;
 
 class MDModel extends Eloquent
 {
-    use MainMongoTrait, ModelAdditionalMethod, Helper, PlainMongoTrait, RelationshipMongoTrait;
+    use Helper, MainMongoTrait, ModelAdditionalMethod, PlainMongoTrait, RelationshipMongoTrait;
 
     protected $connection = 'mongodb';
+
     protected $dates = [
         'deleted_at',
         'created_at',
@@ -37,8 +38,7 @@ class MDModel extends Eloquent
     }
 
     /**
-     * @param int $size
-     *
+     * @param  int  $size
      * @return mixed
      */
     public function getRandom($size = 3)

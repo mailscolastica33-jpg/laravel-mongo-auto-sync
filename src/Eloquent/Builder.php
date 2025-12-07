@@ -3,7 +3,7 @@
 namespace OfflineAgency\MongoAutoSync\Eloquent;
 
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
-use Jenssegers\Mongodb\Eloquent\Builder as MongoDbEloquentBuilder;
+use MongoDB\Laravel\Eloquent\Builder as MongoDbEloquentBuilder;
 
 class Builder extends MongoDbEloquentBuilder
 {
@@ -158,7 +158,7 @@ class Builder extends MongoDbEloquentBuilder
      * TODO Remove if https://github.com/laravel/framework/commit/6484744326531829341e1ff886cc9b628b20d73e
      * wiil be reverted
      * Issue in laravel frawework https://github.com/laravel/framework/issues/27791.
-     * @param array $values
+     *
      * @return array
      */
     protected function addUpdatedAtColumn(array $values)

@@ -8,8 +8,8 @@ use Illuminate\Support\Arr;
 trait Helper
 {
     /**
-     * @param $options
      * @return bool|mixed
+     *
      * @throws Exception
      */
     public function isArray($options)
@@ -20,8 +20,8 @@ trait Helper
     }
 
     /**
-     * @param $options
      * @return bool|mixed
+     *
      * @throws Exception
      */
     public function isCarbonDate($options)
@@ -32,7 +32,6 @@ trait Helper
     }
 
     /**
-     * @param $options
      * @throws Exception
      */
     private function validateOptions($options)
@@ -43,8 +42,6 @@ trait Helper
     }
 
     /**
-     * @param $value
-     * @param string $expected
      * @throws Exception
      */
     private function validateOptionValue($value, string $expected)
@@ -55,10 +52,8 @@ trait Helper
     }
 
     /**
-     * @param array $options
-     * @param string $key
-     * @param string $expected
      * @return bool|mixed
+     *
      * @throws Exception
      */
     private function getFieldTypeOptionsValue(array $options, string $key, string $expected)

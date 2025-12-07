@@ -5,6 +5,7 @@ namespace OfflineAgency\MongoAutoSync\Console;
 use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
+use OfflineAgency\MongoAutoSync\Helpers\SyncHelper;
 use OfflineAgency\MongoAutoSync\Http\Models\MDModel;
 
 class GenerateModelDocumentation extends Command
@@ -35,6 +36,7 @@ class GenerateModelDocumentation extends Command
 
     /**
      * @return void |null
+     *
      * @throws Exception
      */
     public function handle()
@@ -52,7 +54,7 @@ class GenerateModelDocumentation extends Command
         $output .= "* @property string \$id\n";
 
         foreach ($items as $key => $item) {
-            if (isML($item)) {
+            if (SyncHelper::isML($item)) {
                 $output .= '* @property array $'.$key."\n";
             } else {
                 $output .= '* @property string $'.$key."\n";
@@ -75,8 +77,8 @@ class GenerateModelDocumentation extends Command
     }
 
     /**
-     * @param $collection_name
      * @return string
+     *
      * @throws Exception
      */
     public function getModelPathByName($collection_name)
@@ -87,9 +89,8 @@ class GenerateModelDocumentation extends Command
     }
 
     /**
-     * @param $path
-     * @param $collection_name
      * @return string
+     *
      * @throws Exception
      */
     public function checkOaModels($path, $collection_name)
@@ -123,8 +124,8 @@ class GenerateModelDocumentation extends Command
     }
 
     /**
-     * @param string $modelPath
      * @return MDModel
+     *
      * @throws Exception
      */
     private function getModel(string $modelPath)

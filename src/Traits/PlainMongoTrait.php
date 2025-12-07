@@ -5,26 +5,24 @@ namespace OfflineAgency\MongoAutoSync\Traits;
 use Exception;
 use Illuminate\Http\Request;
 use MongoDB\BSON\UTCDateTime;
+use OfflineAgency\MongoAutoSync\Helpers\SyncHelper;
 
 trait PlainMongoTrait
 {
     /**
-     * @param Request $request
-     * @param string $event
-     * @param array $options
      * @throws Exception
      */
     public function storeEditAllItems(Request $request, string $event, array $options)
     {
-        //Get the item name
+        // Get the item name
         $items = $this->getItems();
 
-        //Current Obj Create
+        // Current Obj Create
         foreach ($items as $key => $item) {
-            $is_ML = isML($item);
-            $is_MD = isMD($item);
+            $is_ML = SyncHelper::isML($item);
+            $is_MD = SyncHelper::isMD($item);
 
-            $is_fillable = isFillable($item, $event);
+            $is_fillable = SyncHelper::isFillable($item, $event);
             $is_skippable = $this->getIsSkippable($request->has($key));
 
             if ($is_skippable) {
@@ -43,7 +41,7 @@ trait PlainMongoTrait
                     } else {
                         $old_value = $this->$key;
                     }
-                    $this->$key = ml($old_value, $request->input($key));
+                    $this->$key = SyncHelper::ml($old_value, $request->input($key));
                 } elseif ($is_MD) {
                     if ($request->input($key) == '' || $request->input($key) == null) {
                         $this->$key = null;

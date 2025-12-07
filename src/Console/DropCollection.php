@@ -35,6 +35,7 @@ class DropCollection extends Command
 
     /**
      * @return void |null
+     *
      * @throws Exception
      */
     public function handle()
@@ -46,16 +47,16 @@ class DropCollection extends Command
         $model = $this->getModel($modelPath);
 
         if (! is_null($model)) {
-            $model = $model->all();
-
             $count = $model->count();
             $bar = $this->output->createProgressBar($count);
 
             if ($count > 0) {
-                for ($i = 0; $i <= $count - 1; $i++) {
+                $i = 0;
+                foreach ($model->cursor() as $item) {
                     $bar->advance();
-                    $model[$i]->destroyWithSync();
-                    $this->line($i + 1 .') Destroy item document with id #'.$model[$i]->getId());
+                    $item->destroyWithSync();
+                    $this->line(($i + 1).') Destroy item document with id #'.$item->getId());
+                    $i++;
                 }
             } else {
                 $this->warn('No record found on collection '.strtolower($collection_name));
@@ -66,8 +67,8 @@ class DropCollection extends Command
     }
 
     /**
-     * @param $collection_name
      * @return string
+     *
      * @throws Exception
      */
     public function getModelPathByName($collection_name)
@@ -78,9 +79,8 @@ class DropCollection extends Command
     }
 
     /**
-     * @param $path
-     * @param $collection_name
      * @return string
+     *
      * @throws Exception
      */
     public function checkOaModels($path, $collection_name)
@@ -115,8 +115,8 @@ class DropCollection extends Command
     }
 
     /**
-     * @param string $modelPath
      * @return MDModel
+     *
      * @throws Exception
      */
     private function getModel(string $modelPath)
