@@ -10,7 +10,7 @@ use Tests\Models\Role;
 use Tests\Models\User;
 use Throwable;
 
-class MongoCollectionTest extends SyncTestCase
+class MongoCollectionTest extends TestCase
 {
     public function test_getBySlugAndStatus()
     {

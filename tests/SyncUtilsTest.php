@@ -4,7 +4,7 @@ namespace Tests;
 
 use Tests\Models\Article;
 
-class SyncUtilsTest extends SyncTestCase
+class SyncUtilsTest extends TestCase
 {
     public function test_get_translated_content()
     {

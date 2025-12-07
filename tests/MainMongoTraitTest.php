@@ -6,7 +6,7 @@ use Exception;
 use Illuminate\Http\Request;
 use OfflineAgency\MongoAutoSync\Traits\MainMongoTrait;
 
-class MainMongoTraitTest extends SyncTestCase
+class MainMongoTraitTest extends TestCase
 {
     use MainMongoTrait;
 

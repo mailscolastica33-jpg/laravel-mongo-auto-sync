@@ -5,7 +5,7 @@ namespace Tests;
 use OfflineAgency\MongoAutoSync\Extensions\MongoCollection;
 use Tests\Models\Navigation;
 
-class MDModelTest extends SyncTestCase
+class MDModelTest extends TestCase
 {
     public function test_getId()
     {

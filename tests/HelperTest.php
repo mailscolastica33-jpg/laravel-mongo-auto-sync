@@ -4,7 +4,7 @@ namespace Tests;
 
 use Tests\Models\Article;
 
-class HelperTest extends SyncTestCase
+class HelperTest extends TestCase
 {
     public function test_isArray()
     {

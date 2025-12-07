@@ -4,7 +4,6 @@ namespace Tests;
 
 use Illuminate\Database\Eloquent\Model;
 use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
-use MongoDB\Laravel\MongoDBQueueServiceProvider;
 use MongoDB\Laravel\MongoDBServiceProvider;
 use OfflineAgency\MongoAutoSync\MongoAutoSyncServiceProvider;
 use Orchestra\Testbench\TestCase as BaseTestCase;
@@ -23,7 +22,6 @@ abstract class TestCase extends BaseTestCase
     {
         return [
             MongoDBServiceProvider::class,
-            MongoDBQueueServiceProvider::class,
             MongoAutoSyncServiceProvider::class,
         ];
     }
