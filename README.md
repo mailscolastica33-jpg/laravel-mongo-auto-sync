@@ -99,6 +99,47 @@ composer require offlineagency/laravel-mongo-auto-sync
 ## Documentation
 You can find the documentation [here](https://docs.offlineagency.com/laravel-mongo-auto-sync/)
 
+## Configuration
+
+Publish the configuration file using:
+```bash
+php artisan vendor:publish --provider="OfflineAgency\MongoAutoSync\MongoAutoSyncServiceProvider" --tag="config"
+```
+
+Available options:
+- `request_type`: Set to `partial` to handle partial requests.
+- `use_background_sync`: Set to `true` to disable sync on target models (useful if handled by jobs).
+- `model_path`: Path to your models.
+- `model_namespace`: Namespace of your models.
+
+## Console Commands
+
+### Check Model Configuration
+Validate your model configurations and relationships:
+```bash
+php artisan mongo-sync:check-config
+```
+
+### Generate Model Documentation
+Generate PHPDoc for your models:
+```bash
+php artisan model-doc:generate {collection_name}
+```
+
+## Exceptions
+
+The package throws specific exceptions for better error handling:
+- `InvalidConfigurationException`: Model or relationship configuration errors.
+- `ModelNotFoundException`: Target model cannot be found.
+- `InvalidRelationshipException`: Invalid relationship type.
+- `InvalidRequestException`: Invalid request data.
+
+## Troubleshooting
+
+- **Sync not working?** Check `laravel.log` for logs starting with `storeWithSync` or `updateWithSync`.
+- **Model not found?** Ensure your `model_path` and `model_namespace` in config are correct.
+- **Invalid configuration?** Run `php artisan mongo-sync:check-config` to identify issues.
+
 ## Testing
 Run the tests with:
 ``` bash
