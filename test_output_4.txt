@@ -1,0 +1,1764 @@
+
+Deprecated: ldap_exop_sync(): Implicitly marking parameter $request_data as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/symfony/polyfill-php83/bootstrap.php on line 35
+
+Deprecated: ldap_exop_sync(): Implicitly marking parameter $controls as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/symfony/polyfill-php83/bootstrap.php on line 35
+
+Deprecated: Symfony\Component\Translation\t(): Implicitly marking parameter $domain as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/symfony/translation/Resources/functions.php on line 18
+
+Deprecated: Laravel\Prompts\text(): Implicitly marking parameter $validate as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/prompts/src/helpers.php on line 11
+
+Deprecated: Laravel\Prompts\password(): Implicitly marking parameter $validate as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/prompts/src/helpers.php on line 19
+
+Deprecated: Laravel\Prompts\select(): Implicitly marking parameter $default as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/prompts/src/helpers.php on line 30
+
+Deprecated: Laravel\Prompts\select(): Implicitly marking parameter $validate as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/prompts/src/helpers.php on line 30
+
+Deprecated: Laravel\Prompts\multiselect(): Implicitly marking parameter $validate as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/prompts/src/helpers.php on line 42
+
+Deprecated: Laravel\Prompts\confirm(): Implicitly marking parameter $validate as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/prompts/src/helpers.php on line 50
+
+Deprecated: Laravel\Prompts\suggest(): Implicitly marking parameter $validate as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/prompts/src/helpers.php on line 60
+
+Deprecated: Laravel\Prompts\search(): Implicitly marking parameter $validate as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/prompts/src/helpers.php on line 71
+
+Deprecated: Laravel\Prompts\multisearch(): Implicitly marking parameter $validate as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/prompts/src/helpers.php on line 82
+
+Deprecated: Laravel\Prompts\note(): Implicitly marking parameter $type as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/prompts/src/helpers.php on line 103
+
+Deprecated: Laravel\Prompts\table(): Implicitly marking parameter $rows as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/prompts/src/helpers.php on line 162
+
+Deprecated: Laravel\Prompts\progress(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/prompts/src/helpers.php on line 177
+
+Deprecated: Termwind\style(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/nunomaduro/termwind/src/Functions.php on line 29
+
+Deprecated: Termwind\ask(): Implicitly marking parameter $autocomplete as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/nunomaduro/termwind/src/Functions.php on line 61
+
+Deprecated: optional(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php on line 190
+
+Deprecated: with(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php on line 430
+
+Deprecated: Psy\info(): Implicitly marking parameter $config as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/psy/psysh/src/functions.php on line 131
+
+Deprecated: Mockery::formatArgs(): Implicitly marking parameter $arguments as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mockery/mockery/library/Mockery.php on line 536
+
+Deprecated: Mockery::formatObjects(): Implicitly marking parameter $objects as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mockery/mockery/library/Mockery.php on line 612
+
+Deprecated: SebastianBergmann\CliParser\Parser::parse(): Implicitly marking parameter $longOptions as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/sebastian/cli-parser/src/Parser.php on line 44
+
+Deprecated: PHPUnit\Framework\TestSuite::run(): Implicitly marking parameter $result as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Framework/TestSuite.php on line 602
+
+Deprecated: PHPUnit\Framework\Test::run(): Implicitly marking parameter $result as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Framework/Test.php on line 22
+
+Deprecated: PHPUnit\Framework\TestCase::run(): Implicitly marking parameter $result as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Framework/TestCase.php on line 815
+
+Deprecated: Illuminate\Foundation\Testing\Concerns\InteractsWithContainer::mock(): Implicitly marking parameter $mock as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/InteractsWithContainer.php on line 61
+
+Deprecated: Illuminate\Foundation\Testing\Concerns\InteractsWithContainer::partialMock(): Implicitly marking parameter $mock as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/InteractsWithContainer.php on line 73
+
+Deprecated: Illuminate\Foundation\Testing\Concerns\InteractsWithContainer::spy(): Implicitly marking parameter $mock as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/InteractsWithContainer.php on line 85
+
+Deprecated: PHPUnit\TextUI\TestRunner::__construct(): Implicitly marking parameter $loader as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/TextUI/TestRunner.php on line 125
+
+Deprecated: PHPUnit\TextUI\TestRunner::__construct(): Implicitly marking parameter $filter as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/TextUI/TestRunner.php on line 125
+PHPUnit 9.6.13 by Sebastian Bergmann and contributors.
+
+Warning:       Your XML configuration validates against a deprecated schema.
+Suggestion:    Migrate your XML configuration using "--migrate-configuration"!
+
+
+Deprecated: Dotenv\Repository\RepositoryBuilder::__construct(): Implicitly marking parameter $allowList as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/vlucas/phpdotenv/src/Repository/RepositoryBuilder.php on line 68
+
+Deprecated: Dotenv\Repository\RepositoryBuilder::allowList(): Implicitly marking parameter $allowList as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/vlucas/phpdotenv/src/Repository/RepositoryBuilder.php on line 247
+
+Deprecated: Illuminate\Support\LazyCollection::filter(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/LazyCollection.php on line 431
+
+Deprecated: Illuminate\Support\LazyCollection::first(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/LazyCollection.php on line 455
+
+Deprecated: Illuminate\Support\LazyCollection::last(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/LazyCollection.php on line 735
+
+Deprecated: Illuminate\Support\Traits\EnumeratesValues::times(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/Traits/EnumeratesValues.php on line 165
+
+Deprecated: Illuminate\Support\Traits\EnumeratesValues::whenEmpty(): Implicitly marking parameter $default as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/Traits/EnumeratesValues.php on line 529
+
+Deprecated: Illuminate\Support\Traits\EnumeratesValues::whenNotEmpty(): Implicitly marking parameter $default as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/Traits/EnumeratesValues.php on line 543
+
+Deprecated: Illuminate\Support\Traits\EnumeratesValues::unlessEmpty(): Implicitly marking parameter $default as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/Traits/EnumeratesValues.php on line 557
+
+Deprecated: Illuminate\Support\Traits\EnumeratesValues::unlessNotEmpty(): Implicitly marking parameter $default as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/Traits/EnumeratesValues.php on line 571
+
+Deprecated: Illuminate\Support\Traits\Conditionable::when(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Conditionable/Traits/Conditionable.php on line 21
+
+Deprecated: Illuminate\Support\Traits\Conditionable::when(): Implicitly marking parameter $default as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Conditionable/Traits/Conditionable.php on line 21
+
+Deprecated: Illuminate\Support\Traits\Conditionable::unless(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Conditionable/Traits/Conditionable.php on line 53
+
+Deprecated: Illuminate\Support\Traits\Conditionable::unless(): Implicitly marking parameter $default as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Conditionable/Traits/Conditionable.php on line 53
+
+Deprecated: Illuminate\Support\Enumerable::times(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 41
+
+Deprecated: Illuminate\Support\Enumerable::filter(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 299
+
+Deprecated: Illuminate\Support\Enumerable::when(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 311
+
+Deprecated: Illuminate\Support\Enumerable::when(): Implicitly marking parameter $default as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 311
+
+Deprecated: Illuminate\Support\Enumerable::whenEmpty(): Implicitly marking parameter $default as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 322
+
+Deprecated: Illuminate\Support\Enumerable::whenNotEmpty(): Implicitly marking parameter $default as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 333
+
+Deprecated: Illuminate\Support\Enumerable::unless(): Implicitly marking parameter $default as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 345
+
+Deprecated: Illuminate\Support\Enumerable::unlessEmpty(): Implicitly marking parameter $default as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 356
+
+Deprecated: Illuminate\Support\Enumerable::unlessNotEmpty(): Implicitly marking parameter $default as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 367
+
+Deprecated: Illuminate\Support\Enumerable::first(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 479
+
+Deprecated: Illuminate\Support\Enumerable::last(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 621
+
+Deprecated: SebastianBergmann\Exporter\Exporter::shortenedRecursiveExport(): Implicitly marking parameter $context as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/sebastian/exporter/src/Exporter.php on line 80
+
+Deprecated: PHPUnit\Framework\ExceptionWrapper::originalException(): Implicitly marking parameter $exceptionToStore as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Framework/ExceptionWrapper.php on line 117
+
+Deprecated: PHPUnit\Framework\Exception::__construct(): Implicitly marking parameter $previous as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Framework/Exception/Exception.php on line 47
+E
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Illuminate\Container\Container::beforeResolving(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 1151
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Illuminate\Container\Container::resolving(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 1171
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Illuminate\Container\Container::afterResolving(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 1191
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Illuminate\Container\Container::setInstance(): Implicitly marking parameter $container as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 1430
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Illuminate\Contracts\Container\Container::beforeResolving(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Contracts/Container/Container.php on line 200
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Illuminate\Contracts\Container\Container::resolving(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Contracts/Container/Container.php on line 209
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Illuminate\Contracts\Container\Container::afterResolving(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Contracts/Container/Container.php on line 218
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Illuminate\Support\Arr::first(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/Arr.php on line 188
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Illuminate\Support\Arr::last(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/Arr.php on line 219
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Symfony\Component\Console\Input\ArgvInput::__construct(): Implicitly marking parameter $argv as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/symfony/console/Input/ArgvInput.php on line 46
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Symfony\Component\Console\Input\ArgvInput::__construct(): Implicitly marking parameter $definition as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/symfony/console/Input/ArgvInput.php on line 46
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Symfony\Component\Console\Input\Input::__construct(): Implicitly marking parameter $definition as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/symfony/console/Input/Input.php on line 37
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Dotenv\Dotenv::create(): Implicitly marking parameter $fileEncoding as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/vlucas/phpdotenv/src/Dotenv.php on line 83
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Dotenv\Dotenv::createMutable(): Implicitly marking parameter $fileEncoding as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/vlucas/phpdotenv/src/Dotenv.php on line 112
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Dotenv\Dotenv::createUnsafeMutable(): Implicitly marking parameter $fileEncoding as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/vlucas/phpdotenv/src/Dotenv.php on line 129
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Dotenv\Dotenv::createImmutable(): Implicitly marking parameter $fileEncoding as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/vlucas/phpdotenv/src/Dotenv.php on line 148
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Dotenv\Dotenv::createUnsafeImmutable(): Implicitly marking parameter $fileEncoding as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/vlucas/phpdotenv/src/Dotenv.php on line 165
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Dotenv\Dotenv::createArrayBacked(): Implicitly marking parameter $fileEncoding as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/vlucas/phpdotenv/src/Dotenv.php on line 185
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Dotenv\Store\StoreBuilder::__construct(): Implicitly marking parameter $fileEncoding as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/vlucas/phpdotenv/src/Store/StoreBuilder.php on line 54
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Dotenv\Store\StoreBuilder::fileEncoding(): Implicitly marking parameter $fileEncoding as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/vlucas/phpdotenv/src/Store/StoreBuilder.php on line 123
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Dotenv\Store\FileStore::__construct(): Implicitly marking parameter $fileEncoding as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/vlucas/phpdotenv/src/Store/FileStore.php on line 42
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Dotenv\Store\File\Reader::read(): Implicitly marking parameter $fileEncoding as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/vlucas/phpdotenv/src/Store/File/Reader.php on line 43
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Dotenv\Store\File\Reader::readFromFile(): Implicitly marking parameter $encoding as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/vlucas/phpdotenv/src/Store/File/Reader.php on line 70
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Illuminate\Support\Collection::filter(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/Collection.php on line 384
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Illuminate\Support\Collection::first(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/Collection.php on line 402
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Illuminate\Support\Collection::last(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Collections/Collection.php on line 750
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Illuminate\Support\Str::createRandomStringsUsing(): Implicitly marking parameter $factory as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Str.php on line 918
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Illuminate\Support\Str::createUuidsUsing(): Implicitly marking parameter $factory as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Str.php on line 1550
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Illuminate\Support\Str::freezeUuids(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Str.php on line 1595
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Illuminate\Support\Str::createUlidsUsing(): Implicitly marking parameter $factory as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Str.php on line 1657
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: Illuminate\Support\Str::freezeUlids(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Str.php on line 1702
+
+Deprecated: Constant E_STRICT is deprecated in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+
+Deprecated: voku\helper\ASCII::to_ascii(): Implicitly marking parameter $replace_single_chars_only as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/voku/portable-ascii/src/voku/helper/ASCII.php on line 795
+
+Deprecated: Monolog\Logger::addRecord(): Implicitly marking parameter $datetime as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/monolog/monolog/src/Monolog/Logger.php on line 331
+
+Deprecated: Illuminate\Log\Logger::__construct(): Implicitly marking parameter $dispatcher as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Log/Logger.php on line 46
+..EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE....EEEEEEEEEEEEEEEEEEEEE 65 / 95 ( 68%)
+EEEEEEEEEEEEEEEEEEEEEEEEEEEEEE                                    95 / 95 (100%)
+
+Time: 00:10.691, Memory: 54.00 MB
+
+There were 89 errors:
+
+1) Tests\DropCollectionTest::test_drop_collection_with_object
+
+Deprecated: PhpParser\Parser::parse(): Implicitly marking parameter $errorHandler as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/nikic/php-parser/lib/PhpParser/Parser.php on line 17
+
+Deprecated: PharIo\Manifest\Manifest::isExtensionFor(): Implicitly marking parameter $version as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/phar-io/manifest/src/values/Manifest.php on line 79
+
+Deprecated: SebastianBergmann\GlobalState\Snapshot::__construct(): Implicitly marking parameter $excludeList as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/sebastian/global-state/src/Snapshot.php on line 104
+MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection timeout calling hello on 'localhost:27017']. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/PlainMongoTrait.php:60
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/MainMongoTrait.php:31
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/DropCollectionTest.php:46
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/DropCollectionTest.php:12
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+2) Tests\EmbeddedRelationsTest::testEmbedsManySave
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:36
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+3) Tests\EmbeddedRelationsTest::testEmbedsToArray
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:119
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+4) Tests\EmbeddedRelationsTest::testEmbedsManyAssociate
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:129
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+5) Tests\EmbeddedRelationsTest::testEmbedsManySaveMany
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:149
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+6) Tests\EmbeddedRelationsTest::testEmbedsManyDuplicate
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:159
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+7) Tests\EmbeddedRelationsTest::testEmbedsManyCreate
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:181
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+8) Tests\EmbeddedRelationsTest::testEmbedsManyCreateMany
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:203
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+9) Tests\EmbeddedRelationsTest::testEmbedsManyDestroy
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:215
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+10) Tests\EmbeddedRelationsTest::testEmbedsManyDelete
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:267
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+11) Tests\EmbeddedRelationsTest::testEmbedsManyDissociate
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:303
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+12) Tests\EmbeddedRelationsTest::testEmbedsManyAliases
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:315
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+13) Tests\EmbeddedRelationsTest::testEmbedsManyCreatingEventReturnsFalse
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:327
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+14) Tests\EmbeddedRelationsTest::testEmbedsManySavingEventReturnsFalse
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:347
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+15) Tests\EmbeddedRelationsTest::testEmbedsManyUpdatingEventReturnsFalse
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:364
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+16) Tests\EmbeddedRelationsTest::testEmbedsManyDeletingEventReturnsFalse
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:387
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+17) Tests\EmbeddedRelationsTest::testEmbedsManyFindOrContains
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:407
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+18) Tests\EmbeddedRelationsTest::testEmbedsManyEagerLoading
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:423
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+19) Tests\EmbeddedRelationsTest::testEmbedsManyDeleteAll
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:447
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+20) Tests\EmbeddedRelationsTest::testEmbedsManyCollectionMethods
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:471
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+21) Tests\EmbeddedRelationsTest::testEmbedsOne
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:526
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+22) Tests\EmbeddedRelationsTest::testEmbedsOneAssociate
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:599
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+23) Tests\EmbeddedRelationsTest::testEmbedsOneNullAssociation
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:615
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+24) Tests\EmbeddedRelationsTest::testEmbedsOneDelete
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:621
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+25) Tests\EmbeddedRelationsTest::testEmbedsManyToArray
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:631
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+26) Tests\EmbeddedRelationsTest::testEmbeddedSave
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:644
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+27) Tests\EmbeddedRelationsTest::testNestedEmbedsOne
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:681
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+28) Tests\EmbeddedRelationsTest::testNestedEmbedsMany
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:709
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+29) Tests\EmbeddedRelationsTest::testNestedMixedEmbeds
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:731
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+30) Tests\EmbeddedRelationsTest::testNestedEmbedsOneDelete
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:754
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+31) Tests\EmbeddedRelationsTest::testNestedEmbedsManyDelete
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:769
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+32) Tests\EmbeddedRelationsTest::testNestedMixedEmbedsDelete
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:787
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+33) Tests\EmbeddedRelationsTest::testDoubleAssociate
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:804
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+34) Tests\EmbeddedRelationsTest::testSaveEmptyModel
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:824
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+35) Tests\EmbeddedRelationsTest::testIncrementEmbedded
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:832
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+36) Tests\EmbeddedRelationsTest::testPaginateEmbedsMany
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:855
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+37) Tests\EmbeddedRelationsTest::testGetQueueableRelationsEmbedsMany
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:867
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+38) Tests\EmbeddedRelationsTest::testGetQueueableRelationsEmbedsOne
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/helpers.php:307
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1022
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2334
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2346
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/EmbeddedRelationsTest.php:877
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+39) Tests\MongoSyncTraitTest::test_null_value_saved
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/PlainMongoTrait.php:60
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/MainMongoTrait.php:31
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/SyncTestCase.php:103
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/MongoSyncTraitTest.php:18
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+40) Tests\MongoSyncTraitTest::test_store_with_sync
+InvalidArgumentException: Expected a scalar, or an array as a 2nd argument to "Symfony\Component\HttpFoundation\InputBag::set()", "stdClass" given.
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/symfony/http-foundation/InputBag.php:71
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/symfony/http-foundation/InputBag.php:59
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Http/Request.php:352
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/MainMongoTrait.php:227
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/MainMongoTrait.php:290
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/MainMongoTrait.php:30
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/MongoSyncTraitTest.php:52
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+41) Tests\MongoSyncTraitTest::test_store_different_input_type
+InvalidArgumentException: Expected a scalar, or an array as a 2nd argument to "Symfony\Component\HttpFoundation\InputBag::set()", "stdClass" given.
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/symfony/http-foundation/InputBag.php:71
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/symfony/http-foundation/InputBag.php:59
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Http/Request.php:352
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/MainMongoTrait.php:227
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/MainMongoTrait.php:290
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/MainMongoTrait.php:30
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/MongoSyncTraitTest.php:74
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+42) Tests\MongoSyncTraitTest::test_update_with_sync_with_embeds_one_on_target
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:646
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:462
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:239
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:737
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:721
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:674
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/MongoSyncTraitTest.php:89
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+43) Tests\MongoSyncTraitTest::test_update_with_sync_with_embeds_many_on_target
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:646
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:462
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:239
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:737
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:721
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:674
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/MongoSyncTraitTest.php:115
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+44) Tests\MongoSyncTraitTest::test_update_different_input_type
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:646
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:462
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:239
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:737
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:721
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:674
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/MongoSyncTraitTest.php:141
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+45) Tests\MongoSyncTraitTest::test_update_null_value_on_all_field_except_text_and_code
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:646
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:462
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:239
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:737
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:721
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:674
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/MongoSyncTraitTest.php:170
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+46) Tests\MongoSyncTraitTest::test_store_item_with_relation
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/PlainMongoTrait.php:60
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/MainMongoTrait.php:31
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/SyncTestCase.php:103
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/MongoSyncTraitTest.php:197
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+47) Tests\MongoSyncTraitTest::test_update_navigation_with_items
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/PlainMongoTrait.php:60
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/MainMongoTrait.php:31
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/SyncTestCase.php:103
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/MongoSyncTraitTest.php:242
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+48) Tests\QueryBuilderTest::testDeleteWithId
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:444
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:785
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:27
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+49) Tests\QueryBuilderTest::testCollection
+PHPUnit\Framework\InvalidArgumentException: Argument #1 of PHPUnit\Framework\Assert::assertInstanceOf() must be a class or interface name
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:64
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+50) Tests\QueryBuilderTest::testGet
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:646
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:462
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:239
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:69
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+51) Tests\QueryBuilderTest::testNoDocument
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:646
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:462
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:239
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:80
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+52) Tests\QueryBuilderTest::testInsert
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:857
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:643
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:92
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+53) Tests\QueryBuilderTest::testInsertGetId
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:107
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+54) Tests\QueryBuilderTest::testBatchInsert
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:857
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:643
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:113
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+55) Tests\QueryBuilderTest::testFind
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:131
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+56) Tests\QueryBuilderTest::testFindNull
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:646
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:462
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:239
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Concerns/BuildsQueries.php:333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:225
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:139
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+57) Tests\QueryBuilderTest::testCount
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:857
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:643
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:145
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+58) Tests\QueryBuilderTest::testUpdate
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:857
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:643
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:155
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+59) Tests\QueryBuilderTest::testDelete
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:857
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:643
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:170
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+60) Tests\QueryBuilderTest::testTruncate
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:857
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:643
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:184
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+61) Tests\QueryBuilderTest::testSubKey
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:857
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:643
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:192
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+62) Tests\QueryBuilderTest::testInArray
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:857
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:643
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:210
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+63) Tests\QueryBuilderTest::testRaw
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:857
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:643
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:228
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+64) Tests\QueryBuilderTest::testPush
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:253
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+65) Tests\QueryBuilderTest::testPull
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:312
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+66) Tests\QueryBuilderTest::testDistinct
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:857
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:643
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:340
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+67) Tests\QueryBuilderTest::testCustomId
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:857
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:643
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:360
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+68) Tests\QueryBuilderTest::testTake
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:857
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:643
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:383
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+69) Tests\QueryBuilderTest::testSkip
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:857
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:643
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:397
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+70) Tests\QueryBuilderTest::testPluck
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:857
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:643
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:411
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+71) Tests\QueryBuilderTest::testList
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:857
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:643
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:422
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+72) Tests\QueryBuilderTest::testAggregate
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:857
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:643
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:445
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+73) Tests\QueryBuilderTest::testSubdocumentAggregate
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:857
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:643
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:464
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+74) Tests\QueryBuilderTest::testSubdocumentArrayAggregate
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:857
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:643
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:480
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+75) Tests\QueryBuilderTest::testUpsert
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:1023
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:952
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:681
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:504
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+76) Tests\QueryBuilderTest::testUnset
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:522
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+77) Tests\QueryBuilderTest::testUpdateSubdocument
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:544
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+78) Tests\QueryBuilderTest::testDates
+MongoDB\Driver\Exception\InvalidArgumentException: Expected integer or object, string given
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:555
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+79) Tests\QueryBuilderTest::testOperators
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:857
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:643
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:578
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+80) Tests\QueryBuilderTest::testIncrement
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:857
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:643
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+81) Tests\QueryBuilderTest::testProjections
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:857
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:643
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:702
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+82) Tests\QueryBuilderTest::testValue
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:857
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:643
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:717
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+83) Tests\QueryBuilderTest::testHintOptions
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:857
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:643
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/QueryBuilderTest.php:730
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+84) Tests\StoreWIthSyncTest::test_store_with_embeds_one_on_target
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/PlainMongoTrait.php:60
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/MainMongoTrait.php:31
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/SyncTestCase.php:41
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/StoreWIthSyncTest.php:16
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+85) Tests\StoreWIthSyncTest::test_store_with_embeds_many_on_target
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/PlainMongoTrait.php:60
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/MainMongoTrait.php:31
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/SyncTestCase.php:103
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/StoreWIthSyncTest.php:83
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+86) Tests\Feature\UpdateWithSyncTest::test_update_with_embeds_one_on_target
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/PlainMongoTrait.php:60
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/MainMongoTrait.php:31
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/SyncTestCase.php:41
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/UpdateWithSyncTest.php:19
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+87) Tests\Feature\UpdateWithSyncTest::test_update_with_embeds_many_on_target
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/PlainMongoTrait.php:60
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/MainMongoTrait.php:31
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/UpdateWithSyncTest.php:108
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+88) Tests\Feature\UpdateWithSyncTest::test_update_with_partial_request_plain_field
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/PlainMongoTrait.php:60
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/MainMongoTrait.php:31
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/SyncTestCase.php:41
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/UpdateWithSyncTest.php:192
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+89) Tests\Feature\UpdateWithSyncTest::test_update_with_partial_request_relationship_field
+MongoDB\Driver\Exception\ConnectionTimeoutException: No servers yet eligible for rescan. Topology type: Single
+
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:598
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/functions.php:665
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/mongodb/src/Collection.php:878
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Collection.php:49
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/mongodb/laravel-mongodb/src/Query/Builder.php:653
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1968
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Eloquent/Builder.php:55
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1333
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1298
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1137
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/PlainMongoTrait.php:60
+/Users/gfabbian/projects/laravel-mongo-auto-sync/src/Traits/MainMongoTrait.php:31
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/SyncTestCase.php:41
+/Users/gfabbian/projects/laravel-mongo-auto-sync/tests/UpdateWithSyncTest.php:216
+/Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/orchestra/testbench-core/src/PHPUnit/TestCase.php:42
+
+ERRORS!
+Tests: 95, Assertions: 6, Errors: 89.
+
+Deprecated: Spatie\LaravelRay\Ray::__construct(): Implicitly marking parameter $client as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/spatie/laravel-ray/src/Ray.php on line 46
+
+Deprecated: Spatie\LaravelRay\Ray::__construct(): Implicitly marking parameter $uuid as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/spatie/laravel-ray/src/Ray.php on line 46
+
+Deprecated: Spatie\LaravelRay\Ray::handleWatcherCallable(): Implicitly marking parameter $callable as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/spatie/laravel-ray/src/Ray.php on line 437
+
+Deprecated: Spatie\Ray\Ray::create(): Implicitly marking parameter $client as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/spatie/ray/src/Ray.php on line 110
+
+Deprecated: Spatie\Ray\Ray::create(): Implicitly marking parameter $uuid as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/spatie/ray/src/Ray.php on line 110
+
+Deprecated: Spatie\Ray\Ray::__construct(): Implicitly marking parameter $client as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/spatie/ray/src/Ray.php on line 117
+
+Deprecated: Spatie\Ray\Ray::__construct(): Implicitly marking parameter $uuid as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/spatie/ray/src/Ray.php on line 117
+
+Deprecated: Spatie\Ray\Settings\SettingsFactory::createFromConfigFile(): Implicitly marking parameter $configDirectory as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/spatie/ray/src/Settings/SettingsFactory.php on line 14
+
+Deprecated: Spatie\Ray\Settings\SettingsFactory::getSettingsFromConfigFile(): Implicitly marking parameter $configDirectory as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/spatie/ray/src/Settings/SettingsFactory.php on line 27
+
+Deprecated: Spatie\Ray\Settings\SettingsFactory::searchConfigFiles(): Implicitly marking parameter $configDirectory as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/spatie/ray/src/Settings/SettingsFactory.php on line 40
+
+Deprecated: Spatie\Ray\Settings\SettingsFactory::searchConfigFilesOnDisk(): Implicitly marking parameter $configDirectory as nullable is deprecated, the explicit nullable type must be used instead in /Users/gfabbian/projects/laravel-mongo-auto-sync/vendor/spatie/ray/src/Settings/SettingsFactory.php on line 49

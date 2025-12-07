@@ -9,4 +9,5 @@ return [
             'model_namespace' => 'App',
         ],
     ],
+    'fb_id' => env('FB_ID', ''),
 ];
