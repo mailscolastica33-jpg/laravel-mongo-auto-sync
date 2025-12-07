@@ -1,13 +1,13 @@
 # Laravel MongoDB Relationships
 [![Latest Stable Version](https://poser.pugx.org/offline-agency/laravel-mongo-auto-sync/v/stable)](https://packagist.org/packages/offline-agency/laravel-mongo-auto-sync)
 [![Total Downloads](https://img.shields.io/packagist/dt/offline-agency/laravel-mongo-auto-sync.svg?style=flat-square)](https://packagist.org/packages/offline-agency/laravel-mongo-auto-sync)
-[![Build Status](https://img.shields.io/github/workflow/status/offline-agency/laravel-mongo-auto-sync/CI)](https://github.com/offline-agency/laravel-mongo-auto-sync/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/offline-agency/laravel-mongo-auto-sync/build-ci.yml)](https://github.com/offline-agency/laravel-mongo-auto-sync/actions)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Quality Score](https://img.shields.io/scrutinizer/g/offline-agency/laravel-mongo-auto-sync.svg?style=flat-square)](https://scrutinizer-ci.com/g/offline-agency/laravel-mongo-auto-sync)
 [![StyleCI](https://github.styleci.io/repos/167277388/shield)](https://styleci.io/repos/167277388)
 
 This package provides a better support for [MongoDB](https://www.mongodb.com) relationships in [Laravel](https://laravel.com/) Projects.
-At low level all CRUD operations has been handled by [jenssegers/laravel-mongodb](https://github.com/jenssegers/laravel-mongodb)
+At low level all CRUD operations has been handled by [mongodb/laravel-mongodb](https://github.com/mongodb/laravel-mongodb)
 
 ## Features
 - Sync changes between collection with relationships after CRUD operations
@@ -70,6 +70,7 @@ As you can see the lines of extra code can rapidly increase, and you will write 
   ```
 The sub document article has been updated with the new article, with no need of extra code :tada: 
 
+
 You can see the new article on the category page because the package synchronizes the information for you by reading the Model Setup.
   
 **These example can be applied for all write operations on the database.**
@@ -93,9 +94,9 @@ composer require offlineagency/laravel-mongo-auto-sync
 
 | Laravel     | Package     |
 | ----------- | ----------- |
-| 5.8.x       | 1.x         |
-| 6.x         | 1.x         |
-| 7.x         | <Badge text="TO BE TEST" type="warning"/> 2.0-alpha.1 (Pre-release)         |
+| 11.x / 12.x | 4.x         |
+| 10.x        | 3.x         |
+| 5.8.x - 9.x | 1.x / 2.x   |
 
 ## Documentation
 You can find the documentation [here](https://docs.offlineagency.com/laravel-mongo-auto-sync/)
