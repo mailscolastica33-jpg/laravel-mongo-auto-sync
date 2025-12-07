@@ -316,9 +316,26 @@ trait ModelAdditionalMethod
             if ($value == '' || is_null($value)) {
                 return;
             } else {
+                if ($value instanceof UTCDateTime) {
+                    return $value;
+                }
+                if ($value instanceof \DateTimeInterface) {
+                    return new UTCDateTime($value);
+                }
+
                 return new UTCDateTime(new DateTime($value));
             }
         } elseif ($is_carbon_date) {
+            if ($value instanceof UTCDateTime) {
+                return $value;
+            }
+            if ($value instanceof \DateTimeInterface) {
+                return new UTCDateTime($value);
+            }
+            if (is_string($value) && !is_numeric($value)) {
+                return new UTCDateTime(new DateTime($value));
+            }
+
             return new UTCDateTime($value);
         } elseif ($is_array) {
             return is_null($value) ? [] : (is_array($value) ? $value : $value->getAttributes());
