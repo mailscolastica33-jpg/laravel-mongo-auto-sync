@@ -54,7 +54,7 @@ jobs:
       run: vendor/bin/phpstan analyse --memory-limit=1G
     - name: Run tests
       run: |
-        vendor/bin/pest --coverage
+        vendor/bin/pest --coverage --coverage-clover=coverage.xml
       env:
         MONGO_HOST: 0.0.0.0
 
