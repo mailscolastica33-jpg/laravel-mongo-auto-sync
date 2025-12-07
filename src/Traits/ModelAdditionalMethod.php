@@ -332,7 +332,7 @@ trait ModelAdditionalMethod
             if ($value instanceof \DateTimeInterface) {
                 return new UTCDateTime($value);
             }
-            if (is_string($value) && !is_numeric($value)) {
+            if (is_string($value) && ! is_numeric($value)) {
                 return new UTCDateTime(new DateTime($value));
             }
 

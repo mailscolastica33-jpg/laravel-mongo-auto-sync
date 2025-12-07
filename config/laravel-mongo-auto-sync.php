@@ -10,4 +10,7 @@ return [
         ],
     ],
     'fb_id' => env('FB_ID', ''),
+    'queue_connection' => env('MONGO_AUTO_SYNC_QUEUE_CONNECTION', 'database'),
+    'queue_name' => env('MONGO_AUTO_SYNC_QUEUE_NAME', 'mongo_auto_sync'),
+    'use_background_sync' => env('MONGO_AUTO_SYNC_BACKGROUND_SYNC', true),
 ];

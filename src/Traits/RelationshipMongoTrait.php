@@ -39,6 +39,8 @@ trait RelationshipMongoTrait
 
             $is_EO = SyncHelper::is_EO($type);
             $is_EM = SyncHelper::is_EM($type);
+            $is_HO = SyncHelper::is_HO($type);
+            $is_HM = SyncHelper::is_HM($type);
 
             $is_EM_target = SyncHelper::is_EM($typeOnTarget);
             $is_EO_target = SyncHelper::is_EO($typeOnTarget);
@@ -109,6 +111,14 @@ trait RelationshipMongoTrait
                     $this->$method = [];
                 }
                 $this->save();
+            } elseif ($is_HM || $is_HO) {
+                if ($event == 'update' && $is_embeds_has_to_be_updated) {
+                    $this->syncReferencedDelete($objs, $method, $relation, $is_HO);
+                }
+
+                if (! empty($objs)) {
+                    $this->processReferencedRelationship($request, $objs, $method, $relation, $event, $options);
+                }
             }
         }
     }
@@ -149,7 +159,7 @@ trait RelationshipMongoTrait
         }
 
         if ($hasTarget) {
-            $this->processEmbedOnTargetCollection($modelTarget, $obj, $methodOnTarget, $modelOnTarget, $is_EO_target, $is_EM_target);
+            $this->processEmbedOnTargetCollection($modelTarget, $obj, $methodOnTarget, $modelOnTarget, $is_EO_target, $is_EM_target, $request, $event, $options);
         }
     }
 
@@ -160,6 +170,10 @@ trait RelationshipMongoTrait
      */
     public function deleteTargetObj($method, $modelTarget, $methodOnTarget, $is_EO, $is_EO_target, $is_EM_target)
     {
+        if (config('laravel-mongo-auto-sync.use_background_sync')) {
+            return;
+        }
+
         if ($is_EO) {
             $embedObj = $this->$method;
             if (! is_null($embedObj)) {
@@ -191,6 +205,103 @@ trait RelationshipMongoTrait
                 }
                 $target->$methodOnTarget = $new_values;
                 $target->save();
+            }
+        }
+    }
+
+    public function syncReferencedDelete($objs, $method, $relation, $is_HO)
+    {
+        $current = $this->$method;
+        $currentIds = [];
+
+        if ($is_HO) {
+            if ($current) {
+                $currentIds[] = $current->id;
+            }
+        } else {
+            if ($current) {
+                foreach ($current as $item) {
+                    $currentIds[] = $item->id;
+                }
+            }
+        }
+
+        $incomingIds = [];
+        if (! empty($objs)) {
+            foreach ($objs as $obj) {
+                if (isset($obj->id)) {
+                    $incomingIds[] = $obj->id;
+                } elseif (isset($obj->_id)) {
+                    $incomingIds[] = $obj->_id;
+                }
+            }
+        }
+
+        $toDelete = array_diff($currentIds, $incomingIds);
+        $modelClass = $relation['model'];
+
+        if (! empty($toDelete)) {
+            // For Mongo, we might need to check how destroy works
+            // It usually takes IDs.
+            $modelClass::destroy($toDelete);
+        }
+    }
+
+    public function processReferencedRelationship(Request $request, $objs, $method, $relation, $event, $options)
+    {
+        $modelClass = $relation['model'];
+        $foreignKey = $relation['foreignKey'] ?? null;
+        $localKey = $relation['localKey'] ?? 'id';
+
+        foreach ($objs as $obj) {
+            $attributes = (array) $obj;
+            $id = $attributes['id'] ?? ($attributes['_id'] ?? null);
+
+            $child = new $modelClass;
+            if ($id) {
+                $child = $child->find($id);
+            }
+
+            if ($child) {
+                foreach ($attributes as $k => $v) {
+                    if ($k !== 'id' && $k !== '_id') {
+                        $child->$k = $v;
+                    }
+                }
+
+                if ($foreignKey) {
+                    // Assuming HasMany/HasOne where FK is on child
+                    $child->$foreignKey = $this->$localKey;
+                }
+
+                if (method_exists($child, 'storeWithSync')) {
+                    $childRequest = new Request;
+                    $childRequest->merge($attributes);
+
+                    if ($id) {
+                        $child->updateWithSync($childRequest);
+                    } else {
+                        $child->storeWithSync($childRequest);
+                    }
+                } else {
+                    $child->save();
+                }
+            }
+        }
+    }
+
+    public function deleteReferencedObj($method, $is_HO)
+    {
+        $relationData = $this->$method;
+        if ($is_HO) {
+            if ($relationData) {
+                $relationData->delete();
+            }
+        } else {
+            if ($relationData) {
+                foreach ($relationData as $item) {
+                    $item->delete();
+                }
             }
         }
     }
@@ -249,14 +360,20 @@ trait RelationshipMongoTrait
      *
      * @throws Exception
      */
-    private function processEmbedOnTargetCollection($modelTarget, $obj, $methodOnTarget, $modelOnTarget, $is_EO_target, $is_EM_target)
+    private function processEmbedOnTargetCollection($modelTarget, $obj, $methodOnTarget, $modelOnTarget, $is_EO_target, $is_EM_target, $request = null, $event = null, $options = [])
     {
+        if (config('laravel-mongo-auto-sync.use_background_sync')) {
+            return;
+        }
+
         $modelToBeSync = $this->getModelTobeSync($modelTarget, $obj);
         if (! is_null($modelToBeSync)) {
             $miniModel = $this->getEmbedModel($modelOnTarget);
             $modelToBeSync->updateRelationWithSync($miniModel, $methodOnTarget, $is_EO_target, $is_EM_target);
-            // TODO:Sync target on level > 1
-            // $modelToBeSync->processAllRelationships($request, $event, $methodOnTarget, $methodOnTarget . "-");
+            // Sync target on level > 1
+            if ($request && $event) {
+                $modelToBeSync->processAllRelationships($request, $event, $methodOnTarget, $methodOnTarget.'-', $options);
+            }
         }
     }
 }

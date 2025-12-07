@@ -3,8 +3,6 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/offline-agency/laravel-mongo-auto-sync.svg?style=flat-square)](https://packagist.org/packages/offline-agency/laravel-mongo-auto-sync)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/offline-agency/laravel-mongo-auto-sync/build-ci.yml)](https://github.com/offline-agency/laravel-mongo-auto-sync/actions)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Quality Score](https://img.shields.io/scrutinizer/g/offline-agency/laravel-mongo-auto-sync.svg?style=flat-square)](https://scrutinizer-ci.com/g/offline-agency/laravel-mongo-auto-sync)
-[![StyleCI](https://github.styleci.io/repos/167277388/shield)](https://styleci.io/repos/167277388)
 
 This package provides a better support for [MongoDB](https://www.mongodb.com) relationships in [Laravel](https://laravel.com/) Projects.
 At low level all CRUD operations has been handled by [mongodb/laravel-mongodb](https://github.com/mongodb/laravel-mongodb)

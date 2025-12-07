@@ -17,7 +17,7 @@ class ModelAdditionalMethodTest extends TestCase
 
     public function test_cast_ml()
     {
-        $model = new TestModelWithTraits();
+        $model = new TestModelWithTraits;
         $model->setRequest();
 
         // []
@@ -45,12 +45,12 @@ class ModelAdditionalMethodTest extends TestCase
 
     public function test_cast_md()
     {
-        $model = new TestModelWithTraits();
+        $model = new TestModelWithTraits;
         $model->setRequest();
 
         // UTCDateTime
 
-        $model->setMd(new UTCDateTime(new DateTime()));
+        $model->setMd(new UTCDateTime(new DateTime));
 
         $parsed_value = $model->castValueToBeSaved('md', [
             'is-md' => true,
@@ -91,7 +91,7 @@ class ModelAdditionalMethodTest extends TestCase
 
     public function test_cast_carbon_date()
     {
-        $model = new TestModelWithTraits();
+        $model = new TestModelWithTraits;
         $model->setRequest();
 
         // Carbon
@@ -129,7 +129,7 @@ class ModelAdditionalMethodTest extends TestCase
 
     public function test_cast_array()
     {
-        $model = new TestModelWithTraits();
+        $model = new TestModelWithTraits;
         $model->setRequest();
 
         // filled array
@@ -167,7 +167,7 @@ class ModelAdditionalMethodTest extends TestCase
 
     public function test_unique_mini_model()
     {
-        $model = new TestModelWithTraits();
+        $model = new TestModelWithTraits;
         $model->setMongoRelation([
             'relation' => [
                 'type' => 'EmbedsMany',
@@ -185,7 +185,7 @@ class ModelAdditionalMethodTest extends TestCase
 
     public function test_obj_with_ref_id()
     {
-        $model = new TestModelWithTraits();
+        $model = new TestModelWithTraits;
         $this->expectException(Exception::class);
 
         $model->getObjWithRefId('', [
@@ -195,7 +195,7 @@ class ModelAdditionalMethodTest extends TestCase
 
     public function test_embed_model()
     {
-        $model = new TestModelWithTraits();
+        $model = new TestModelWithTraits;
         $model->setMiniModels([
             'modelTargets' => 'App\Models\Relation',
         ]);
@@ -208,14 +208,18 @@ class ModelAdditionalMethodTest extends TestCase
 
 class TestModelWithTraits
 {
-    use ModelAdditionalMethod,
-        Helper,
-        MainMongoTrait;
+    use Helper,
+        MainMongoTrait,
+        ModelAdditionalMethod;
 
     protected $ml;
+
     protected $md;
+
     protected $carbon_date;
+
     protected $array;
+
     protected $mongoRelation;
 
     public function getMl()
@@ -260,7 +264,7 @@ class TestModelWithTraits
 
     public function setRequest()
     {
-        $this->request = new Request();
+        $this->request = new Request;
     }
 
     public function setMongoRelation($mongoRelation)

@@ -6,10 +6,16 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use OfflineAgency\MongoAutoSync\Helpers\SyncHelper;
+use OfflineAgency\MongoAutoSync\Observers\MongoAutoSyncObserver;
 use stdClass;
 
 trait MainMongoTrait
 {
+    public static function bootMainMongoTrait()
+    {
+        static::observe(MongoAutoSyncObserver::class);
+    }
+
     protected $has_partial_request;
 
     protected $request;
@@ -59,7 +65,7 @@ trait MainMongoTrait
     /**
      * @return $this
      */
-    public function destroyWithSync()
+    public function destroyWithSync($syncTargets = true)
     {
         // Get the relation info
         $relations = $this->getMongoRelation();
@@ -69,25 +75,26 @@ trait MainMongoTrait
             // Get Relation Save Mode
             $type = $relation['type'];
             $hasTarget = SyncHelper::hasTarget($relation);
-            if ($hasTarget) {
+            if ($hasTarget && $syncTargets) {
                 $modelTarget = $relation['modelTarget'];
                 $methodOnTarget = $relation['methodOnTarget'];
                 $modelOnTarget = $relation['modelOnTarget'];
+                $typeOnTarget = Arr::has($relation, 'typeOnTarget') ? Arr::get($relation, 'typeOnTarget') : 'EmbedsMany';
 
                 $is_EO = SyncHelper::is_EO($type);
                 $is_EM = SyncHelper::is_EM($type);
                 $is_HO = SyncHelper::is_HO($type);
                 $is_HM = SyncHelper::is_HM($type);
 
+                $is_EO_target = SyncHelper::is_EO($typeOnTarget);
+                $is_EM_target = SyncHelper::is_EM($typeOnTarget);
+
                 if ($is_EO || $is_EM) {// EmbedsOne Create - EmbedsMany Create
                     // Delete EmbedsMany or EmbedsOne on Target
-                    $this->deleteTargetObj($method, $modelTarget, $methodOnTarget, $is_EO);
+                    $this->deleteTargetObj($method, $modelTarget, $methodOnTarget, $is_EO, $is_EO_target, $is_EM_target);
+                } elseif ($is_HM || $is_HO) {
+                    $this->deleteReferencedObj($method, $is_HO);
                 }
-
-                // TODO: Need to be implemented
-                /* elseif ($is_HM) {//HasMany
-                 } elseif ($is_HO) {//HasOne Create
-                 }*/
             }
         }
         // Delete current object
