@@ -5,6 +5,10 @@ namespace OfflineAgency\MongoAutoSync\Traits;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Log;
+use OfflineAgency\MongoAutoSync\Exceptions\InvalidConfigurationException;
+use OfflineAgency\MongoAutoSync\Exceptions\InvalidRequestException;
+use OfflineAgency\MongoAutoSync\Exceptions\MongoAutoSyncException;
 use OfflineAgency\MongoAutoSync\Helpers\SyncHelper;
 use OfflineAgency\MongoAutoSync\Observers\MongoAutoSyncObserver;
 use stdClass;
@@ -31,10 +35,12 @@ trait MainMongoTrait
     /**
      * @return $this
      *
-     * @throws Exception
+     * @throws MongoAutoSyncException
      */
     public function storeWithSync(Request $request, array $additionalData = [], array $options = [], array $target_additional_data = [])
     {
+        Log::info('storeWithSync started for model: '.get_class($this));
+        
         $this->initDataForSync($request, $additionalData, $options, $target_additional_data);
         $this->storeEditAllItems($request, 'add', $options);
         $this->processAllRelationships($request, 'add', '', '', $options);
@@ -48,10 +54,12 @@ trait MainMongoTrait
     /**
      * @return $this
      *
-     * @throws Exception
+     * @throws MongoAutoSyncException
      */
     public function updateWithSync(Request $request, array $additionalData = [], array $options = [], array $target_additional_data = [])
     {
+        Log::info('updateWithSync started for model: '.get_class($this).' with ID: '.$this->id);
+
         $this->initDataForSync($request, $additionalData, $options, $target_additional_data);
         $this->storeEditAllItems($request, 'update', $options);
         $this->processAllRelationships($request, 'update', '', '', $options);
@@ -118,35 +126,35 @@ trait MainMongoTrait
      * @param  string  $method
      * @param  string  $model
      *
-     * @throws Exception
+     * @throws InvalidConfigurationException
      */
     public function checkPropertyExistence($obj, string $EOkey, $method = '', $model = '')
     {
         if (! property_exists($obj, $EOkey)) {
             $msg = 'Error - '.$EOkey.' attribute not found on obj '.json_encode($obj).' during save of model: '.$model.' and attribute: '.$method;
-            throw new Exception($msg);
+            throw new InvalidConfigurationException($msg);
         }
     }
 
     /**
-     * @throws Exception
+     * @throws InvalidConfigurationException
      */
     public function checkArrayExistence($arr, string $key)
     {
         if (! Arr::has($arr, $key)) {
             $msg = ('Error - '.$key.' attribute not found on obj '.json_encode($arr));
-            throw new Exception($msg);
+            throw new InvalidConfigurationException($msg);
         }
     }
 
     /**
-     * @throws Exception
+     * @throws InvalidRequestException
      */
     private function checkRequestExistence(Request $request, string $key)
     {
         if (! $request->has($key)) {
             $msg = ('Error - '.$key.' attribute not found in Request '.json_encode($request->all()));
-            throw new Exception($msg);
+            throw new InvalidRequestException($msg);
         }
     }
 
@@ -179,7 +187,7 @@ trait MainMongoTrait
     /**
      * @return MDModel
      *
-     * @throws Exception
+     * @throws InvalidConfigurationException
      */
     private function getModelTobeSync(string $modelTarget, stdClass $obj)
     {
@@ -195,7 +203,7 @@ trait MainMongoTrait
     /**
      * @return mixed
      *
-     * @throws Exception
+     * @throws InvalidRequestException
      */
     private function getRelationshipRequest(string $key, Request $request)
     {

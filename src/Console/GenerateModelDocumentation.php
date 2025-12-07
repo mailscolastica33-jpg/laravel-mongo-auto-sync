@@ -5,6 +5,8 @@ namespace OfflineAgency\MongoAutoSync\Console;
 use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
+use OfflineAgency\MongoAutoSync\Exceptions\InvalidConfigurationException;
+use OfflineAgency\MongoAutoSync\Exceptions\ModelNotFoundException;
 use OfflineAgency\MongoAutoSync\Helpers\SyncHelper;
 use OfflineAgency\MongoAutoSync\Http\Models\MDModel;
 
@@ -91,7 +93,7 @@ class GenerateModelDocumentation extends Command
     /**
      * @return string
      *
-     * @throws Exception
+     * @throws InvalidConfigurationException
      */
     public function checkOaModels($path, $collection_name)
     {
@@ -100,7 +102,7 @@ class GenerateModelDocumentation extends Command
         try {
             $results = scandir($path);
         } catch (Exception $e) {
-            throw new Exception('Error directory '.config('laravel-mongo-auto-sync.model_path').' not found');
+            throw new InvalidConfigurationException('Error directory '.config('laravel-mongo-auto-sync.model_path').' not found');
         }
 
         foreach ($results as $result) {
@@ -126,14 +128,14 @@ class GenerateModelDocumentation extends Command
     /**
      * @return MDModel
      *
-     * @throws Exception
+     * @throws ModelNotFoundException
      */
     private function getModel(string $modelPath)
     {
         if (class_exists($modelPath)) {
             return new $modelPath;
         } else {
-            throw new Exception('Error '.$this->argument('collection_name').' Model not found');
+            throw new ModelNotFoundException('Error '.$this->argument('collection_name').' Model not found');
         }
     }
 }

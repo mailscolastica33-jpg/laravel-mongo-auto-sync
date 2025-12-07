@@ -6,6 +6,9 @@ use DateTime;
 use Exception;
 use Illuminate\Support\Arr;
 use MongoDB\BSON\UTCDateTime;
+use OfflineAgency\MongoAutoSync\Exceptions\InvalidConfigurationException;
+use OfflineAgency\MongoAutoSync\Exceptions\InvalidRelationshipException;
+use OfflineAgency\MongoAutoSync\Exceptions\InvalidRequestException;
 use OfflineAgency\MongoAutoSync\Extensions\MongoCollection;
 use OfflineAgency\MongoAutoSync\Helpers\SyncHelper;
 use OfflineAgency\MongoAutoSync\Http\Models\MDModel;
@@ -14,6 +17,8 @@ use stdClass;
 trait ModelAdditionalMethod
 {
     protected $mini_models;
+
+    protected static $mini_model_list_cache = [];
 
     public function newCollection(array $models = [])
     {
@@ -192,15 +197,15 @@ trait ModelAdditionalMethod
     /**
      * @return mixed
      *
-     * @throws Exception
+     * @throws InvalidRequestException
      */
     public function getRandomRow(int $numberOfRandomRow = 0)
     {
         $totalRow = $this->count();
         if ($numberOfRandomRow <= 0) {
-            throw new Exception('Invalid # of random record requested');
+            throw new InvalidRequestException('Invalid # of random record requested');
         } elseif ($numberOfRandomRow > $totalRow) {
-            throw new Exception('You have requested a number of record bigger than the count collection record ( '.$totalRow.')');
+            throw new InvalidRequestException('You have requested a number of record bigger than the count collection record ( '.$totalRow.')');
         }
 
         $raw = $this->raw(function ($collection) use ($numberOfRandomRow) {
@@ -240,10 +245,54 @@ trait ModelAdditionalMethod
     /**
      * @return array
      *
-     * @throws Exception
+     * @throws InvalidConfigurationException
      */
     public function getUniqueMiniModelList()
     {
+        $cacheKey = get_class($this);
+
+        if (isset(self::$mini_model_list_cache[$cacheKey])) {
+            $result = self::$mini_model_list_cache[$cacheKey];
+            // Restore partial generated request from cache or re-generate it?
+            // The method sets partial generated request as a side effect.
+            // We need to be careful. The side effect depends on the instance data ($this->getObjWithRefId which depends on attributes).
+            // Actually getUniqueMiniModelList calls getObjWithRefId.
+            // Wait, getObjWithRefId depends on $this attributes (ref_id).
+            // So we CANNOT cache the result across instances blindly if the result depends on instance data.
+            
+            // Let's check getUniqueMiniModelList implementation again.
+            // It calls getObjWithRefId.
+            // getObjWithRefId calls getObjValueToBeSaved -> getDbValue -> $this->$key.
+            // So it DOES depend on instance data.
+            // So static caching is NOT safe if it depends on instance state.
+            
+            // However, the LIST of mini models (classes) should be constant for the Model Class.
+            // But the method ALSO sets $this->setPartialGeneratedRequest($embedded_object);
+            // $embedded_object depends on instance data.
+            
+            // So I can cache the 'models' list but I still need to iterate to build $embedded_object.
+            // The previous implementation was:
+            /*
+            foreach ($relationships as $method => $relationship) {
+                $hasTarget = SyncHelper::hasTarget($relationship);
+                if ($hasTarget) {
+                    $relationshipsContainsTarget = Arr::has($relationship, 'modelOnTarget');
+                    if ($relationshipsContainsTarget) {
+                        $models[] = Arr::get($relationship, 'modelOnTarget');
+                        $embedded_object[$method] = $this->getObjWithRefId($method, $relationship);
+                    } else {
+                        throw new Exception...
+                    }
+                }
+            }
+            $this->setPartialGeneratedRequest($embedded_object);
+            return collect($models)->unique()->toArray();
+            */
+            
+            // I can optimize by caching which relationships have targets and what their modelOnTarget is.
+            // But the 'embedded_object' part needs to run for every instance.
+        }
+
         $relationships = $this->getMongoRelation();
 
         $models = [];
@@ -257,7 +306,7 @@ trait ModelAdditionalMethod
                     $models[] = Arr::get($relationship, 'modelOnTarget');
                     $embedded_object[$method] = $this->getObjWithRefId($method, $relationship);
                 } else {
-                    throw new Exception('modelOnTarget not found on relationship '.$method.' array. Check your Model configuration '.get_class($this));
+                    throw new InvalidConfigurationException('modelOnTarget not found on relationship '.$method.' array. Check your Model configuration '.get_class($this));
                 }
             }
         }
@@ -380,7 +429,7 @@ trait ModelAdditionalMethod
     /**
      * @return array
      *
-     * @throws Exception
+     * @throws InvalidConfigurationException
      */
     public function getEmbedModel(string $key)
     {
@@ -389,14 +438,14 @@ trait ModelAdditionalMethod
         if (Arr::has($embedModels, $key)) {
             return Arr::get($embedModels, $key);
         } else {
-            throw new Exception('I cannot find an embedded model with key: '.$key.'. Check on your model configuration');
+            throw new InvalidConfigurationException('I cannot find an embedded model with key: '.$key.'. Check on your model configuration');
         }
     }
 
     /**
      * @return false|string
      *
-     * @throws Exception
+     * @throws InvalidRelationshipException
      */
     public function getObjWithRefId(string $method, array $relationship)
     {
@@ -419,7 +468,7 @@ trait ModelAdditionalMethod
                 }
             }
         } else {
-            throw new Exception('Relationship '.$method.' type '.$type.' is not valid! Possible values are: EmbedsMany and EmbedsOne');
+            throw new InvalidRelationshipException('Relationship '.$method.' type '.$type.' is not valid! Possible values are: EmbedsMany and EmbedsOne');
         }
 
         return json_encode($objs);

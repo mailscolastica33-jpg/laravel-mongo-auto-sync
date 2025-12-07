@@ -2,15 +2,17 @@
 
 namespace OfflineAgency\MongoAutoSync\Traits;
 
+use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use MongoDB\BSON\UTCDateTime;
+use OfflineAgency\MongoAutoSync\Exceptions\MongoAutoSyncException;
 use OfflineAgency\MongoAutoSync\Helpers\SyncHelper;
 
 trait RelationshipMongoTrait
 {
     /**
-     * @throws Exception
+     * @throws MongoAutoSyncException
      */
     public function processAllRelationships(Request $request, string $event, string $parent, string $counter, array $options)
     {
@@ -150,7 +152,7 @@ trait RelationshipMongoTrait
      * @param  bool  $is_EM_target
      * @param  bool  $is_embeds_has_to_be_updated
      *
-     * @throws Exception
+     * @throws MongoAutoSyncException
      */
     public function processOneEmbeddedRelationship(Request $request, $obj, $type, $model, $method, $modelTarget, $methodOnTarget, $modelOnTarget, $event, $hasTarget, $is_EO, $is_EM, $is_EO_target, $is_EM_target, $i, $is_embeds_has_to_be_updated, $options)
     {
@@ -168,22 +170,29 @@ trait RelationshipMongoTrait
      * @param  bool  $is_EO_target
      * @param  bool  $is_EM_target
      */
-    public function deleteTargetObj($method, $modelTarget, $methodOnTarget, $is_EO, $is_EO_target, $is_EM_target)
+    public function deleteTargetObj(string $method, string $modelTarget, string $methodOnTarget, bool $is_EO, bool $is_EO_target, bool $is_EM_target)
     {
         if (config('laravel-mongo-auto-sync.use_background_sync')) {
             return;
         }
 
+        $targetIds = [];
+
         if ($is_EO) {
             $embedObj = $this->$method;
             if (! is_null($embedObj)) {
-                $target_id = $embedObj->ref_id;
-                $this->handleSubTarget($target_id, $modelTarget, $methodOnTarget, $is_EO_target, $is_EM_target);
+                $targetIds[] = $embedObj->ref_id;
             }
         } else {
-            foreach ($this->$method as $target) {
-                $this->handleSubTarget($target->ref_id, $modelTarget, $methodOnTarget, $is_EO_target, $is_EM_target);
+            if (is_iterable($this->$method)) {
+                foreach ($this->$method as $target) {
+                    $targetIds[] = $target->ref_id;
+                }
             }
+        }
+
+        if (!empty($targetIds)) {
+            $this->batchHandleSubTarget($targetIds, $modelTarget, $methodOnTarget, $is_EO_target, $is_EM_target);
         }
     }
 
@@ -191,22 +200,44 @@ trait RelationshipMongoTrait
      * @param  bool  $is_EO_target
      * @param  bool  $is_EM_target
      */
-    public function handleSubTarget($target_id, $modelTarget, $methodOnTarget, $is_EO_target, $is_EM_target)
+    public function batchHandleSubTarget(array $targetIds, string $modelTarget, string $methodOnTarget, bool $is_EO_target, bool $is_EM_target)
     {
         if ($is_EM_target) {
-            $target = new $modelTarget;
-            $target = $target->all()->where('id', $target_id)->first();
-            if (! is_null($target)) {
-                $new_values = [];
-                foreach ($target->$methodOnTarget as $temp) {
-                    if ($temp->ref_id !== $this->getId()) {
-                        $new_values[] = $temp->attributes;
+            $modelInstance = new $modelTarget;
+            // Use whereIn for batch retrieval
+            $targets = $modelInstance->whereIn('id', $targetIds)->get();
+
+            foreach ($targets as $target) {
+                if (! is_null($target)) {
+                    $new_values = [];
+                    // Check if the relationship exists and is iterable
+                    if (isset($target->$methodOnTarget) && is_iterable($target->$methodOnTarget)) {
+                        foreach ($target->$methodOnTarget as $temp) {
+                            // Check if property exists to avoid undefined property notice
+                            if (property_exists($temp, 'ref_id') && $temp->ref_id !== $this->getId()) {
+                                $new_values[] = $temp->attributes ?? $temp;
+                            } elseif (isset($temp['ref_id']) && $temp['ref_id'] !== $this->getId()) {
+                                // Handle array case just in case
+                                $new_values[] = $temp;
+                            }
+                        }
                     }
+                    $target->$methodOnTarget = $new_values;
+                    $target->save();
                 }
-                $target->$methodOnTarget = $new_values;
-                $target->save();
             }
         }
+    }
+
+    /**
+     * @param  bool  $is_EO_target
+     * @param  bool  $is_EM_target
+     * @deprecated Use batchHandleSubTarget instead
+     */
+    public function handleSubTarget($target_id, $modelTarget, $methodOnTarget, $is_EO_target, $is_EM_target)
+    {
+        // Wrapper for backward compatibility
+        $this->batchHandleSubTarget([$target_id], $modelTarget, $methodOnTarget, $is_EO_target, $is_EM_target);
     }
 
     public function syncReferencedDelete($objs, $method, $relation, $is_HO)
@@ -307,7 +338,7 @@ trait RelationshipMongoTrait
     }
 
     /**
-     * @throws Exception
+     * @throws MongoAutoSyncException
      */
     private function processEmbedOnCurrentCollection(Request $request, $obj, $type, $model, $method, $event, $is_EO, $is_EM, $i, $options)
     {
@@ -358,7 +389,7 @@ trait RelationshipMongoTrait
      * @param  bool  $is_EO_target
      * @param  bool  $is_EM_target
      *
-     * @throws Exception
+     * @throws MongoAutoSyncException
      */
     private function processEmbedOnTargetCollection($modelTarget, $obj, $methodOnTarget, $modelOnTarget, $is_EO_target, $is_EM_target, $request = null, $event = null, $options = [])
     {
