@@ -35,6 +35,7 @@ class EmbedsMany extends EmbedsOneOrMany
     {
         /** @var \Illuminate\Database\Eloquent\Collection<int, \MongoDB\Laravel\Eloquent\Model> $results */
         $results = $this->toCollection($this->getEmbeddedAsIndexed());
+
         return $results;
     }
 
@@ -73,7 +74,6 @@ class EmbedsMany extends EmbedsOneOrMany
     /**
      * Save an existing model and attach it to the parent model.
      *
-     * @param  Model  $model
      * @param  array<string, mixed>  $values
      * @return Model|bool
      */
@@ -234,11 +234,9 @@ class EmbedsMany extends EmbedsOneOrMany
     /**
      * Save alias.
      *
-     * @param  Model  $model
      * @return Model
      */
     /**
-     * @param  Model  $model
      * @return \Illuminate\Database\Eloquent\Model
      */
     public function attach(Model $model)
@@ -249,6 +247,7 @@ class EmbedsMany extends EmbedsOneOrMany
             /** @var \Illuminate\Database\Eloquent\Model $model */
             return $model;
         }
+
         /** @var \Illuminate\Database\Eloquent\Model $result */
         return $result;
     }
@@ -272,6 +271,7 @@ class EmbedsMany extends EmbedsOneOrMany
         $records[] = $model->getAttributes();
 
         $this->setEmbedded($records);
+
         return $model;
     }
 
@@ -299,6 +299,7 @@ class EmbedsMany extends EmbedsOneOrMany
         }
 
         $this->setEmbedded($records);
+
         return $model;
     }
 
@@ -351,6 +352,7 @@ class EmbedsMany extends EmbedsOneOrMany
         if (! is_array($embedded)) {
             return null;
         }
+
         // Return as-is, maintaining parent's type signature
         return $embedded;
     }
@@ -379,6 +381,7 @@ class EmbedsMany extends EmbedsOneOrMany
                 $result[] = $value;
             }
         }
+
         return $result;
     }
 
@@ -393,6 +396,7 @@ class EmbedsMany extends EmbedsOneOrMany
     {
         if ($models === null) {
             parent::setEmbedded(null);
+
             return;
         }
         if (! is_array($models)) {
@@ -422,6 +426,7 @@ class EmbedsMany extends EmbedsOneOrMany
         if (method_exists(Collection::class, $method)) {
             /** @var callable $callable */
             $callable = [$this->getResults(), $method];
+
             return call_user_func_array($callable, $parameters);
         }
 

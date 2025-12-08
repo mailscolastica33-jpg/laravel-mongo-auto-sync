@@ -10,10 +10,9 @@ use OfflineAgency\MongoAutoSync\Helpers\SyncHelper;
 trait PlainMongoTrait
 {
     /**
-     * @param  Request  $request
-     * @param  string  $event
      * @param  array<string, mixed>  $options
      * @return void
+     *
      * @throws Exception
      */
     public function storeEditAllItems(Request $request, string $event, array $options)

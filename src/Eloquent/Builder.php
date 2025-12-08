@@ -9,12 +9,14 @@ use MongoDB\Model\BSONDocument;
 
 /**
  * @template TModel of \Illuminate\Database\Eloquent\Model
+ *
  * @extends MongoDbEloquentBuilder<TModel>
  */
 class Builder extends MongoDbEloquentBuilder
 {
     /**
      * {@inheritdoc}
+     *
      * @param  array<mixed>  $values
      * @param  array<mixed>  $options
      */
@@ -36,6 +38,7 @@ class Builder extends MongoDbEloquentBuilder
 
     /**
      * {@inheritdoc}
+     *
      * @param  array<mixed>  $values
      * @return bool
      */
@@ -54,6 +57,7 @@ class Builder extends MongoDbEloquentBuilder
 
     /**
      * {@inheritdoc}
+     *
      * @param  array<mixed>  $values
      * @param  string|null  $sequence
      * @return mixed
@@ -89,6 +93,7 @@ class Builder extends MongoDbEloquentBuilder
 
     /**
      * {@inheritdoc}
+     *
      * @param  string|\Illuminate\Contracts\Database\Query\Expression  $column
      * @param  float|int  $amount
      * @param  array<mixed>  $extra
@@ -128,6 +133,7 @@ class Builder extends MongoDbEloquentBuilder
 
     /**
      * {@inheritdoc}
+     *
      * @param  string|\Illuminate\Contracts\Database\Query\Expression  $column
      * @param  float|int  $amount
      * @param  array<mixed>  $extra
@@ -151,8 +157,10 @@ class Builder extends MongoDbEloquentBuilder
                 $this->model->syncOriginalAttribute($column);
                 /** @var array<string, mixed> $updateData */
                 $updateData = [$column => $value];
+
                 return (int) $this->model->update($updateData);
             }
+
             return 0;
         }
 
@@ -169,6 +177,7 @@ class Builder extends MongoDbEloquentBuilder
 
     /**
      * {@inheritdoc}
+     *
      * @return \Illuminate\Database\Eloquent\Collection<int, TModel>|BSONDocument|TModel|array<mixed>|mixed
      */
     public function raw($expression = null)

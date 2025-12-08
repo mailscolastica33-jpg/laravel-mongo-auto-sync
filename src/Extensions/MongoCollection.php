@@ -51,7 +51,7 @@ class MongoCollection extends Collection
         // Iterate backwards or handle keys carefully if splicing
         // Actually, splice modifies the collection.
         // It's safer to find the item and prepend it.
-        
+
         $keyToMove = null;
         foreach ($this->items as $key => $item) {
             /** @var TModel $item */

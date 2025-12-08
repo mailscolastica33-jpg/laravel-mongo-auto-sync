@@ -36,6 +36,7 @@ trait Helper
     /**
      * @param  mixed  $options
      * @return void
+     *
      * @throws InvalidConfigurationException
      */
     private function validateOptions($options)
@@ -47,8 +48,8 @@ trait Helper
 
     /**
      * @param  mixed  $value
-     * @param  string  $expected
      * @return void
+     *
      * @throws InvalidConfigurationException
      */
     private function validateOptionValue($value, string $expected)
@@ -60,8 +61,6 @@ trait Helper
 
     /**
      * @param  array<string, mixed>  $options
-     * @param  string  $key
-     * @param  string  $expected
      * @return bool|mixed
      *
      * @throws InvalidConfigurationException

@@ -43,6 +43,7 @@ trait EmbedsRelationships
         $instance = new $related;
 
         $embedsMany = new EmbedsMany($query, $this, $instance, $localKey, $foreignKey, $relation);
+
         return $embedsMany;
     }
 
@@ -81,6 +82,7 @@ trait EmbedsRelationships
         $instance = new $related;
 
         $embedsOne = new EmbedsOne($query, $this, $instance, $localKey, $foreignKey, $relation);
+
         return $embedsOne;
     }
 }

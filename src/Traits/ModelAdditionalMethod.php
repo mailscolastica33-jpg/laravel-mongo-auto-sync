@@ -34,6 +34,7 @@ trait ModelAdditionalMethod
     {
         /** @var \Illuminate\Database\Eloquent\Collection<int, static> $collection */
         $collection = new MongoCollection($models);
+
         return $collection;
     }
 
@@ -212,9 +213,7 @@ trait ModelAdditionalMethod
     }
 
     /**
-     * @param  string  $key
      * @param  array<string, mixed>  $item
-     * @param  string  $mini_model_path
      * @return array<string, mixed>|UTCDateTime|mixed|null
      *
      * @throws Exception
@@ -262,19 +261,17 @@ trait ModelAdditionalMethod
     }
 
     /**
-     * @param  string  $mini_model_path
      * @return MDModel
      */
     public function getModelInstanceFromPath(string $mini_model_path)
     {
         /** @var MDModel $instance */
         $instance = new $mini_model_path;
+
         return $instance;
     }
 
     /**
-     * @param  string  $key
-     * @param  string  $mini_model_path
      * @param  bool  $rewrite_ref_id_key
      * @return mixed
      */
@@ -289,6 +286,7 @@ trait ModelAdditionalMethod
         if ($request === null) {
             return $db_value;
         }
+
         return Arr::has($target_additional_data, $mini_model_path.'.'.$key) ? Arr::get($target_additional_data, $mini_model_path.'.'.$key) : // Search on target_additional_data [] 4th parameter of updateWithSync() / storeWithSync()
             ($request->has($key) ? $request->input($key) : $db_value); // Search on Main Request 1st parameter of updateWithSync() / storeWithSync() or directly on database
         // TODO: Add default value from Item Model
@@ -303,7 +301,6 @@ trait ModelAdditionalMethod
     }
 
     /**
-     * @param  string  $key
      * @return MDModel
      *
      * @throws InvalidConfigurationException
@@ -315,6 +312,7 @@ trait ModelAdditionalMethod
         if (Arr::has($embedModels, $key)) {
             /** @var MDModel $model */
             $model = Arr::get($embedModels, $key);
+
             return $model;
         } else {
             throw new InvalidConfigurationException('I cannot find an embedded model with key: '.$key.'. Check on your model configuration');
@@ -322,7 +320,6 @@ trait ModelAdditionalMethod
     }
 
     /**
-     * @param  string  $method
      * @param  array<string, mixed>  $relationship
      * @return string
      *
@@ -359,6 +356,7 @@ trait ModelAdditionalMethod
         if ($result === false) {
             return '';
         }
+
         return $result;
     }
 }

@@ -2,7 +2,6 @@
 
 namespace OfflineAgency\MongoAutoSync\Helpers;
 
-use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use stdClass;
@@ -262,6 +261,7 @@ class SyncHelper
         if ($is_EM) {
             return '';
         }
+
         return '-'.$i;
     }
 }

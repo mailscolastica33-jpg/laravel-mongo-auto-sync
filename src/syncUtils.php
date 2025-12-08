@@ -141,7 +141,6 @@ if (! function_exists('getRequestToBeSync')) {
     /**
      * @param  string|mixed  $ref_id
      * @param  string  $modelOnTarget
-     * @param  Request  $request
      * @param  string  $methodOnTarget
      * @return Request
      */
@@ -153,7 +152,6 @@ if (! function_exists('getRequestToBeSync')) {
 
 if (! function_exists('isRequestReadyToBeProcessed')) {
     /**
-     * @param  Request  $request
      * @return bool
      */
     function isRequestReadyToBeProcessed(Request $request)
@@ -164,7 +162,6 @@ if (! function_exists('isRequestReadyToBeProcessed')) {
 
 if (! function_exists('removeSubCollectionInput')) {
     /**
-     * @param  Request  $request
      * @return Request
      */
     function removeSubCollectionInput(Request $request)
@@ -176,7 +173,6 @@ if (! function_exists('removeSubCollectionInput')) {
 if (! function_exists('prepareRequest')) {
 
     /**
-     * @param  Request  $request
      * @param  array<string, mixed>  $additionalData
      * @return Request
      */

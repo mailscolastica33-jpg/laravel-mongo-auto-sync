@@ -12,6 +12,7 @@ use MongoDB\Laravel\Eloquent\Model;
  * @template TRelatedModel of Model
  * @template TDeclaringModel of Model
  * @template TResult of Collection|Model
+ *
  * @extends Relation<TRelatedModel, TDeclaringModel, TResult>
  */
 abstract class EmbedsOneOrMany extends Relation
@@ -110,7 +111,6 @@ abstract class EmbedsOneOrMany extends Relation
     /**
      * Save a new model and attach it to the parent model.
      *
-     * @param  Model  $model
      * @return Model|bool
      */
     abstract public function performInsert(Model $model);
@@ -118,7 +118,6 @@ abstract class EmbedsOneOrMany extends Relation
     /**
      * Save an existing model and attach it to the parent model.
      *
-     * @param  Model  $model
      * @param  array<string, mixed>  $values
      * @return Model|bool
      */
@@ -127,7 +126,6 @@ abstract class EmbedsOneOrMany extends Relation
     /**
      * Delete an existing model and detach it from the parent model.
      *
-     * @param  Model  $model
      * @return int
      */
     abstract public function performDelete(Model $model);
@@ -160,6 +158,7 @@ abstract class EmbedsOneOrMany extends Relation
     {
         /** @var TResult $results */
         $results = $this->getResults();
+
         return $results;
     }
 
@@ -174,6 +173,7 @@ abstract class EmbedsOneOrMany extends Relation
         if ($embedded === null) {
             return 0;
         }
+
         return count($embedded);
     }
 
@@ -318,6 +318,7 @@ abstract class EmbedsOneOrMany extends Relation
         // Convert the id to MongoId if necessary.
         /** @var \MongoDB\Laravel\Query\Builder $baseQuery */
         $baseQuery = $this->getBaseQuery();
+
         return $baseQuery->convertKey($id);
     }
 
@@ -380,6 +381,7 @@ abstract class EmbedsOneOrMany extends Relation
         if ($parentRelation === null) {
             return null;
         }
+
         /** @var Relation<TRelatedModel, TDeclaringModel, mixed> $parentRelation */
         return $parentRelation;
     }
@@ -396,6 +398,7 @@ abstract class EmbedsOneOrMany extends Relation
         // MongoDB\Laravel\Eloquent\Builder extends Illuminate\Database\Eloquent\Builder
         /** @var \Illuminate\Database\Eloquent\Builder<TRelatedModel> $query */
         $query = clone $this->query;
+
         return $query;
     }
 
@@ -410,6 +413,7 @@ abstract class EmbedsOneOrMany extends Relation
         // to make sure we use separate query instances.
         /** @var \MongoDB\Laravel\Query\Builder $baseQuery */
         $baseQuery = clone $this->query->getQuery();
+
         return $baseQuery;
     }
 

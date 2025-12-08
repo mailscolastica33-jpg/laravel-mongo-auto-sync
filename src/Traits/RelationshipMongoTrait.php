@@ -12,12 +12,9 @@ use OfflineAgency\MongoAutoSync\Helpers\SyncHelper;
 trait RelationshipMongoTrait
 {
     /**
-     * @param  Request  $request
-     * @param  string  $event
-     * @param  string  $parent
-     * @param  string  $counter
      * @param  array<string, mixed>  $options
      * @return void
+     *
      * @throws MongoAutoSyncException
      */
     public function processAllRelationships(Request $request, string $event, string $parent, string $counter, array $options)
@@ -134,7 +131,6 @@ trait RelationshipMongoTrait
 
     /**
      * @param  object  $mini_model
-     * @param  string  $method_on_target
      * @param  bool  $is_EO_target
      * @param  bool  $is_EM_target
      * @return void
@@ -159,7 +155,6 @@ trait RelationshipMongoTrait
     }
 
     /**
-     * @param  Request  $request
      * @param  object  $obj
      * @param  string  $type
      * @param  string  $model
@@ -177,6 +172,7 @@ trait RelationshipMongoTrait
      * @param  bool  $is_embeds_has_to_be_updated
      * @param  array<string, mixed>  $options
      * @return void
+     *
      * @throws MongoAutoSyncException
      */
     public function processOneEmbeddedRelationship(Request $request, $obj, $type, $model, $method, $modelTarget, $methodOnTarget, $modelOnTarget, $event, $hasTarget, $is_EO, $is_EM, $is_EO_target, $is_EM_target, $i, $is_embeds_has_to_be_updated, array $options)
@@ -191,12 +187,6 @@ trait RelationshipMongoTrait
     }
 
     /**
-     * @param  string  $method
-     * @param  string  $modelTarget
-     * @param  string  $methodOnTarget
-     * @param  bool  $is_EO
-     * @param  bool  $is_EO_target
-     * @param  bool  $is_EM_target
      * @return void
      */
     public function deleteTargetObj(string $method, string $modelTarget, string $methodOnTarget, bool $is_EO, bool $is_EO_target, bool $is_EM_target)
@@ -227,10 +217,6 @@ trait RelationshipMongoTrait
 
     /**
      * @param  array<int|string, mixed>  $targetIds
-     * @param  string  $modelTarget
-     * @param  string  $methodOnTarget
-     * @param  bool  $is_EO_target
-     * @param  bool  $is_EM_target
      * @return void
      */
     public function batchHandleSubTarget(array $targetIds, string $modelTarget, string $methodOnTarget, bool $is_EO_target, bool $is_EM_target)
@@ -270,6 +256,7 @@ trait RelationshipMongoTrait
      * @param  bool  $is_EO_target
      * @param  bool  $is_EM_target
      * @return void
+     *
      * @deprecated Use batchHandleSubTarget instead
      */
     public function handleSubTarget($target_id, $modelTarget, $methodOnTarget, $is_EO_target, $is_EM_target)
@@ -324,7 +311,6 @@ trait RelationshipMongoTrait
     }
 
     /**
-     * @param  Request  $request
      * @param  array<int, object>  $objs
      * @param  string  $method
      * @param  array<string, mixed>  $relation
@@ -398,7 +384,6 @@ trait RelationshipMongoTrait
     }
 
     /**
-     * @param  Request  $request
      * @param  object|null  $obj
      * @param  string  $type
      * @param  string  $model
@@ -409,6 +394,7 @@ trait RelationshipMongoTrait
      * @param  int  $i
      * @param  array<string, mixed>  $options
      * @return void
+     *
      * @throws MongoAutoSyncException
      */
     private function processEmbedOnCurrentCollection(Request $request, $obj, $type, $model, $method, $event, $is_EO, $is_EM, $i, array $options)
@@ -474,6 +460,7 @@ trait RelationshipMongoTrait
      * @param  string|null  $event
      * @param  array<string, mixed>  $options
      * @return void
+     *
      * @throws MongoAutoSyncException
      */
     private function processEmbedOnTargetCollection($modelTarget, $obj, $methodOnTarget, $modelOnTarget, $is_EO_target, $is_EM_target, $request = null, $event = null, array $options = [])

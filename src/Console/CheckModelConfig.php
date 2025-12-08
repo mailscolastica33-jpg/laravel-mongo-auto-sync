@@ -22,8 +22,9 @@ class CheckModelConfig extends Command
         $this->info('Checking model configurations...');
 
         $modelPath = config('laravel-mongo-auto-sync.model_path');
-        if (!is_string($modelPath)) {
+        if (! is_string($modelPath)) {
             $this->error('Model path is not a string');
+
             return;
         }
         $models = $this->getAllModels($modelPath);
@@ -40,7 +41,7 @@ class CheckModelConfig extends Command
                 if (is_array($relations)) {
                     foreach ($relations as $method => $relation) {
                         if (is_array($relation)) {
-                            $this->validateRelation($modelClass, (string)$method, $relation);
+                            $this->validateRelation($modelClass, (string) $method, $relation);
                         }
                     }
                 }
@@ -53,9 +54,9 @@ class CheckModelConfig extends Command
     }
 
     /**
-     * @param string $modelClass
-     * @param string $method
-     * @param array<mixed> $relation
+     * @param  string  $modelClass
+     * @param  string  $method
+     * @param  array<mixed>  $relation
      * @return void
      */
     private function validateRelation($modelClass, $method, $relation)
@@ -96,7 +97,7 @@ class CheckModelConfig extends Command
     }
 
     /**
-     * @param string $path
+     * @param  string  $path
      * @return array<string>
      */
     private function getAllModels($path)
@@ -134,7 +135,7 @@ class CheckModelConfig extends Command
         if (is_array($otherModels)) {
             foreach ($otherModels as $key => $values) {
                 if (is_array($values) && isset($values['model_namespace'])) {
-                    $className = $values['model_namespace'].'\\'.Str::ucfirst((string)$key);
+                    $className = $values['model_namespace'].'\\'.Str::ucfirst((string) $key);
                     if (class_exists($className)) {
                         $out[] = $className;
                     }

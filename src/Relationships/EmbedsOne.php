@@ -65,7 +65,6 @@ class EmbedsOne extends EmbedsOneOrMany
     /**
      * Save an existing model and attach it to the parent model.
      *
-     * @param  Model  $model
      * @param  array<string, mixed>  $values
      * @return Model|bool
      */
@@ -92,7 +91,6 @@ class EmbedsOne extends EmbedsOneOrMany
     /**
      * Delete an existing model and detach it from the parent model.
      *
-     * @param  Model  $model
      * @return int
      */
     public function performDelete(Model $model)
@@ -120,12 +118,12 @@ class EmbedsOne extends EmbedsOneOrMany
     /**
      * Attach the model to its parent.
      *
-     * @param  Model  $model
      * @return \Illuminate\Database\Eloquent\Model
      */
     public function associate(Model $model)
     {
         $this->setEmbedded($model->getAttributes());
+
         return $model;
     }
 
@@ -137,6 +135,7 @@ class EmbedsOne extends EmbedsOneOrMany
     public function dissociate()
     {
         $this->setEmbedded(null);
+
         return null;
     }
 
@@ -151,6 +150,7 @@ class EmbedsOne extends EmbedsOneOrMany
         if ($model === null) {
             return 0;
         }
+
         return $this->performDelete($model);
     }
 

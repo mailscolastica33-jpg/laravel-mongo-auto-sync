@@ -53,7 +53,6 @@ trait MainMongoTrait
     protected $tempEM;
 
     /**
-     * @param  Request  $request
      * @param  array<string, mixed>  $additionalData
      * @param  array<string, mixed>  $options
      * @param  array<string, mixed>  $target_additional_data
@@ -76,11 +75,11 @@ trait MainMongoTrait
         if ($fresh === null) {
             return $this;
         }
+
         return $fresh;
     }
 
     /**
-     * @param  Request  $request
      * @param  array<string, mixed>  $additionalData
      * @param  array<string, mixed>  $options
      * @param  array<string, mixed>  $target_additional_data
@@ -103,6 +102,7 @@ trait MainMongoTrait
         if ($fresh === null) {
             return $this;
         }
+
         return $fresh;
     }
 
@@ -153,7 +153,6 @@ trait MainMongoTrait
 
     /**
      * @param  array<string, mixed>  $options
-     * @param  string  $key
      * @return bool|mixed
      */
     private function getOptionValue(array $options, string $key)
@@ -163,7 +162,6 @@ trait MainMongoTrait
 
     /**
      * @param  object  $obj
-     * @param  string  $EOkey
      * @param  string  $method
      * @param  string  $model
      * @return void
@@ -180,8 +178,8 @@ trait MainMongoTrait
 
     /**
      * @param  array<string, mixed>  $arr
-     * @param  string  $key
      * @return void
+     *
      * @throws InvalidConfigurationException
      */
     public function checkArrayExistence($arr, string $key)
@@ -193,9 +191,8 @@ trait MainMongoTrait
     }
 
     /**
-     * @param  Request  $request
-     * @param  string  $key
      * @return void
+     *
      * @throws InvalidRequestException
      */
     private function checkRequestExistence(Request $request, string $key)
@@ -233,8 +230,6 @@ trait MainMongoTrait
     }
 
     /**
-     * @param  string  $modelTarget
-     * @param  stdClass  $obj
      * @return \OfflineAgency\MongoAutoSync\Http\Models\MDModel|null
      *
      * @throws InvalidConfigurationException
@@ -252,6 +247,7 @@ trait MainMongoTrait
         if ($found instanceof \OfflineAgency\MongoAutoSync\Http\Models\MDModel) {
             return $found;
         }
+
         return null;
     }
 
@@ -279,9 +275,7 @@ trait MainMongoTrait
     }
 
     /**
-     * @param  Request  $request
      * @param  array<string, mixed>  $additionalData
-     * @return void
      */
     public function setRequest(Request $request, array $additionalData): void
     {
@@ -299,7 +293,6 @@ trait MainMongoTrait
 
     /**
      * @param  array<string, mixed>  $arr
-     * @return void
      */
     public function setPartialGeneratedRequest(array $arr): void
     {
@@ -317,12 +310,12 @@ trait MainMongoTrait
         if ($this->options === null) {
             return [];
         }
+
         return $this->options;
     }
 
     /**
      * @param  array<string, mixed>  $options
-     * @return void
      */
     public function setOptions(array $options): void
     {
@@ -337,12 +330,12 @@ trait MainMongoTrait
         if ($this->target_additional_data === null) {
             return [];
         }
+
         return $this->target_additional_data;
     }
 
     /**
      * @param  array<string, mixed>  $target_additional_data
-     * @return void
      */
     public function setTargetAdditionalData($target_additional_data): void
     {
@@ -350,7 +343,6 @@ trait MainMongoTrait
     }
 
     /**
-     * @param  Request  $request
      * @param  array<string, mixed>  $additionalData
      * @param  array<string, mixed>  $options
      * @param  array<string, mixed>  $target_additional_data
