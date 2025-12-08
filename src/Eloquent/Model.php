@@ -35,7 +35,7 @@ class Model extends MongoDbModel
      *
      * @return Relation|null
      */
-    public function getParentRelation()
+    public function getParentRelation(): ?Relation
     {
         return $this->parentRelation;
     }

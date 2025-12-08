@@ -81,6 +81,8 @@ class DropCollection extends Command
     }
 
     /**
+     * @param  string  $path
+     * @param  string  $collection_name
      * @return string
      *
      * @throws InvalidConfigurationException
@@ -93,6 +95,10 @@ class DropCollection extends Command
             $results = scandir($path);
         } catch (Exception $e) {
             throw new InvalidConfigurationException('Error directory '.config('laravel-mongo-auto-sync.model_path').' not found');
+        }
+
+        if ($results === false) {
+            return '';
         }
 
         foreach ($results as $result) {
@@ -124,6 +130,7 @@ class DropCollection extends Command
     private function getModel(string $modelPath)
     {
         if (class_exists($modelPath)) {
+            /** @var MDModel */
             return new $modelPath;
         } else {
             throw new ModelNotFoundException('Error '.$this->argument('collection_name').' Model not found');
