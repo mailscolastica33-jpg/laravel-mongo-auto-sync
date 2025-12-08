@@ -15,7 +15,7 @@ trait EmbedsRelationships
      * @param  string|null  $localKey
      * @param  string|null  $foreignKey
      * @param  string|null  $relation
-     * @return EmbedsMany
+     * @return \MongoDB\Laravel\Relations\EmbedsMany<\MongoDB\Laravel\Eloquent\Model, \MongoDB\Laravel\Eloquent\Model, \Illuminate\Database\Eloquent\Collection<int, \MongoDB\Laravel\Eloquent\Model>>|\OfflineAgency\MongoAutoSync\Relationships\EmbedsMany
      */
     protected function embedsMany($related, $localKey = null, $foreignKey = null, $relation = null)
     {
@@ -53,7 +53,7 @@ trait EmbedsRelationships
      * @param  string|null  $localKey
      * @param  string|null  $foreignKey
      * @param  string|null  $relation
-     * @return EmbedsOne
+     * @return \MongoDB\Laravel\Relations\EmbedsOne<\MongoDB\Laravel\Eloquent\Model, \MongoDB\Laravel\Eloquent\Model, \MongoDB\Laravel\Eloquent\Model>|\OfflineAgency\MongoAutoSync\Relationships\EmbedsOne
      */
     protected function embedsOne($related, $localKey = null, $foreignKey = null, $relation = null)
     {

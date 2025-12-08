@@ -68,7 +68,7 @@ abstract class EmbedsOneOrMany extends Relation
     {
         // MongoDB\Laravel\Eloquent\Builder extends Illuminate\Database\Eloquent\Builder
         // so this assignment is valid at runtime
-        /** @var \Illuminate\Database\Eloquent\Builder<TRelatedModel> $query */
+        /** @phpstan-ignore-next-line */
         $this->query = $query;
         $this->parent = $parent;
         $this->related = $related;
@@ -81,7 +81,8 @@ abstract class EmbedsOneOrMany extends Relation
             $parentQuery = $parentRelation->getQuery();
             // MongoDB\Laravel\Eloquent\Builder extends Illuminate\Database\Eloquent\Builder
             // so this assignment is valid at runtime
-            /** @var \Illuminate\Database\Eloquent\Builder<TRelatedModel> $parentQuery */
+            /** @var Builder<TRelatedModel> $parentQuery */
+            /** @phpstan-ignore-next-line */
             $this->query = $parentQuery;
         }
 
@@ -392,6 +393,7 @@ abstract class EmbedsOneOrMany extends Relation
     {
         // Because we are sharing this relation instance to models, we need
         // to make sure we use separate query instances.
+        // MongoDB\Laravel\Eloquent\Builder extends Illuminate\Database\Eloquent\Builder
         /** @var \Illuminate\Database\Eloquent\Builder<TRelatedModel> $query */
         $query = clone $this->query;
         return $query;
