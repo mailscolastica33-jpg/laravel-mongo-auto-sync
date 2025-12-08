@@ -3,8 +3,14 @@
 namespace OfflineAgency\MongoAutoSync\Eloquent;
 
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
+use MongoDB\Driver\Cursor;
 use MongoDB\Laravel\Eloquent\Builder as MongoDbEloquentBuilder;
+use MongoDB\Model\BSONDocument;
 
+/**
+ * @template TModel of \Illuminate\Database\Eloquent\Model
+ * @extends MongoDbEloquentBuilder<TModel>
+ */
 class Builder extends MongoDbEloquentBuilder
 {
     /**
@@ -14,7 +20,8 @@ class Builder extends MongoDbEloquentBuilder
     {
         // Intercept operations on embedded models and delegate logic
         // to the parent relation instance.
-        if ($relation = $this->model->getParentRelation()) {
+        // @phpstan-ignore-next-line
+        if (method_exists($this->model, 'getParentRelation') && $relation = $this->model->getParentRelation()) {
             $relation->performUpdate($this->model, $values);
 
             return 1;
@@ -30,8 +37,9 @@ class Builder extends MongoDbEloquentBuilder
     {
         // Intercept operations on embedded models and delegate logic
         // to the parent relation instance.
-        if ($relation = $this->model->getParentRelation()) {
-            $relation->performInsert($this->model, $values);
+        // @phpstan-ignore-next-line
+        if (method_exists($this->model, 'getParentRelation') && $relation = $this->model->getParentRelation()) {
+            $relation->performInsert($this->model, $values); // @phpstan-ignore-line
 
             return true;
         }
@@ -46,8 +54,9 @@ class Builder extends MongoDbEloquentBuilder
     {
         // Intercept operations on embedded models and delegate logic
         // to the parent relation instance.
-        if ($relation = $this->model->getParentRelation()) {
-            $relation->performInsert($this->model, $values);
+        // @phpstan-ignore-next-line
+        if (method_exists($this->model, 'getParentRelation') && $relation = $this->model->getParentRelation()) {
+            $relation->performInsert($this->model, $values); // @phpstan-ignore-line
 
             return $this->model->getKey();
         }
@@ -62,8 +71,9 @@ class Builder extends MongoDbEloquentBuilder
     {
         // Intercept operations on embedded models and delegate logic
         // to the parent relation instance.
-        if ($relation = $this->model->getParentRelation()) {
-            $relation->performDelete($this->model);
+        // @phpstan-ignore-next-line
+        if (method_exists($this->model, 'getParentRelation') && $relation = $this->model->getParentRelation()) {
+            $relation->performDelete($this->model); // @phpstan-ignore-line
 
             return $this->model->getKey();
         }
@@ -78,7 +88,8 @@ class Builder extends MongoDbEloquentBuilder
     {
         // Intercept operations on embedded models and delegate logic
         // to the parent relation instance.
-        if ($relation = $this->model->getParentRelation()) {
+        // @phpstan-ignore-next-line
+        if (method_exists($this->model, 'getParentRelation') && $relation = $this->model->getParentRelation()) {
             $value = $this->model->{$column};
 
             // When doing increment and decrements, Eloquent will automatically
@@ -86,7 +97,9 @@ class Builder extends MongoDbEloquentBuilder
             // temporary in order to trigger an update query.
             $this->model->{$column} = null;
 
-            $this->model->syncOriginalAttribute($column);
+            if (is_string($column)) {
+                $this->model->syncOriginalAttribute($column);
+            }
 
             $result = $this->model->update([$column => $value]);
 
@@ -103,7 +116,8 @@ class Builder extends MongoDbEloquentBuilder
     {
         // Intercept operations on embedded models and delegate logic
         // to the parent relation instance.
-        if ($relation = $this->model->getParentRelation()) {
+        // @phpstan-ignore-next-line
+        if (method_exists($this->model, 'getParentRelation') && $relation = $this->model->getParentRelation()) {
             $value = $this->model->{$column};
 
             // When doing increment and decrements, Eloquent will automatically
@@ -111,7 +125,9 @@ class Builder extends MongoDbEloquentBuilder
             // temporary in order to trigger an update query.
             $this->model->{$column} = null;
 
-            $this->model->syncOriginalAttribute($column);
+            if (is_string($column)) {
+                $this->model->syncOriginalAttribute($column);
+            }
 
             return $this->model->update([$column => $value]);
         }

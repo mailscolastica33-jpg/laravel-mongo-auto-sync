@@ -10,14 +10,14 @@ use stdClass;
 class SyncHelper
 {
     /**
-     * @param  array|null  $mlCollection
+     * @param  array<mixed>|null  $mlCollection
      * @return string
      */
     public static function getTranslatedContent($mlCollection)
     {
         $cl = Config::get('app.locale');
 
-        if (is_array($mlCollection) && (array_key_exists('en_EN', $mlCollection) || array_key_exists('it_IT', $mlCollection) || ! is_null($mlCollection))) {
+        if (is_array($mlCollection) && (array_key_exists('en_EN', $mlCollection) || array_key_exists('it_IT', $mlCollection))) {
             return $mlCollection[$cl] ?? '';
         } else {
             return '';
@@ -29,13 +29,13 @@ class SyncHelper
      */
     public static function cl()
     {
-        return Config::get('app.locale');
+        return (string) Config::get('app.locale');
     }
 
     /**
-     * @param  array|null  $destination
+     * @param  array<mixed>|null  $destination
      * @param  string  $input
-     * @return array ready to be saved
+     * @return array<mixed> ready to be saved
      */
     public static function ml($destination, $input)
     {
@@ -46,70 +46,103 @@ class SyncHelper
         return array_merge($destination, [self::cl() => $input]);
     }
 
+    /**
+     * @param  mixed  $value
+     * @return bool
+     */
     public static function isML($value)
     {
-        try {
-            if (gettype($value) !== 'array') {
-                return false;
-            }
-        } catch (Exception $exception) {
+        if (! is_array($value)) {
             return false;
         }
 
         if (array_key_exists('is-ml', $value)) {
-            return $value['is-ml'];
+            return (bool) $value['is-ml'];
         } else {
             return false;
         }
     }
 
+    /**
+     * @param  mixed  $value
+     * @return bool
+     */
     public static function isMD($value)
     {
         if (is_array($value) && array_key_exists('is-md', $value)) {
-            return $value['is-md'];
+            return (bool) $value['is-md'];
         } else {
             return false;
         }
     }
 
+    /**
+     * @param  mixed  $value
+     * @return bool
+     */
     public static function is_EM($value)
     {
         return $value === 'EmbedsMany';
     }
 
+    /**
+     * @param  mixed  $value
+     * @return bool
+     */
     public static function is_EO($value)
     {
         return $value === 'EmbedsOne';
     }
 
+    /**
+     * @param  mixed  $value
+     * @return bool
+     */
     public static function is_HM($value)
     {
         return $value === 'HasMany';
     }
 
+    /**
+     * @param  mixed  $value
+     * @return bool
+     */
     public static function is_HO($value)
     {
         return $value === 'HasOne';
     }
 
+    /**
+     * @param  mixed  $value
+     * @return bool
+     */
     public static function isEditable($value)
     {
         if (is_array($value) && array_key_exists('is-editable', $value)) {
-            return $value['is-editable'];
+            return (bool) $value['is-editable'];
         } else {
             return true;
         }
     }
 
+    /**
+     * @param  mixed  $value
+     * @return bool
+     */
     public static function hasTarget($value)
     {
         if (is_array($value) && array_key_exists('has-target', $value)) {
-            return $value['has-target'];
+            return (bool) $value['has-target'];
         } else {
             return true;
         }
     }
 
+    /**
+     * @param  mixed  $value
+     * @param  string  $event
+     * @return bool
+     */
     public static function isFillable($value, $event)
     {
         if ($event === 'add') {
@@ -120,6 +153,9 @@ class SyncHelper
     }
 
     /**
+     * @param  string|mixed  $ref_id
+     * @param  string  $modelOnTarget
+     * @param  string  $methodOnTarget
      * @return Request
      */
     public static function getRequestToBeSync($ref_id, $modelOnTarget, Request $request, $methodOnTarget)
@@ -127,7 +163,7 @@ class SyncHelper
         $new_req_embeded = new stdClass;
         /** @var mixed $model */
         $model = new $modelOnTarget;
-        /** @var array $items */
+        /** @var array<string, mixed> $items */
         $items = $model->getItems();
 
         foreach ($items as $key => $item) {
@@ -146,6 +182,9 @@ class SyncHelper
         return $request;
     }
 
+    /**
+     * @return bool
+     */
     public static function isRequestReadyToBeProcessed(Request $request)
     {
         $requests = $request->all();
@@ -161,12 +200,16 @@ class SyncHelper
         return true;
     }
 
+    /**
+     * @return Request
+     */
     public static function removeSubCollectionInput(Request $request)
     {
         return $request;
     }
 
     /**
+     * @param  array<mixed>  $additionalData
      * @return Request
      */
     public static function prepareRequest(Request $request, array $additionalData)
@@ -175,7 +218,10 @@ class SyncHelper
     }
 
     /**
-     * @return array
+     * @param  string  $model
+     * @param  bool  $is_EO
+     * @param  bool  $is_EM
+     * @return array<mixed>
      */
     public static function getArrayWithEmptyObj($model, $is_EO, $is_EM)
     {
@@ -184,7 +230,7 @@ class SyncHelper
             $obj = new stdClass;
             /** @var mixed $embedObj */
             $embedObj = new $model;
-            /** @var array $EOitems */
+            /** @var array<string, mixed> $EOitems */
             $EOitems = $embedObj->getItems();
 
             // Current Obj Create
@@ -199,6 +245,10 @@ class SyncHelper
     }
 
     /**
+     * @param  string  $method
+     * @param  bool  $is_EO
+     * @param  bool  $is_EM
+     * @param  int|string  $i
      * @return string
      */
     public static function getCounterForRelationships($method, $is_EO, $is_EM, $i)

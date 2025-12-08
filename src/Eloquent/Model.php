@@ -3,6 +3,7 @@
 namespace OfflineAgency\MongoAutoSync\Eloquent;
 
 use Illuminate\Database\Eloquent\Model as BaseModel;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use MongoDB\Laravel\Eloquent\Model as MongoDbModel;
@@ -10,6 +11,34 @@ use MongoDB\Laravel\Eloquent\Model as MongoDbModel;
 class Model extends MongoDbModel
 {
     use EmbedsRelationships;
+
+    /**
+     * The parent relation instance.
+     *
+     * @var Relation|null
+     */
+    protected $parentRelation;
+
+    /**
+     * Set the parent relation.
+     *
+     * @param  Relation  $relation
+     * @return void
+     */
+    public function setParentRelation($relation)
+    {
+        $this->parentRelation = $relation;
+    }
+
+    /**
+     * Get the parent relation.
+     *
+     * @return Relation|null
+     */
+    public function getParentRelation()
+    {
+        return $this->parentRelation;
+    }
 
     /**
      * {@inheritdoc}

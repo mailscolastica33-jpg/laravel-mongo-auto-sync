@@ -4,7 +4,7 @@ namespace OfflineAgency\MongoAutoSync\Relationships;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Model as EloquentModel;
-use MongoDB\BSON\ObjectID;
+use MongoDB\BSON\ObjectId;
 
 class EmbedsOne extends EmbedsOneOrMany
 {
@@ -37,7 +37,7 @@ class EmbedsOne extends EmbedsOneOrMany
     {
         // Generate a new key if needed.
         if ($model->getKeyName() == '_id' && ! $model->getKey()) {
-            $model->setAttribute('_id', new ObjectID);
+            $model->setAttribute('_id', new ObjectId);
         }
 
         // For deeply nested documents, let the parent handle the changes.

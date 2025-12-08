@@ -12,10 +12,12 @@ trait EmbedsRelationships
      * Define an embedded one-to-many relationship.
      *
      * @param  string  $related
-     * @param  string  $localKey
-     * @param  string  $foreignKey
-     * @param  string  $relation
+     * @param  string|null  $localKey
+     * @param  string|null  $foreignKey
+     * @param  string|null  $relation
      * @return EmbedsMany
+     *
+     * @phpstan-ignore-next-line
      */
     protected function embedsMany($related, $localKey = null, $foreignKey = null, $relation = null)
     {
@@ -23,7 +25,7 @@ trait EmbedsRelationships
         // the calling method's name and use that as the relationship name as most
         // of the time this will be what we desire to use for the relationships.
         if ($relation === null) {
-            [, $caller] = debug_backtrace(false);
+            [, $caller] = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2);
 
             $relation = $caller['function'];
         }
@@ -47,10 +49,12 @@ trait EmbedsRelationships
      * Define an embedded one-to-many relationship.
      *
      * @param  string  $related
-     * @param  string  $localKey
-     * @param  string  $foreignKey
-     * @param  string  $relation
+     * @param  string|null  $localKey
+     * @param  string|null  $foreignKey
+     * @param  string|null  $relation
      * @return EmbedsOne
+     *
+     * @phpstan-ignore-next-line
      */
     protected function embedsOne($related, $localKey = null, $foreignKey = null, $relation = null)
     {
@@ -58,7 +62,7 @@ trait EmbedsRelationships
         // the calling method's name and use that as the relationship name as most
         // of the time this will be what we desire to use for the relationships.
         if ($relation === null) {
-            [, $caller] = debug_backtrace(false);
+            [, $caller] = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2);
 
             $relation = $caller['function'];
         }

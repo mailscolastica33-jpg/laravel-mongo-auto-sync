@@ -2,10 +2,10 @@
 
 namespace OfflineAgency\MongoAutoSync\Relationships;
 
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model as EloquentModel;
 use Illuminate\Database\Eloquent\Relations\Relation;
+use MongoDB\Laravel\Eloquent\Builder;
 use MongoDB\Laravel\Eloquent\Model;
 
 abstract class EmbedsOneOrMany extends Relation
@@ -32,8 +32,26 @@ abstract class EmbedsOneOrMany extends Relation
     protected $relation;
 
     /**
+     * @var Builder
+     */
+    protected $query;
+
+    /**
+     * @var Model
+     */
+    protected $parent;
+
+    /**
+     * @var Model
+     */
+    protected $related;
+
+    /**
      * Create a new embeds many relationship instance.
      *
+     * @param  Builder  $query
+     * @param  Model  $parent
+     * @param  Model  $related
      * @param  string  $localKey
      * @param  string  $foreignKey
      * @param  string  $relation
@@ -304,6 +322,7 @@ abstract class EmbedsOneOrMany extends Relation
 
     /**
      * {@inheritdoc}
+     * @return Builder
      */
     public function getQuery()
     {
@@ -314,6 +333,7 @@ abstract class EmbedsOneOrMany extends Relation
 
     /**
      * {@inheritdoc}
+     * @return \MongoDB\Laravel\Eloquent\Builder
      */
     public function getBaseQuery()
     {

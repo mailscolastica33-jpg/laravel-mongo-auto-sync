@@ -3,47 +3,67 @@
 namespace OfflineAgency\MongoAutoSync\Extensions;
 
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @template TKey of array-key
+ * @template TModel of Model
+ *
+ * @extends Collection<TKey, TModel>
+ */
 class MongoCollection extends Collection
 {
     // Check if the collection has an item with ref_id equal to id of the obj pass in to the parameter, useful to mark a category already selected in edit
 
     /**
+     * @param  Model|null  $obj
      * @return bool
      */
     public function hasItem($obj)
     {
         if (is_null($obj)) {
             return false;
-        } elseif (is_null($obj->id)) {
+        }
+
+        // Check if id exists
+        if (! isset($obj->id) || is_null($obj->id)) {
             return false;
         }
 
         $id = $obj->id;
 
         $out = $this->filter(function ($col) use ($id) {
-            if ($col->ref_id == $id) {
-                return true;
-            } else {
-                return false;
-            }
+            // @phpstan-ignore-next-line
+            return isset($col->ref_id) && $col->ref_id == $id;
         });
-        if ($out->count() > 0) {
-            return true;
-        } else {
-            return false;
-        }
+
+        return $out->count() > 0;
     }
 
     // Move the item with ref_id equal to the parameter, useful for edit primary category
 
     /**
+     * @param  string|int  $id
      * @return $this
      */
     public function moveFirst($id)
     {
-        for ($i = 0; $i <= ($this->count() - 1); $i++) {
-            $this[$i]->ref_id == $id ? $this->prepend($this->splice($i, 1)[0]) : 0;
+        // Iterate backwards or handle keys carefully if splicing
+        // Actually, splice modifies the collection.
+        // It's safer to find the item and prepend it.
+        
+        $keyToMove = null;
+        foreach ($this->items as $key => $item) {
+             // @phpstan-ignore-next-line
+            if (isset($item->ref_id) && $item->ref_id == $id) {
+                $keyToMove = $key;
+                break;
+            }
+        }
+
+        if (! is_null($keyToMove)) {
+            $item = $this->pull($keyToMove);
+            $this->prepend($item);
         }
 
         return $this;
@@ -54,10 +74,6 @@ class MongoCollection extends Collection
      */
     public function exist()
     {
-        if ($this->count() > 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return $this->count() > 0;
     }
 }
