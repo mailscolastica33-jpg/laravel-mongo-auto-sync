@@ -103,12 +103,14 @@ class Builder extends MongoDbEloquentBuilder
         // @phpstan-ignore-next-line
         if (method_exists($this->model, 'getParentRelation') && $relation = $this->model->getParentRelation()) {
             /** @var \OfflineAgency\MongoAutoSync\Relationships\EmbedsOneOrMany $relation */
-            $value = $this->model->{$column}; // @phpstan-ignore-line
+            // @phpstan-ignore-next-line
+            $value = $this->model->{$column};
 
             // When doing increment and decrements, Eloquent will automatically
             // sync the original attributes. We need to change the attribute
             // temporary in order to trigger an update query.
-            $this->model->{$column} = null; // @phpstan-ignore-line
+            // @phpstan-ignore-next-line
+            $this->model->{$column} = null;
 
             if (is_string($column)) {
                 $this->model->syncOriginalAttribute($column);
@@ -117,7 +119,7 @@ class Builder extends MongoDbEloquentBuilder
             // @phpstan-ignore-next-line
             $result = $this->model->update([$column => $value]);
 
-            return $result;
+            return (int) $result;
         }
 
         return EloquentBuilder::increment($column, $amount, $extra);
@@ -137,19 +139,21 @@ class Builder extends MongoDbEloquentBuilder
         // @phpstan-ignore-next-line
         if (method_exists($this->model, 'getParentRelation') && $relation = $this->model->getParentRelation()) {
             /** @var \OfflineAgency\MongoAutoSync\Relationships\EmbedsOneOrMany $relation */
-            $value = $this->model->{$column}; // @phpstan-ignore-line
+            // @phpstan-ignore-next-line
+            $value = $this->model->{$column};
 
             // When doing increment and decrements, Eloquent will automatically
             // sync the original attributes. We need to change the attribute
             // temporary in order to trigger an update query.
-            $this->model->{$column} = null; // @phpstan-ignore-line
+            // @phpstan-ignore-next-line
+            $this->model->{$column} = null;
 
             if (is_string($column)) {
                 $this->model->syncOriginalAttribute($column);
             }
 
             // @phpstan-ignore-next-line
-            return $this->model->update([$column => $value]);
+            return (int) $this->model->update([$column => $value]);
         }
 
         return EloquentBuilder::decrement($column, $amount, $extra);
@@ -165,7 +169,7 @@ class Builder extends MongoDbEloquentBuilder
 
     /**
      * {@inheritdoc}
-     * @return \Illuminate\Database\Eloquent\Collection<int, TModel>|BSONDocument|TModel|array<mixed>|\Illuminate\Contracts\Database\Query\Expression
+     * @return \Illuminate\Database\Eloquent\Collection<int, TModel>|BSONDocument|TModel|array<mixed>|mixed
      */
     public function raw($expression = null)
     {
