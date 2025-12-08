@@ -163,6 +163,7 @@ class Builder extends MongoDbEloquentBuilder
         if ($results instanceof Cursor) {
             $results = iterator_to_array($results, false);
 
+            /** @var \Illuminate\Database\Eloquent\Collection<int, TModel> */
             return $this->model->hydrate($results);
         } // Convert Mongo BSONDocument to a single object.
         elseif ($results instanceof BSONDocument) {

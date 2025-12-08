@@ -18,8 +18,10 @@ class BenchmarkCommand extends Command
      */
     public function handle()
     {
-        $modelClass = (string) $this->argument('model');
-        $count = (int) $this->argument('count');
+        /** @var string */
+        $modelClass = $this->argument('model');
+        /** @var int */
+        $count = $this->argument('count');
 
         if (! class_exists($modelClass)) {
             $this->error("Class $modelClass does not exist.");

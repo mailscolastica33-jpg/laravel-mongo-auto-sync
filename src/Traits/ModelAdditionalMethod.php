@@ -88,7 +88,7 @@ trait ModelAdditionalMethod
     }
 
     /**
-     * @return array<string, mixed>
+     * @return array
      *
      * @throws InvalidConfigurationException
      */
@@ -96,9 +96,7 @@ trait ModelAdditionalMethod
     {
         $cacheKey = get_class($this);
 
-        // @phpstan-ignore-next-line
         if (isset(self::$mini_model_list_cache[$cacheKey])) {
-            // @phpstan-ignore-next-line
             $result = self::$mini_model_list_cache[$cacheKey];
             // Restore partial generated request from cache or re-generate it?
             // The method sets partial generated request as a side effect.
@@ -151,7 +149,7 @@ trait ModelAdditionalMethod
                 $relationshipsContainsTarget = Arr::has($relationship, 'modelOnTarget');
                 if ($relationshipsContainsTarget) {
                     $models[] = Arr::get($relationship, 'modelOnTarget');
-                    $embedded_object[$method] = $this->getObjWithRefId((string) $method, $relationship);
+                    $embedded_object[$method] = $this->getObjWithRefId($method, $relationship);
                 } else {
                     throw new InvalidConfigurationException('modelOnTarget not found on relationship '.$method.' array. Check your Model configuration '.get_class($this));
                 }
@@ -274,7 +272,7 @@ trait ModelAdditionalMethod
     }
 
     /**
-     * @return array<string, mixed>
+     * @return array
      *
      * @throws InvalidConfigurationException
      */
@@ -283,7 +281,6 @@ trait ModelAdditionalMethod
         $embedModels = $this->getMiniModels();
 
         if (Arr::has($embedModels, $key)) {
-            // @phpstan-ignore-next-line
             return Arr::get($embedModels, $key);
         } else {
             throw new InvalidConfigurationException('I cannot find an embedded model with key: '.$key.'. Check on your model configuration');
@@ -291,8 +288,6 @@ trait ModelAdditionalMethod
     }
 
     /**
-     * @param string $method
-     * @param array<mixed> $relationship
      * @return false|string
      *
      * @throws InvalidRelationshipException

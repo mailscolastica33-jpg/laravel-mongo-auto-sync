@@ -42,7 +42,8 @@ class DropCollection extends Command
      */
     public function handle()
     {
-        $collection_name = (string) $this->argument('collection_name');
+        /** @var string */
+        $collection_name = $this->argument('collection_name');
 
         $modelPath = $this->getModelPathByName($collection_name);
 
