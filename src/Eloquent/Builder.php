@@ -24,7 +24,8 @@ class Builder extends MongoDbEloquentBuilder
         // to the parent relation instance.
         // @phpstan-ignore-next-line
         if (method_exists($this->model, 'getParentRelation') && $relation = $this->model->getParentRelation()) {
-            $relation->performUpdate($this->model, $values);
+            /** @var \OfflineAgency\MongoAutoSync\Relationships\EmbedsOneOrMany $relation */
+            $relation->performUpdate($this->model, $values); // @phpstan-ignore-line
 
             return 1;
         }
@@ -90,6 +91,10 @@ class Builder extends MongoDbEloquentBuilder
 
     /**
      * {@inheritdoc}
+     * @param  string|Illuminate\Contracts\Database\Query\Expression  $column
+     * @param  float|int  $amount
+     * @param  array<mixed>  $extra
+     * @return int
      */
     public function increment($column, $amount = 1, array $extra = [])
     {
@@ -97,6 +102,7 @@ class Builder extends MongoDbEloquentBuilder
         // to the parent relation instance.
         // @phpstan-ignore-next-line
         if (method_exists($this->model, 'getParentRelation') && $relation = $this->model->getParentRelation()) {
+            /** @var \OfflineAgency\MongoAutoSync\Relationships\EmbedsOneOrMany $relation */
             $value = $this->model->{$column};
 
             // When doing increment and decrements, Eloquent will automatically
@@ -105,9 +111,10 @@ class Builder extends MongoDbEloquentBuilder
             $this->model->{$column} = null;
 
             if (is_string($column)) {
-            $this->model->syncOriginalAttribute($column);
+                $this->model->syncOriginalAttribute($column);
             }
 
+            // @phpstan-ignore-next-line
             $result = $this->model->update([$column => $value]);
 
             return $result;
@@ -118,6 +125,10 @@ class Builder extends MongoDbEloquentBuilder
 
     /**
      * {@inheritdoc}
+     * @param  string|Illuminate\Contracts\Database\Query\Expression  $column
+     * @param  float|int  $amount
+     * @param  array<mixed>  $extra
+     * @return int
      */
     public function decrement($column, $amount = 1, array $extra = [])
     {
@@ -125,6 +136,7 @@ class Builder extends MongoDbEloquentBuilder
         // to the parent relation instance.
         // @phpstan-ignore-next-line
         if (method_exists($this->model, 'getParentRelation') && $relation = $this->model->getParentRelation()) {
+            /** @var \OfflineAgency\MongoAutoSync\Relationships\EmbedsOneOrMany $relation */
             $value = $this->model->{$column};
 
             // When doing increment and decrements, Eloquent will automatically
@@ -133,9 +145,10 @@ class Builder extends MongoDbEloquentBuilder
             $this->model->{$column} = null;
 
             if (is_string($column)) {
-            $this->model->syncOriginalAttribute($column);
+                $this->model->syncOriginalAttribute($column);
             }
 
+            // @phpstan-ignore-next-line
             return $this->model->update([$column => $value]);
         }
 

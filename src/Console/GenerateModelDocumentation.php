@@ -148,7 +148,9 @@ class GenerateModelDocumentation extends Command
             /** @var MDModel */
             return new $modelPath;
         } else {
-            throw new ModelNotFoundException('Error '.$this->argument('collection_name').' Model not found');
+            $collection_name = $this->argument('collection_name');
+            $name = is_string($collection_name) ? $collection_name : 'unknown';
+            throw new ModelNotFoundException('Error '.$name.' Model not found');
         }
     }
 }
