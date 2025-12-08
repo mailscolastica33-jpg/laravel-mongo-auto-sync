@@ -42,7 +42,7 @@ class DropCollection extends Command
      */
     public function handle()
     {
-        $collection_name = $this->argument('collection_name');
+        $collection_name = (string) $this->argument('collection_name');
 
         $modelPath = $this->getModelPathByName($collection_name);
 
@@ -69,6 +69,7 @@ class DropCollection extends Command
     }
 
     /**
+     * @param string $collection_name
      * @return string
      *
      * @throws Exception
@@ -76,6 +77,10 @@ class DropCollection extends Command
     public function getModelPathByName($collection_name)
     {
         $path = config('laravel-mongo-auto-sync.model_path');
+
+        if (!is_string($path)) {
+             throw new Exception('Config laravel-mongo-auto-sync.model_path is not set or invalid');
+        }
 
         return $this->checkOaModels($path, $collection_name);
     }

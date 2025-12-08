@@ -16,8 +16,6 @@ trait EmbedsRelationships
      * @param  string|null  $foreignKey
      * @param  string|null  $relation
      * @return EmbedsMany
-     *
-     * @phpstan-ignore-next-line
      */
     protected function embedsMany($related, $localKey = null, $foreignKey = null, $relation = null)
     {
@@ -53,8 +51,6 @@ trait EmbedsRelationships
      * @param  string|null  $foreignKey
      * @param  string|null  $relation
      * @return EmbedsOne
-     *
-     * @phpstan-ignore-next-line
      */
     protected function embedsOne($related, $localKey = null, $foreignKey = null, $relation = null)
     {

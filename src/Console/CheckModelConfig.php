@@ -14,11 +14,18 @@ class CheckModelConfig extends Command
 
     protected $description = 'Check model configurations for errors';
 
+    /**
+     * @return void
+     */
     public function handle()
     {
         $this->info('Checking model configurations...');
 
         $modelPath = config('laravel-mongo-auto-sync.model_path');
+        if (!is_string($modelPath)) {
+            $this->error('Model path is not a string');
+            return;
+        }
         $models = $this->getAllModels($modelPath);
 
         foreach ($models as $modelClass) {
@@ -30,8 +37,12 @@ class CheckModelConfig extends Command
                 }
 
                 $relations = $model->getMongoRelation();
-                foreach ($relations as $method => $relation) {
-                    $this->validateRelation($modelClass, $method, $relation);
+                if (is_array($relations)) {
+                    foreach ($relations as $method => $relation) {
+                        if (is_array($relation)) {
+                            $this->validateRelation($modelClass, (string)$method, $relation);
+                        }
+                    }
                 }
             } catch (Exception $e) {
                 $this->error("Error in $modelClass: ".$e->getMessage());
@@ -41,6 +52,12 @@ class CheckModelConfig extends Command
         $this->info('Check completed.');
     }
 
+    /**
+     * @param string $modelClass
+     * @param string $method
+     * @param array<mixed> $relation
+     * @return void
+     */
     private function validateRelation($modelClass, $method, $relation)
     {
         if (! isset($relation['type'])) {
@@ -78,6 +95,10 @@ class CheckModelConfig extends Command
         }
     }
 
+    /**
+     * @param string $path
+     * @return array<string>
+     */
     private function getAllModels($path)
     {
         $out = [];
@@ -86,6 +107,10 @@ class CheckModelConfig extends Command
         } catch (Exception $e) {
             $this->error("Directory $path not found");
 
+            return [];
+        }
+
+        if ($results === false) {
             return [];
         }
 
@@ -106,10 +131,14 @@ class CheckModelConfig extends Command
 
         // Also add other_models from config
         $otherModels = config('laravel-mongo-auto-sync.other_models', []);
-        foreach ($otherModels as $key => $values) {
-            $className = $values['model_namespace'].'\\'.Str::ucfirst($key);
-            if (class_exists($className)) {
-                $out[] = $className;
+        if (is_array($otherModels)) {
+            foreach ($otherModels as $key => $values) {
+                if (is_array($values) && isset($values['model_namespace'])) {
+                    $className = $values['model_namespace'].'\\'.Str::ucfirst((string)$key);
+                    if (class_exists($className)) {
+                        $out[] = $className;
+                    }
+                }
             }
         }
 

@@ -156,3 +156,25 @@ if (! function_exists('getCounterForRelationships')) {
         return SyncHelper::getCounterForRelationships($method, $is_EO, $is_EM, $i);
     }
 }
+
+if (! function_exists('getFullUrlImgByKey')) {
+    /**
+     * @param string|null $key
+     * @return string
+     */
+    function getFullUrlImgByKey($key)
+    {
+        return '';
+    }
+}
+
+if (! function_exists('getSiteGeneralValueByKey')) {
+    /**
+     * @param string $key
+     * @return string
+     */
+    function getSiteGeneralValueByKey($key)
+    {
+        return '';
+    }
+}

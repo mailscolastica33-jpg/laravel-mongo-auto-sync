@@ -15,6 +15,8 @@ class Builder extends MongoDbEloquentBuilder
 {
     /**
      * {@inheritdoc}
+     * @param  array<mixed>  $values
+     * @param  array<mixed>  $options
      */
     public function update(array $values, array $options = [])
     {
@@ -32,6 +34,8 @@ class Builder extends MongoDbEloquentBuilder
 
     /**
      * {@inheritdoc}
+     * @param  array<mixed>  $values
+     * @return bool
      */
     public function insert(array $values)
     {
@@ -49,6 +53,9 @@ class Builder extends MongoDbEloquentBuilder
 
     /**
      * {@inheritdoc}
+     * @param  array<mixed>  $values
+     * @param  string|null  $sequence
+     * @return mixed
      */
     public function insertGetId(array $values, $sequence = null)
     {
@@ -98,7 +105,7 @@ class Builder extends MongoDbEloquentBuilder
             $this->model->{$column} = null;
 
             if (is_string($column)) {
-                $this->model->syncOriginalAttribute($column);
+            $this->model->syncOriginalAttribute($column);
             }
 
             $result = $this->model->update([$column => $value]);
@@ -126,7 +133,7 @@ class Builder extends MongoDbEloquentBuilder
             $this->model->{$column} = null;
 
             if (is_string($column)) {
-                $this->model->syncOriginalAttribute($column);
+            $this->model->syncOriginalAttribute($column);
             }
 
             return $this->model->update([$column => $value]);
@@ -145,6 +152,7 @@ class Builder extends MongoDbEloquentBuilder
 
     /**
      * {@inheritdoc}
+     * @return \Illuminate\Database\Eloquent\Collection<int, TModel>|BSONDocument|TModel|array<mixed>
      */
     public function raw($expression = null)
     {
@@ -160,9 +168,11 @@ class Builder extends MongoDbEloquentBuilder
         elseif ($results instanceof BSONDocument) {
             $results = $results->getArrayCopy();
 
+            /** @var TModel */
             return $this->model->newFromBuilder((array) $results);
         } // The result is a single object.
         elseif (is_array($results) && array_key_exists('_id', $results)) {
+            /** @var TModel */
             return $this->model->newFromBuilder((array) $results);
         }
 
@@ -175,7 +185,8 @@ class Builder extends MongoDbEloquentBuilder
      * wiil be reverted
      * Issue in laravel frawework https://github.com/laravel/framework/issues/27791.
      *
-     * @return array
+     * @param  array<mixed>  $values
+     * @return array<mixed>
      */
     protected function addUpdatedAtColumn(array $values)
     {

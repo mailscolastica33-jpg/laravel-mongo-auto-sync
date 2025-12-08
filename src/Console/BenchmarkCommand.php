@@ -13,10 +13,13 @@ class BenchmarkCommand extends Command
 
     protected $description = 'Benchmark MongoDB operations';
 
+    /**
+     * @return void
+     */
     public function handle()
     {
-        $modelClass = $this->argument('model');
-        $count = $this->argument('count');
+        $modelClass = (string) $this->argument('model');
+        $count = (int) $this->argument('count');
 
         if (! class_exists($modelClass)) {
             $this->error("Class $modelClass does not exist.");
@@ -29,6 +32,7 @@ class BenchmarkCommand extends Command
         $times = [];
 
         // Insert
+        // @phpstan-ignore-next-line
         $times['Insert'] = Benchmark::measure(function () use ($modelClass, $count) {
             for ($i = 0; $i < $count; $i++) {
                 $model = new $modelClass;
@@ -36,17 +40,20 @@ class BenchmarkCommand extends Command
                 // We need some data?
                 // This is hard to genericize without factories.
                 // Just doing simple save() if storeWithSync is too complex
+                // @phpstan-ignore-next-line
                 $model->save();
             }
         });
 
         // Read
+        // @phpstan-ignore-next-line
         $times['Read'] = Benchmark::measure(function () use ($modelClass, $count) {
             $modelClass::limit($count)->get();
         });
 
         // Update
         $items = $modelClass::limit($count)->get();
+        // @phpstan-ignore-next-line
         $times['Update'] = Benchmark::measure(function () use ($items) {
             foreach ($items as $item) {
                 $item->touch();
@@ -54,6 +61,7 @@ class BenchmarkCommand extends Command
         });
 
         // Delete
+        // @phpstan-ignore-next-line
         $times['Delete'] = Benchmark::measure(function () use ($items) {
             foreach ($items as $item) {
                 $item->delete();
