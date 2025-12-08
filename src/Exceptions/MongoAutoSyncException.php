@@ -8,4 +8,3 @@ class MongoAutoSyncException extends Exception
 {
     //
 }
-

@@ -165,11 +165,6 @@ trait RelationshipMongoTrait
         }
     }
 
-    /**
-     * @param  bool  $is_EO
-     * @param  bool  $is_EO_target
-     * @param  bool  $is_EM_target
-     */
     public function deleteTargetObj(string $method, string $modelTarget, string $methodOnTarget, bool $is_EO, bool $is_EO_target, bool $is_EM_target)
     {
         if (config('laravel-mongo-auto-sync.use_background_sync')) {
@@ -191,15 +186,11 @@ trait RelationshipMongoTrait
             }
         }
 
-        if (!empty($targetIds)) {
+        if (! empty($targetIds)) {
             $this->batchHandleSubTarget($targetIds, $modelTarget, $methodOnTarget, $is_EO_target, $is_EM_target);
         }
     }
 
-    /**
-     * @param  bool  $is_EO_target
-     * @param  bool  $is_EM_target
-     */
     public function batchHandleSubTarget(array $targetIds, string $modelTarget, string $methodOnTarget, bool $is_EO_target, bool $is_EM_target)
     {
         if ($is_EM_target) {
@@ -232,6 +223,7 @@ trait RelationshipMongoTrait
     /**
      * @param  bool  $is_EO_target
      * @param  bool  $is_EM_target
+     *
      * @deprecated Use batchHandleSubTarget instead
      */
     public function handleSubTarget($target_id, $modelTarget, $methodOnTarget, $is_EO_target, $is_EM_target)

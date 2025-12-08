@@ -6,4 +6,3 @@ class ModelNotFoundException extends MongoAutoSyncException
 {
     //
 }
-

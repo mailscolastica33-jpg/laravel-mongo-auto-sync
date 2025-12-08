@@ -5,7 +5,6 @@ namespace OfflineAgency\MongoAutoSync\Helpers;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
-use MongoDB\Laravel\Eloquent\Model;
 use stdClass;
 
 class SyncHelper
@@ -145,64 +144,6 @@ class SyncHelper
         $request->merge($new_req);
 
         return $request;
-    }
-
-    /**
-     * @param  string|null  $request
-     * @return string
-     */
-    public static function getPrimaryRequest($request)
-    {
-        if (! is_null($request)) {
-            $arr = [];
-            $categorylistdataJson = $request;
-            $categorylistdataArr = json_decode($categorylistdataJson);
-            if (empty($categorylistdataArr)) {
-                return '';
-            } else {
-                // extract first array  and create the primary category
-                $primarycategory = ($categorylistdataArr[0]);
-                $arr[] = $primarycategory;
-
-                return json_encode($arr);
-            }
-        } else {
-            return '';
-        }
-    }
-
-    /**
-     * @return int
-     */
-    public static function getAID(Model $model)
-    {
-        // Get Last Obj
-        /** @var mixed $obj */
-        $obj = $model->orderBy('created_at', 'desc')->first();
-
-        return is_null($obj) ? 1 : $obj->autoincrement_id + 1;
-    }
-
-    /**
-     * @param  array  $array
-     * @return string
-     */
-    public static function processList($array)
-    {
-        $final = [];
-        $n = count($array);
-        for ($i = 0; $i < $n; $i++) {
-            $obj = [];
-            if ($array[$i] !== null) {
-                $obj = ['label' => $array[$i], 'key' => $i];
-                $final[] = $obj;
-            } else {
-                $final[] = $obj;
-                array_pop($final);
-            }
-        }
-
-        return json_encode($final);
     }
 
     public static function isRequestReadyToBeProcessed(Request $request)

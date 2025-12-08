@@ -8,7 +8,7 @@ use OfflineAgency\MongoAutoSync\Jobs\SyncTargetJob;
 class MongoAutoSyncObserver
 {
     /**
-     * @param mixed $model
+     * @param  mixed  $model
      * @return void
      */
     public function saved($model)
@@ -19,7 +19,7 @@ class MongoAutoSyncObserver
     }
 
     /**
-     * @param mixed $model
+     * @param  mixed  $model
      * @return void
      */
     public function deleted($model)
@@ -49,8 +49,8 @@ class MongoAutoSyncObserver
     }
 
     /**
-     * @param mixed $model
-     * @param string $event
+     * @param  mixed  $model
+     * @param  string  $event
      * @return void
      */
     private function processSync($model, $event)

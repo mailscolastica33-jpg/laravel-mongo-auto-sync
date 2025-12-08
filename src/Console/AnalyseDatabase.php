@@ -6,6 +6,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use OfflineAgency\MongoAutoSync\Helpers\SyncHelper;
 use OfflineAgency\MongoAutoSync\Jobs\SyncTargetJob;
+
 use function Termwind\render;
 
 class AnalyseDatabase extends Command
@@ -45,10 +46,10 @@ class AnalyseDatabase extends Command
     }
 
     /**
-     * @param object $modelInstance
-     * @param string $method
-     * @param array<mixed> $relation
-     * @param string $modelClass
+     * @param  object  $modelInstance
+     * @param  string  $method
+     * @param  array<mixed>  $relation
+     * @param  string  $modelClass
      * @return void
      */
     private function analyseRelation($modelInstance, $method, $relation, $modelClass)

@@ -2,7 +2,6 @@
 
 namespace OfflineAgency\MongoAutoSync\Traits;
 
-use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Log;
@@ -40,7 +39,7 @@ trait MainMongoTrait
     public function storeWithSync(Request $request, array $additionalData = [], array $options = [], array $target_additional_data = [])
     {
         Log::info('storeWithSync started for model: '.get_class($this));
-        
+
         $this->initDataForSync($request, $additionalData, $options, $target_additional_data);
         $this->storeEditAllItems($request, 'add', $options);
         $this->processAllRelationships($request, 'add', '', '', $options);

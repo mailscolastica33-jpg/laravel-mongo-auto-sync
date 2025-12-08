@@ -6,4 +6,3 @@ class InvalidRelationshipException extends MongoAutoSyncException
 {
     //
 }
-

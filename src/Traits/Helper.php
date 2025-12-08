@@ -2,7 +2,6 @@
 
 namespace OfflineAgency\MongoAutoSync\Traits;
 
-use Exception;
 use Illuminate\Support\Arr;
 use OfflineAgency\MongoAutoSync\Exceptions\InvalidConfigurationException;
 

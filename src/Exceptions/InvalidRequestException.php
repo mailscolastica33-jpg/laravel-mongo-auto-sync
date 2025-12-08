@@ -6,4 +6,3 @@ class InvalidRequestException extends MongoAutoSyncException
 {
     //
 }
-

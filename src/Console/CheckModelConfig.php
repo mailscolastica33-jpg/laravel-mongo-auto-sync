@@ -25,7 +25,7 @@ class CheckModelConfig extends Command
             $this->info("Checking $modelClass...");
             try {
                 $model = new $modelClass;
-                if (!method_exists($model, 'getMongoRelation')) {
+                if (! method_exists($model, 'getMongoRelation')) {
                     continue;
                 }
 
@@ -34,7 +34,7 @@ class CheckModelConfig extends Command
                     $this->validateRelation($modelClass, $method, $relation);
                 }
             } catch (Exception $e) {
-                $this->error("Error in $modelClass: " . $e->getMessage());
+                $this->error("Error in $modelClass: ".$e->getMessage());
             }
         }
 
@@ -43,36 +43,36 @@ class CheckModelConfig extends Command
 
     private function validateRelation($modelClass, $method, $relation)
     {
-        if (!isset($relation['type'])) {
+        if (! isset($relation['type'])) {
             throw new InvalidConfigurationException("Relation $method in $modelClass missing 'type'");
         }
 
         $type = $relation['type'];
-        if (!in_array($type, ['EmbedsOne', 'EmbedsMany', 'HasOne', 'HasMany'])) {
+        if (! in_array($type, ['EmbedsOne', 'EmbedsMany', 'HasOne', 'HasMany'])) {
             throw new InvalidConfigurationException("Relation $method in $modelClass has invalid type '$type'");
         }
 
-        if (!isset($relation['model'])) {
+        if (! isset($relation['model'])) {
             throw new InvalidConfigurationException("Relation $method in $modelClass missing 'model'");
         }
 
-        if (!class_exists($relation['model'])) {
+        if (! class_exists($relation['model'])) {
             throw new InvalidConfigurationException("Relation $method in $modelClass refers to non-existent model '{$relation['model']}'");
         }
 
         if (SyncHelper::hasTarget($relation)) {
             $requiredKeys = ['modelTarget', 'methodOnTarget', 'modelOnTarget'];
             foreach ($requiredKeys as $key) {
-                if (!isset($relation[$key])) {
+                if (! isset($relation[$key])) {
                     throw new InvalidConfigurationException("Relation $method in $modelClass missing '$key' for target sync");
                 }
             }
 
-            if (!class_exists($relation['modelTarget'])) {
+            if (! class_exists($relation['modelTarget'])) {
                 throw new InvalidConfigurationException("Relation $method in $modelClass refers to non-existent target model '{$relation['modelTarget']}'");
             }
-            
-            // Check if methodOnTarget exists as a property or method? 
+
+            // Check if methodOnTarget exists as a property or method?
             // It's usually a property for EmbedsMany/One, or method for HasMany/One?
             // In this package it seems to be treated as property usually for Embeds.
         }
@@ -85,6 +85,7 @@ class CheckModelConfig extends Command
             $results = scandir($path);
         } catch (Exception $e) {
             $this->error("Directory $path not found");
+
             return [];
         }
 
@@ -92,27 +93,26 @@ class CheckModelConfig extends Command
             if ($result === '.' or $result === '..') {
                 continue;
             }
-            $filename = $path . '/' . $result;
+            $filename = $path.'/'.$result;
             if (is_dir($filename)) {
                 $out = array_merge($out, $this->getAllModels($filename));
             } elseif (substr($result, -4) === '.php') {
-                $className = config('laravel-mongo-auto-sync.model_namespace') . '\\' . substr($result, 0, -4);
+                $className = config('laravel-mongo-auto-sync.model_namespace').'\\'.substr($result, 0, -4);
                 if (class_exists($className)) {
                     $out[] = $className;
                 }
             }
         }
-        
+
         // Also add other_models from config
         $otherModels = config('laravel-mongo-auto-sync.other_models', []);
         foreach ($otherModels as $key => $values) {
-             $className = $values['model_namespace'] . '\\' . Str::ucfirst($key);
-             if (class_exists($className)) {
-                 $out[] = $className;
-             }
+            $className = $values['model_namespace'].'\\'.Str::ucfirst($key);
+            if (class_exists($className)) {
+                $out[] = $className;
+            }
         }
 
         return $out;
     }
 }
-

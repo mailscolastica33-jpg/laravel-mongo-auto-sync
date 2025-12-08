@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-use MongoDB\Laravel\Eloquent\Model;
 use OfflineAgency\MongoAutoSync\Helpers\SyncHelper;
 
 if (! function_exists('getTranslatedContent')) {
@@ -108,38 +107,6 @@ if (! function_exists('getRequestToBeSync')) {
     function getRequestToBeSync($ref_id, $modelOnTarget, Request $request, $methodOnTarget)
     {
         return SyncHelper::getRequestToBeSync($ref_id, $modelOnTarget, $request, $methodOnTarget);
-    }
-}
-
-if (! function_exists('getPrimaryRequest')) {
-    /**
-     * @param  string  $request
-     * @return string
-     */
-    function getPrimaryRequest($request)
-    {
-        return SyncHelper::getPrimaryRequest($request);
-    }
-}
-
-if (! function_exists('getAID')) {
-    /**
-     * @return string
-     */
-    function getAID(Model $model)
-    {
-        return SyncHelper::getAID($model);
-    }
-}
-
-if (! function_exists('processList')) {
-    /**
-     * @param  array  $array
-     * @return string
-     */
-    function processList($array)
-    {
-        return SyncHelper::processList($array);
     }
 }
 

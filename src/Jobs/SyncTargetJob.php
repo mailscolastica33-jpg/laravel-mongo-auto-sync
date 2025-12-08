@@ -40,14 +40,14 @@ class SyncTargetJob implements ShouldQueue
     protected $sourceId;
 
     /**
-     * @param mixed $model
-     * @param array<mixed> $relation
-     * @param string $method
-     * @param string $event
-     * @param mixed $items
-     * @param array<mixed> $requestData
-     * @param array<mixed> $targetAdditionalData
-     * @param mixed $sourceId
+     * @param  mixed  $model
+     * @param  array<mixed>  $relation
+     * @param  string  $method
+     * @param  string  $event
+     * @param  mixed  $items
+     * @param  array<mixed>  $requestData
+     * @param  array<mixed>  $targetAdditionalData
+     * @param  mixed  $sourceId
      */
     public function __construct($model, $relation, $method, $event, $items, $requestData = [], $targetAdditionalData = [], $sourceId = null)
     {
@@ -113,13 +113,13 @@ class SyncTargetJob implements ShouldQueue
     }
 
     /**
-     * @param mixed $items
-     * @param bool $is_EO
-     * @param string $modelTarget
-     * @param string $methodOnTarget
-     * @param string $modelOnTarget
-     * @param bool $is_EO_target
-     * @param bool $is_EM_target
+     * @param  mixed  $items
+     * @param  bool  $is_EO
+     * @param  string  $modelTarget
+     * @param  string  $methodOnTarget
+     * @param  string  $modelOnTarget
+     * @param  bool  $is_EO_target
+     * @param  bool  $is_EM_target
      * @return void
      */
     private function processUpdate($items, $is_EO, $modelTarget, $methodOnTarget, $modelOnTarget, $is_EO_target, $is_EM_target)
@@ -166,12 +166,12 @@ class SyncTargetJob implements ShouldQueue
     }
 
     /**
-     * @param mixed $items
-     * @param bool $is_EO
-     * @param string $modelTarget
-     * @param string $methodOnTarget
-     * @param bool $is_EO_target
-     * @param bool $is_EM_target
+     * @param  mixed  $items
+     * @param  bool  $is_EO
+     * @param  string  $modelTarget
+     * @param  string  $methodOnTarget
+     * @param  bool  $is_EO_target
+     * @param  bool  $is_EM_target
      * @return void
      */
     private function processDelete($items, $is_EO, $modelTarget, $methodOnTarget, $is_EO_target, $is_EM_target)

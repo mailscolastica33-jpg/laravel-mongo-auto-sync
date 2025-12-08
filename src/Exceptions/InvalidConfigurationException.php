@@ -6,4 +6,3 @@ class InvalidConfigurationException extends MongoAutoSyncException
 {
     //
 }
-

@@ -40,161 +40,6 @@ trait ModelAdditionalMethod
     }
 
     /**
-     * @return array
-     *
-     * @deprecated This method contains hardcoded business logic and will be removed in future versions.
-     */
-    public function getPageMetaTag()
-    {
-        $collection_name = $this->collection;
-        $meta_content = [];
-        $meta_value = [];
-        $meta_key = [];
-        $title = '';
-        $description = '';
-        $meta_description = '';
-        $fb_id = config('laravel-mongo-auto-sync.fb_id');
-        $img_url = '';
-        $meta = [];
-
-        switch ($collection_name) {
-            case $collection_name == 'article':
-                $meta_content = [
-                    'article',
-                    $this->author,
-                    $this->updated_at,
-                    $this->updated_at,
-                    '666',
-                    '920',
-                    'secure_image.png',
-                ];
-                $meta_value = [
-                    'og:type',
-                    'article:author',
-                    'article:modified_time',
-                    'article:published_time',
-                    'og:image:height',
-                    'og:image:width',
-                    'og:image:secure_url',
-                ];
-                $meta_key = [
-                    'property',
-                    'property',
-                    'property',
-                    'property',
-                    'property',
-                    'property',
-                    'property',
-                ];
-                $title = SyncHelper::getTranslatedContent($this->title).' | ';
-                $description = SyncHelper::getTranslatedContent($this->excerption);
-                $meta_description = '';
-                $img_url = getFullUrlImgByKey($this->img_evidence_text);
-                break;
-
-            case $collection_name == 'course':
-                $meta_content = ['article'];
-                $meta_value = ['og:type'];
-                $meta_key = ['property'];
-                $title = SyncHelper::getTranslatedContent($this->title).' | ';
-                $description = SyncHelper::getTranslatedContent($this->shortDescription);
-                $meta_description = SyncHelper::getTranslatedContent($this->shortDescription);
-                $img_url = getFullUrlImgByKey($this->img_evidence_text);
-
-                break;
-
-            case $collection_name == 'event':
-                $meta_content = ['product'];
-                $meta_value = [];
-                $meta_key = [];
-                $title = SyncHelper::getTranslatedContent($this->title).' | ';
-                $meta_description = SyncHelper::getTranslatedContent($this->shortDescription);
-                $img_url = getFullUrlImgByKey($this->img_evidence_text);
-
-                break;
-
-            case $collection_name == 'page':
-                $meta_content = [];
-                $meta_value = [];
-                $meta_key = [];
-                $title = SyncHelper::getTranslatedContent($this->title).' | ';
-                $meta_description = SyncHelper::getTranslatedContent($this->description);
-                $img_url = '';
-                break;
-
-        }
-
-        // common meta
-        $obj_content = [
-            $meta_description,
-            config('app.locale'),
-            $title.getSiteGeneralValueByKey('company_name'),
-            $description,
-            url()->current(),
-            $img_url,
-            $img_url,
-            getSiteGeneralValueByKey('company_name'),
-            $fb_id,
-            '@informaz',
-            '@informaz',
-            $title.getSiteGeneralValueByKey('company_name'),
-            $description,
-            $img_url,
-            'summary',
-        ];
-        $obj_value = [
-            'description',
-            'og:locale',
-            'og:title',
-            'og:description',
-            'og:url',
-            'og:image',
-            'og:image:secure_url',
-            'og:site_name',
-            'fb:app_id',
-            'twitter:creator',
-            'twitter:site',
-            'twitter:title',
-            'twitter:description',
-            'twitter:image',
-            'twitter:card',
-        ];
-        $obj_key = [
-            'name',
-            'property',
-            'property',
-            'property',
-            'property',
-            'property',
-            'property',
-            'property',
-            'property',
-            'name',
-            'name',
-            'name',
-            'name',
-            'name',
-            'name',
-        ];
-
-        $obj_key = array_merge($obj_key, $meta_key);
-        $obj_value = array_merge($obj_value, $meta_value);
-        $obj_content = array_merge($obj_content, $meta_content);
-
-        for ($i = 0; $i < count($obj_key); $i++) {
-            $obj = [
-                'key' => $obj_key[$i],
-                'value' => $obj_value[$i],
-                'content' => $obj_content[$i],
-            ];
-            // generate new sitegeneral to match obj_key number
-            $meta[] = $obj;
-        }
-
-        return $meta;
-    }
-
-    /**
      * @return mixed
      *
      * @throws InvalidRequestException
@@ -259,17 +104,17 @@ trait ModelAdditionalMethod
             // Actually getUniqueMiniModelList calls getObjWithRefId.
             // Wait, getObjWithRefId depends on $this attributes (ref_id).
             // So we CANNOT cache the result across instances blindly if the result depends on instance data.
-            
+
             // Let's check getUniqueMiniModelList implementation again.
             // It calls getObjWithRefId.
             // getObjWithRefId calls getObjValueToBeSaved -> getDbValue -> $this->$key.
             // So it DOES depend on instance data.
             // So static caching is NOT safe if it depends on instance state.
-            
+
             // However, the LIST of mini models (classes) should be constant for the Model Class.
             // But the method ALSO sets $this->setPartialGeneratedRequest($embedded_object);
             // $embedded_object depends on instance data.
-            
+
             // So I can cache the 'models' list but I still need to iterate to build $embedded_object.
             // The previous implementation was:
             /*
@@ -288,7 +133,7 @@ trait ModelAdditionalMethod
             $this->setPartialGeneratedRequest($embedded_object);
             return collect($models)->unique()->toArray();
             */
-            
+
             // I can optimize by caching which relationships have targets and what their modelOnTarget is.
             // But the 'embedded_object' part needs to run for every instance.
         }
