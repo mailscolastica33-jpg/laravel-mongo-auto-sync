@@ -18,9 +18,10 @@
         "laravel/pint": "^1.0",
         "larastan/larastan": "^3.0",
         "orchestra/testbench": "^9.0",
-        "pestphp/pest": "^3.0",
+        "pestphp/pest": "^3.7",
         "pestphp/pest-plugin-laravel": "^3.0",
-        "mockery/mockery": "^1.6"
+        "mockery/mockery": "^1.6",
+        "brianium/paratest": "^7.7"
     },
     "license": "MIT",
     "authors": [

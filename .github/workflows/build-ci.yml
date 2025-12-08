@@ -47,7 +47,7 @@ jobs:
         restore-keys: ${{ matrix.os }}-composer-
     - name: Install dependencies
       run: |
-        composer install --no-interaction
+        composer install --no-interaction --ignore-platform-req=php+
     - name: Run Pint
       run: vendor/bin/pint --test
     - name: Run PHPStan
