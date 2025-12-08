@@ -91,7 +91,7 @@ class Builder extends MongoDbEloquentBuilder
 
     /**
      * {@inheritdoc}
-     * @param  string|Illuminate\Contracts\Database\Query\Expression  $column
+     * @param  string|\Illuminate\Contracts\Database\Query\Expression  $column
      * @param  float|int  $amount
      * @param  array<mixed>  $extra
      * @return int
@@ -103,12 +103,12 @@ class Builder extends MongoDbEloquentBuilder
         // @phpstan-ignore-next-line
         if (method_exists($this->model, 'getParentRelation') && $relation = $this->model->getParentRelation()) {
             /** @var \OfflineAgency\MongoAutoSync\Relationships\EmbedsOneOrMany $relation */
-            $value = $this->model->{$column};
+            $value = $this->model->{$column}; // @phpstan-ignore-line
 
             // When doing increment and decrements, Eloquent will automatically
             // sync the original attributes. We need to change the attribute
             // temporary in order to trigger an update query.
-            $this->model->{$column} = null;
+            $this->model->{$column} = null; // @phpstan-ignore-line
 
             if (is_string($column)) {
                 $this->model->syncOriginalAttribute($column);
@@ -125,7 +125,7 @@ class Builder extends MongoDbEloquentBuilder
 
     /**
      * {@inheritdoc}
-     * @param  string|Illuminate\Contracts\Database\Query\Expression  $column
+     * @param  string|\Illuminate\Contracts\Database\Query\Expression  $column
      * @param  float|int  $amount
      * @param  array<mixed>  $extra
      * @return int
@@ -137,12 +137,12 @@ class Builder extends MongoDbEloquentBuilder
         // @phpstan-ignore-next-line
         if (method_exists($this->model, 'getParentRelation') && $relation = $this->model->getParentRelation()) {
             /** @var \OfflineAgency\MongoAutoSync\Relationships\EmbedsOneOrMany $relation */
-            $value = $this->model->{$column};
+            $value = $this->model->{$column}; // @phpstan-ignore-line
 
             // When doing increment and decrements, Eloquent will automatically
             // sync the original attributes. We need to change the attribute
             // temporary in order to trigger an update query.
-            $this->model->{$column} = null;
+            $this->model->{$column} = null; // @phpstan-ignore-line
 
             if (is_string($column)) {
                 $this->model->syncOriginalAttribute($column);
