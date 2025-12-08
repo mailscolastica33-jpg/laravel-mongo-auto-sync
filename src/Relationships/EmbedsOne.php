@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Model as EloquentModel;
 use MongoDB\BSON\ObjectId;
 
+/**
+ * @extends EmbedsOneOrMany<\MongoDB\Laravel\Eloquent\Model, \MongoDB\Laravel\Eloquent\Model, \MongoDB\Laravel\Eloquent\Model>
+ */
 class EmbedsOne extends EmbedsOneOrMany
 {
     /**
@@ -22,6 +25,8 @@ class EmbedsOne extends EmbedsOneOrMany
 
     /**
      * {@inheritdoc}
+     *
+     * @return \MongoDB\Laravel\Eloquent\Model
      */
     public function getResults()
     {
@@ -60,9 +65,11 @@ class EmbedsOne extends EmbedsOneOrMany
     /**
      * Save an existing model and attach it to the parent model.
      *
+     * @param  Model  $model
+     * @param  array<string, mixed>  $values
      * @return Model|bool
      */
-    public function performUpdate(Model $model)
+    public function performUpdate(Model $model, array $values = [])
     {
         if ($this->isNested()) {
             $this->associate($model);
@@ -85,46 +92,52 @@ class EmbedsOne extends EmbedsOneOrMany
     /**
      * Delete an existing model and detach it from the parent model.
      *
+     * @param  Model  $model
      * @return int
      */
-    public function performDelete()
+    public function performDelete(Model $model)
     {
         // For deeply nested documents, let the parent handle the changes.
         if ($this->isNested()) {
             $this->dissociate();
 
-            return $this->parent->save();
+            return $this->parent->save() ? 1 : 0;
         }
 
-        // Overwrite the local key with an empty array.
-        $result = $this->getBaseQuery()->update([$this->localKey => null]);
+        // Overwrite the local key with null.
+        /** @var \MongoDB\Laravel\Query\Builder $baseQuery */
+        $baseQuery = $this->getBaseQuery();
+        $result = $baseQuery->update([$this->localKey => null]);
 
         // Detach the model from its parent.
         if ($result) {
             $this->dissociate();
         }
 
-        return $result;
+        return $result ? 1 : 0;
     }
 
     /**
      * Attach the model to its parent.
      *
-     * @return Model
+     * @param  Model  $model
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function associate(Model $model)
     {
-        return $this->setEmbedded($model->getAttributes());
+        $this->setEmbedded($model->getAttributes());
+        return $model;
     }
 
     /**
      * Detach the model from its parent.
      *
-     * @return Model
+     * @return \Illuminate\Database\Eloquent\Model|null
      */
     public function dissociate()
     {
-        return $this->setEmbedded(null);
+        $this->setEmbedded(null);
+        return null;
     }
 
     /**
@@ -134,7 +147,11 @@ class EmbedsOne extends EmbedsOneOrMany
      */
     public function delete()
     {
-        return $this->performDelete();
+        $model = $this->getResults();
+        if ($model === null) {
+            return 0;
+        }
+        return $this->performDelete($model);
     }
 
     /**

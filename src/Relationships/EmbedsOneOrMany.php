@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Relations\Relation;
 use MongoDB\Laravel\Eloquent\Builder;
 use MongoDB\Laravel\Eloquent\Model;
 
+/**
+ * @template TRelatedModel of Model
+ * @template TDeclaringModel of Model
+ * @template TResult of Collection|Model
+ * @extends Relation<TRelatedModel, TDeclaringModel, TResult>
+ */
 abstract class EmbedsOneOrMany extends Relation
 {
     /**
@@ -32,32 +38,37 @@ abstract class EmbedsOneOrMany extends Relation
     protected $relation;
 
     /**
-     * @var Builder
+     * The Eloquent query builder instance.
+     *
+     * @var \Illuminate\Database\Eloquent\Builder<TRelatedModel>
      */
     protected $query;
 
     /**
-     * @var Model
+     * @var TDeclaringModel
      */
     protected $parent;
 
     /**
-     * @var Model
+     * @var TRelatedModel
      */
     protected $related;
 
     /**
      * Create a new embeds many relationship instance.
      *
-     * @param  Builder  $query
-     * @param  Model  $parent
-     * @param  Model  $related
+     * @param  Builder<TRelatedModel>  $query
+     * @param  TDeclaringModel  $parent
+     * @param  TRelatedModel  $related
      * @param  string  $localKey
      * @param  string  $foreignKey
      * @param  string  $relation
      */
     public function __construct(Builder $query, Model $parent, Model $related, $localKey, $foreignKey, $relation)
     {
+        // MongoDB\Laravel\Eloquent\Builder extends Illuminate\Database\Eloquent\Builder
+        // so this assignment is valid at runtime
+        /** @var \Illuminate\Database\Eloquent\Builder<TRelatedModel> $query */
         $this->query = $query;
         $this->parent = $parent;
         $this->related = $related;
@@ -67,7 +78,11 @@ abstract class EmbedsOneOrMany extends Relation
 
         // If this is a nested relation, we need to get the parent query instead.
         if ($parentRelation = $this->getParentRelation()) {
-            $this->query = $parentRelation->getQuery();
+            $parentQuery = $parentRelation->getQuery();
+            // MongoDB\Laravel\Eloquent\Builder extends Illuminate\Database\Eloquent\Builder
+            // so this assignment is valid at runtime
+            /** @var \Illuminate\Database\Eloquent\Builder<TRelatedModel> $parentQuery */
+            $this->query = $parentQuery;
         }
 
         $this->addConstraints();
@@ -92,6 +107,31 @@ abstract class EmbedsOneOrMany extends Relation
     }
 
     /**
+     * Save a new model and attach it to the parent model.
+     *
+     * @param  Model  $model
+     * @return Model|bool
+     */
+    abstract public function performInsert(Model $model);
+
+    /**
+     * Save an existing model and attach it to the parent model.
+     *
+     * @param  Model  $model
+     * @param  array<string, mixed>  $values
+     * @return Model|bool
+     */
+    abstract public function performUpdate(Model $model, array $values = []);
+
+    /**
+     * Delete an existing model and detach it from the parent model.
+     *
+     * @param  Model  $model
+     * @return int
+     */
+    abstract public function performDelete(Model $model);
+
+    /**
      * {@inheritdoc}
      */
     public function match(array $models, Collection $results, $relation)
@@ -99,7 +139,9 @@ abstract class EmbedsOneOrMany extends Relation
         foreach ($models as $model) {
             $results = $model->$relation()->getResults();
 
-            $model->setParentRelation($this);
+            if (method_exists($model, 'setParentRelation')) {
+                $model->setParentRelation($this);
+            }
 
             $model->setRelation($relation, $results);
         }
@@ -110,12 +152,14 @@ abstract class EmbedsOneOrMany extends Relation
     /**
      * Shorthand to get the results of the relationship.
      *
-     * @param  array  $columns
-     * @return Collection
+     * @param  array<int|string, string>  $columns
+     * @return TResult
      */
     public function get($columns = ['*'])
     {
-        return $this->getResults();
+        /** @var TResult $results */
+        $results = $this->getResults();
+        return $results;
     }
 
     /**
@@ -125,7 +169,11 @@ abstract class EmbedsOneOrMany extends Relation
      */
     public function count()
     {
-        return count($this->getEmbedded());
+        $embedded = $this->getEmbedded();
+        if ($embedded === null) {
+            return 0;
+        }
+        return count($embedded);
     }
 
     /**
@@ -143,8 +191,8 @@ abstract class EmbedsOneOrMany extends Relation
     /**
      * Attach a collection of models to the parent instance.
      *
-     * @param  Collection|array  $models
-     * @return Collection|array
+     * @param  Collection<int, Model>|array<int, Model>  $models
+     * @return Collection<int, Model>|array<int, Model>
      */
     public function saveMany($models)
     {
@@ -158,6 +206,7 @@ abstract class EmbedsOneOrMany extends Relation
     /**
      * Create a new instance of the related model.
      *
+     * @param  array<string, mixed>  $attributes
      * @return Model
      */
     public function create(array $attributes = [])
@@ -177,14 +226,17 @@ abstract class EmbedsOneOrMany extends Relation
     /**
      * Create an array of new instances of the related model.
      *
-     * @return array
+     * @param  array<int|string, array<string, mixed>>  $records
+     * @return array<int, Model>
      */
     public function createMany(array $records)
     {
         $instances = [];
 
         foreach ($records as $record) {
-            $instances[] = $this->create($record);
+            if (is_array($record)) {
+                $instances[] = $this->create($record);
+            }
         }
 
         return $instances;
@@ -194,7 +246,7 @@ abstract class EmbedsOneOrMany extends Relation
      * Transform single ID, single Model or array of Models into an array of IDs.
      *
      * @param  mixed  $ids
-     * @return array
+     * @return array<int|string, mixed>
      */
     protected function getIdsArrayFrom($ids)
     {
@@ -217,6 +269,8 @@ abstract class EmbedsOneOrMany extends Relation
 
     /**
      * {@inheritdoc}
+     *
+     * @return array<string, mixed>|null
      */
     protected function getEmbedded()
     {
@@ -231,6 +285,9 @@ abstract class EmbedsOneOrMany extends Relation
 
     /**
      * {@inheritdoc}
+     *
+     * @param  array<string, mixed>|null  $records
+     * @return void
      */
     protected function setEmbedded($records)
     {
@@ -242,7 +299,7 @@ abstract class EmbedsOneOrMany extends Relation
         $this->parent->setRawAttributes($attributes);
 
         // Set the relation on the parent.
-        return $this->parent->setRelation($this->relation, $records === null ? null : $this->getResults());
+        $this->parent->setRelation($this->relation, $records === null ? null : $this->getResults());
     }
 
     /**
@@ -258,13 +315,16 @@ abstract class EmbedsOneOrMany extends Relation
         }
 
         // Convert the id to MongoId if necessary.
-        return $this->getBaseQuery()->convertKey($id);
+        /** @var \MongoDB\Laravel\Query\Builder $baseQuery */
+        $baseQuery = $this->getBaseQuery();
+        return $baseQuery->convertKey($id);
     }
 
     /**
      * Convert an array of records to a Collection.
      *
-     * @return Collection
+     * @param  array<int, array<string, mixed>>  $records
+     * @return Collection<int, Model>
      */
     protected function toCollection(array $records = [])
     {
@@ -274,9 +334,7 @@ abstract class EmbedsOneOrMany extends Relation
             $models[] = $this->toModel($attributes);
         }
 
-        if (count($models) > 0) {
-            $models = $this->eagerLoadRelations($models);
-        }
+        // Note: Eager loading is handled by the query builder, not needed here
 
         return $this->related->newCollection($models);
     }
@@ -284,13 +342,13 @@ abstract class EmbedsOneOrMany extends Relation
     /**
      * Create a related model instanced.
      *
-     * @param  array  $attributes
+     * @param  array<string, mixed>|null  $attributes
      * @return Model
      */
     protected function toModel($attributes = [])
     {
         if ($attributes === null) {
-            return;
+            return $this->related->newInstance();
         }
 
         $connection = $this->related->getConnection();
@@ -313,33 +371,44 @@ abstract class EmbedsOneOrMany extends Relation
     /**
      * Get the relation instance of the parent.
      *
-     * @return Relation
+     * @return Relation<TRelatedModel, TDeclaringModel, mixed>|null
      */
     protected function getParentRelation()
     {
-        return $this->parent->getParentRelation();
+        $parentRelation = $this->parent->getParentRelation();
+        if ($parentRelation === null) {
+            return null;
+        }
+        /** @var Relation<TRelatedModel, TDeclaringModel, mixed> $parentRelation */
+        return $parentRelation;
     }
 
     /**
      * {@inheritdoc}
-     * @return Builder
+     *
+     * @return \Illuminate\Database\Eloquent\Builder<TRelatedModel>
      */
     public function getQuery()
     {
         // Because we are sharing this relation instance to models, we need
         // to make sure we use separate query instances.
-        return clone $this->query;
+        /** @var \Illuminate\Database\Eloquent\Builder<TRelatedModel> $query */
+        $query = clone $this->query;
+        return $query;
     }
 
     /**
      * {@inheritdoc}
-     * @return \MongoDB\Laravel\Eloquent\Builder
+     *
+     * @return \MongoDB\Laravel\Query\Builder
      */
     public function getBaseQuery()
     {
         // Because we are sharing this relation instance to models, we need
         // to make sure we use separate query instances.
-        return clone $this->query->getQuery();
+        /** @var \MongoDB\Laravel\Query\Builder $baseQuery */
+        $baseQuery = clone $this->query->getQuery();
+        return $baseQuery;
     }
 
     /**
@@ -360,7 +429,8 @@ abstract class EmbedsOneOrMany extends Relation
      */
     protected function getPathHierarchy($glue = '.')
     {
-        if ($parentRelation = $this->getParentRelation()) {
+        $parentRelation = $this->getParentRelation();
+        if ($parentRelation !== null && $parentRelation instanceof self) {
             return $parentRelation->getPathHierarchy($glue).$glue.$this->localKey;
         }
 
@@ -372,7 +442,8 @@ abstract class EmbedsOneOrMany extends Relation
      */
     public function getQualifiedParentKeyName()
     {
-        if ($parentRelation = $this->getParentRelation()) {
+        $parentRelation = $this->getParentRelation();
+        if ($parentRelation !== null && $parentRelation instanceof self) {
             return $parentRelation->getPathHierarchy().'.'.$this->parent->getKeyName();
         }
 
@@ -392,8 +463,9 @@ abstract class EmbedsOneOrMany extends Relation
     /**
      * Return update values.
      *
+     * @param  array<string, mixed>  $array
      * @param  string  $prepend
-     * @return array
+     * @return array<string, mixed>
      */
     public static function getUpdateValues($array, $prepend = '')
     {

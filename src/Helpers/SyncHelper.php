@@ -161,7 +161,7 @@ class SyncHelper
     public static function getRequestToBeSync($ref_id, $modelOnTarget, Request $request, $methodOnTarget)
     {
         $new_req_embeded = new stdClass;
-        /** @var mixed $model */
+        /** @var \OfflineAgency\MongoAutoSync\Http\Models\MDModel $model */
         $model = new $modelOnTarget;
         /** @var array<string, mixed> $items */
         $items = $model->getItems();
@@ -228,7 +228,7 @@ class SyncHelper
         $arr = [];
         if ($is_EO) {
             $obj = new stdClass;
-            /** @var mixed $embedObj */
+            /** @var \OfflineAgency\MongoAutoSync\Http\Models\MDModel $embedObj */
             $embedObj = new $model;
             /** @var array<string, mixed> $EOitems */
             $EOitems = $embedObj->getItems();
@@ -253,10 +253,15 @@ class SyncHelper
      */
     public static function getCounterForRelationships($method, $is_EO, $is_EM, $i)
     {
-        if ($method === '' || ($method !== '' && $is_EO) || ($method === '' && $is_EM)) {
+        if ($method === '') {
             return '';
-        } else {
-            return '-'.$i;
         }
+        if ($is_EO) {
+            return '';
+        }
+        if ($is_EM) {
+            return '';
+        }
+        return '-'.$i;
     }
 }

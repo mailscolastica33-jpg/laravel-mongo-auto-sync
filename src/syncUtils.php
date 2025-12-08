@@ -6,7 +6,7 @@ use OfflineAgency\MongoAutoSync\Helpers\SyncHelper;
 if (! function_exists('getTranslatedContent')) {
 
     /**
-     * @param  array  $mlCollection
+     * @param  array<string, mixed>|null  $mlCollection
      * @return string
      */
     function getTranslatedContent($mlCollection)
@@ -29,9 +29,9 @@ if (! function_exists('cl')) {
 if (! function_exists('ml')) {
     // save a localized field
     /**
-     * @param  array  $destination
+     * @param  array<string, mixed>|null  $destination
      * @param  string  $input
-     * @return array ready to be saved
+     * @return array<string, mixed>
      */
     function ml($destination, $input)
     {
@@ -40,6 +40,10 @@ if (! function_exists('ml')) {
 }
 
 if (! function_exists('isML')) {
+    /**
+     * @param  mixed  $value
+     * @return bool
+     */
     function isML($value)
     {
         return SyncHelper::isML($value);
@@ -47,12 +51,20 @@ if (! function_exists('isML')) {
 }
 
 if (! function_exists('isMD')) {
+    /**
+     * @param  mixed  $value
+     * @return bool
+     */
     function isMD($value)
     {
         return SyncHelper::isMD($value);
     }
 }
 if (! function_exists('is_EM')) {
+    /**
+     * @param  mixed  $value
+     * @return bool
+     */
     function is_EM($value)
     {
         return SyncHelper::is_EM($value);
@@ -60,6 +72,10 @@ if (! function_exists('is_EM')) {
 }
 
 if (! function_exists('is_EO')) {
+    /**
+     * @param  mixed  $value
+     * @return bool
+     */
     function is_EO($value)
     {
         return SyncHelper::is_EO($value);
@@ -67,6 +83,10 @@ if (! function_exists('is_EO')) {
 }
 
 if (! function_exists('is_HM')) {
+    /**
+     * @param  mixed  $value
+     * @return bool
+     */
     function is_HM($value)
     {
         return SyncHelper::is_HM($value);
@@ -74,6 +94,10 @@ if (! function_exists('is_HM')) {
 }
 
 if (! function_exists('is_HO')) {
+    /**
+     * @param  mixed  $value
+     * @return bool
+     */
     function is_HO($value)
     {
         return SyncHelper::is_HO($value);
@@ -81,6 +105,10 @@ if (! function_exists('is_HO')) {
 }
 
 if (! function_exists('isEditable')) {
+    /**
+     * @param  mixed  $value
+     * @return bool
+     */
     function isEditable($value)
     {
         return SyncHelper::isEditable($value);
@@ -88,12 +116,21 @@ if (! function_exists('isEditable')) {
 }
 
 if (! function_exists('hasTarget')) {
+    /**
+     * @param  mixed  $value
+     * @return bool
+     */
     function hasTarget($value)
     {
         return SyncHelper::hasTarget($value);
     }
 }
 if (! function_exists('isFillable')) {
+    /**
+     * @param  mixed  $value
+     * @param  string  $event
+     * @return bool
+     */
     function isFillable($value, $event)
     {
         return SyncHelper::isFillable($value, $event);
@@ -102,6 +139,10 @@ if (! function_exists('isFillable')) {
 
 if (! function_exists('getRequestToBeSync')) {
     /**
+     * @param  string|mixed  $ref_id
+     * @param  string  $modelOnTarget
+     * @param  Request  $request
+     * @param  string  $methodOnTarget
      * @return Request
      */
     function getRequestToBeSync($ref_id, $modelOnTarget, Request $request, $methodOnTarget)
@@ -111,6 +152,10 @@ if (! function_exists('getRequestToBeSync')) {
 }
 
 if (! function_exists('isRequestReadyToBeProcessed')) {
+    /**
+     * @param  Request  $request
+     * @return bool
+     */
     function isRequestReadyToBeProcessed(Request $request)
     {
         return SyncHelper::isRequestReadyToBeProcessed($request);
@@ -118,6 +163,10 @@ if (! function_exists('isRequestReadyToBeProcessed')) {
 }
 
 if (! function_exists('removeSubCollectionInput')) {
+    /**
+     * @param  Request  $request
+     * @return Request
+     */
     function removeSubCollectionInput(Request $request)
     {
         return SyncHelper::removeSubCollectionInput($request);
@@ -127,6 +176,8 @@ if (! function_exists('removeSubCollectionInput')) {
 if (! function_exists('prepareRequest')) {
 
     /**
+     * @param  Request  $request
+     * @param  array<string, mixed>  $additionalData
      * @return Request
      */
     function prepareRequest(Request $request, array $additionalData)
@@ -138,7 +189,10 @@ if (! function_exists('prepareRequest')) {
 if (! function_exists('getArrayWithEmptyObj')) {
 
     /**
-     * @return array
+     * @param  string  $model
+     * @param  bool  $is_EO
+     * @param  bool  $is_EM
+     * @return array<int, object>
      */
     function getArrayWithEmptyObj($model, $is_EO, $is_EM)
     {
@@ -149,6 +203,10 @@ if (! function_exists('getArrayWithEmptyObj')) {
 if (! function_exists('getCounterForRelationships')) {
 
     /**
+     * @param  string  $method
+     * @param  bool  $is_EO
+     * @param  bool  $is_EM
+     * @param  int|string  $i
      * @return string
      */
     function getCounterForRelationships($method, $is_EO, $is_EM, $i)
@@ -159,7 +217,7 @@ if (! function_exists('getCounterForRelationships')) {
 
 if (! function_exists('getFullUrlImgByKey')) {
     /**
-     * @param string|null $key
+     * @param  string|null  $key
      * @return string
      */
     function getFullUrlImgByKey($key)
@@ -170,7 +228,7 @@ if (! function_exists('getFullUrlImgByKey')) {
 
 if (! function_exists('getSiteGeneralValueByKey')) {
     /**
-     * @param string $key
+     * @param  string  $key
      * @return string
      */
     function getSiteGeneralValueByKey($key)

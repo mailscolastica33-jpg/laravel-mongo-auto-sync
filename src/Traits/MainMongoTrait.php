@@ -14,25 +14,50 @@ use stdClass;
 
 trait MainMongoTrait
 {
+    /**
+     * @return void
+     */
     public static function bootMainMongoTrait()
     {
         static::observe(MongoAutoSyncObserver::class);
     }
 
+    /**
+     * @var bool
+     */
     protected $has_partial_request;
 
+    /**
+     * @var Request|null
+     */
     protected $request;
 
+    /**
+     * @var array<string, mixed>|null
+     */
     protected $target_additional_data;
 
+    /**
+     * @var Request|null
+     */
     protected $partial_generated_request;
 
+    /**
+     * @var array<string, mixed>|null
+     */
     protected $options;
 
+    /**
+     * @var array<int, array<string, mixed>>|null
+     */
     protected $tempEM;
 
     /**
-     * @return $this
+     * @param  Request  $request
+     * @param  array<string, mixed>  $additionalData
+     * @param  array<string, mixed>  $options
+     * @param  array<string, mixed>  $target_additional_data
+     * @return static
      *
      * @throws MongoAutoSyncException
      */
@@ -47,11 +72,19 @@ trait MainMongoTrait
         // Dispatch the creation event
         $this->fireModelEvent('storeWithSync');
 
-        return $this->fresh();
+        $fresh = $this->fresh();
+        if ($fresh === null) {
+            return $this;
+        }
+        return $fresh;
     }
 
     /**
-     * @return $this
+     * @param  Request  $request
+     * @param  array<string, mixed>  $additionalData
+     * @param  array<string, mixed>  $options
+     * @param  array<string, mixed>  $target_additional_data
+     * @return static
      *
      * @throws MongoAutoSyncException
      */
@@ -66,10 +99,15 @@ trait MainMongoTrait
         // Dispatch the update event
         $this->fireModelEvent('updateWithSync');
 
-        return $this->fresh();
+        $fresh = $this->fresh();
+        if ($fresh === null) {
+            return $this;
+        }
+        return $fresh;
     }
 
     /**
+     * @param  bool  $syncTargets
      * @return $this
      */
     public function destroyWithSync($syncTargets = true)
@@ -114,6 +152,8 @@ trait MainMongoTrait
     }
 
     /**
+     * @param  array<string, mixed>  $options
+     * @param  string  $key
      * @return bool|mixed
      */
     private function getOptionValue(array $options, string $key)
@@ -122,8 +162,11 @@ trait MainMongoTrait
     }
 
     /**
+     * @param  object  $obj
+     * @param  string  $EOkey
      * @param  string  $method
      * @param  string  $model
+     * @return void
      *
      * @throws InvalidConfigurationException
      */
@@ -136,6 +179,9 @@ trait MainMongoTrait
     }
 
     /**
+     * @param  array<string, mixed>  $arr
+     * @param  string  $key
+     * @return void
      * @throws InvalidConfigurationException
      */
     public function checkArrayExistence($arr, string $key)
@@ -147,6 +193,9 @@ trait MainMongoTrait
     }
 
     /**
+     * @param  Request  $request
+     * @param  string  $key
+     * @return void
      * @throws InvalidRequestException
      */
     private function checkRequestExistence(Request $request, string $key)
@@ -184,7 +233,9 @@ trait MainMongoTrait
     }
 
     /**
-     * @return MDModel
+     * @param  string  $modelTarget
+     * @param  stdClass  $obj
+     * @return \OfflineAgency\MongoAutoSync\Http\Models\MDModel|null
      *
      * @throws InvalidConfigurationException
      */
@@ -194,9 +245,14 @@ trait MainMongoTrait
         $target_id = $obj->ref_id;
 
         // Init the Target Model
+        /** @var \OfflineAgency\MongoAutoSync\Http\Models\MDModel $modelToBeSync */
         $modelToBeSync = new $modelTarget;
 
-        return $modelToBeSync->find($target_id);
+        $found = $modelToBeSync->find($target_id);
+        if ($found instanceof \OfflineAgency\MongoAutoSync\Http\Models\MDModel) {
+            return $found;
+        }
+        return null;
     }
 
     /**
@@ -215,31 +271,36 @@ trait MainMongoTrait
     }
 
     /**
-     * @return Request
+     * @return Request|null
      */
     public function getRequest()
     {
         return $this->request;
     }
 
+    /**
+     * @param  Request  $request
+     * @param  array<string, mixed>  $additionalData
+     * @return void
+     */
     public function setRequest(Request $request, array $additionalData): void
     {
-        // Convert stdClass to array if necessary, because merge expects array
-        if (is_object($additionalData)) {
-            $additionalData = (array) $additionalData;
-        }
         $request = $request->merge($additionalData);
         $this->request = $request;
     }
 
     /**
-     * @return Request
+     * @return Request|null
      */
     public function getPartialGeneratedRequest()
     {
         return $this->partial_generated_request;
     }
 
+    /**
+     * @param  array<string, mixed>  $arr
+     * @return void
+     */
     public function setPartialGeneratedRequest(array $arr): void
     {
         $partial_generated_request = new Request;
@@ -249,34 +310,52 @@ trait MainMongoTrait
     }
 
     /**
-     * @return array
+     * @return array<string, mixed>
      */
     public function getOptions()
     {
+        if ($this->options === null) {
+            return [];
+        }
         return $this->options;
     }
 
+    /**
+     * @param  array<string, mixed>  $options
+     * @return void
+     */
     public function setOptions(array $options): void
     {
         $this->options = $options;
     }
 
     /**
-     * @return array
+     * @return array<string, mixed>
      */
     public function getTargetAdditionalData()
     {
+        if ($this->target_additional_data === null) {
+            return [];
+        }
         return $this->target_additional_data;
     }
 
     /**
-     * @param  array  $target_additional_data
+     * @param  array<string, mixed>  $target_additional_data
+     * @return void
      */
     public function setTargetAdditionalData($target_additional_data): void
     {
         $this->target_additional_data = $target_additional_data;
     }
 
+    /**
+     * @param  Request  $request
+     * @param  array<string, mixed>  $additionalData
+     * @param  array<string, mixed>  $options
+     * @param  array<string, mixed>  $target_additional_data
+     * @return void
+     */
     public function initDataForSync(Request $request, array $additionalData, array $options, array $target_additional_data)
     {
         $this->setRequest($request, $additionalData);

@@ -11,7 +11,7 @@ trait EmbedsRelationships
     /**
      * Define an embedded one-to-many relationship.
      *
-     * @param  string  $related
+     * @param  class-string  $related
      * @param  string|null  $localKey
      * @param  string|null  $foreignKey
      * @param  string|null  $relation
@@ -36,17 +36,20 @@ trait EmbedsRelationships
             $foreignKey = Str::snake(class_basename($this));
         }
 
+        /** @var \MongoDB\Laravel\Eloquent\Builder<\MongoDB\Laravel\Eloquent\Model> $query */
         $query = $this->newQuery();
 
+        /** @var \MongoDB\Laravel\Eloquent\Model $instance */
         $instance = new $related;
 
-        return new EmbedsMany($query, $this, $instance, $localKey, $foreignKey, $relation);
+        $embedsMany = new EmbedsMany($query, $this, $instance, $localKey, $foreignKey, $relation);
+        return $embedsMany;
     }
 
     /**
      * Define an embedded one-to-many relationship.
      *
-     * @param  string  $related
+     * @param  class-string  $related
      * @param  string|null  $localKey
      * @param  string|null  $foreignKey
      * @param  string|null  $relation
@@ -71,10 +74,13 @@ trait EmbedsRelationships
             $foreignKey = Str::snake(class_basename($this));
         }
 
+        /** @var \MongoDB\Laravel\Eloquent\Builder<\MongoDB\Laravel\Eloquent\Model> $query */
         $query = $this->newQuery();
 
+        /** @var \MongoDB\Laravel\Eloquent\Model $instance */
         $instance = new $related;
 
-        return new EmbedsOne($query, $this, $instance, $localKey, $foreignKey, $relation);
+        $embedsOne = new EmbedsOne($query, $this, $instance, $localKey, $foreignKey, $relation);
+        return $embedsOne;
     }
 }

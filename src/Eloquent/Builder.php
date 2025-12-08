@@ -22,10 +22,11 @@ class Builder extends MongoDbEloquentBuilder
     {
         // Intercept operations on embedded models and delegate logic
         // to the parent relation instance.
-        // @phpstan-ignore-next-line
         if (method_exists($this->model, 'getParentRelation') && $relation = $this->model->getParentRelation()) {
-            /** @var \OfflineAgency\MongoAutoSync\Relationships\EmbedsOneOrMany $relation */
-            $relation->performUpdate($this->model, $values); // @phpstan-ignore-line
+            /** @var \OfflineAgency\MongoAutoSync\Relationships\EmbedsOneOrMany<\MongoDB\Laravel\Eloquent\Model, \MongoDB\Laravel\Eloquent\Model, \Illuminate\Database\Eloquent\Collection<int, \MongoDB\Laravel\Eloquent\Model>> $relation */
+            /** @var \MongoDB\Laravel\Eloquent\Model $model */
+            $model = $this->model;
+            $relation->performUpdate($model, $values);
 
             return 1;
         }
@@ -42,9 +43,8 @@ class Builder extends MongoDbEloquentBuilder
     {
         // Intercept operations on embedded models and delegate logic
         // to the parent relation instance.
-        // @phpstan-ignore-next-line
         if (method_exists($this->model, 'getParentRelation') && $relation = $this->model->getParentRelation()) {
-            $relation->performInsert($this->model, $values); // @phpstan-ignore-line
+            $relation->performInsert($this->model, $values);
 
             return true;
         }
@@ -62,9 +62,8 @@ class Builder extends MongoDbEloquentBuilder
     {
         // Intercept operations on embedded models and delegate logic
         // to the parent relation instance.
-        // @phpstan-ignore-next-line
         if (method_exists($this->model, 'getParentRelation') && $relation = $this->model->getParentRelation()) {
-            $relation->performInsert($this->model, $values); // @phpstan-ignore-line
+            $relation->performInsert($this->model, $values);
 
             return $this->model->getKey();
         }
@@ -79,9 +78,8 @@ class Builder extends MongoDbEloquentBuilder
     {
         // Intercept operations on embedded models and delegate logic
         // to the parent relation instance.
-        // @phpstan-ignore-next-line
         if (method_exists($this->model, 'getParentRelation') && $relation = $this->model->getParentRelation()) {
-            $relation->performDelete($this->model); // @phpstan-ignore-line
+            $relation->performDelete($this->model);
 
             return $this->model->getKey();
         }
@@ -100,24 +98,27 @@ class Builder extends MongoDbEloquentBuilder
     {
         // Intercept operations on embedded models and delegate logic
         // to the parent relation instance.
-        // @phpstan-ignore-next-line
         if (method_exists($this->model, 'getParentRelation') && $relation = $this->model->getParentRelation()) {
             /** @var \OfflineAgency\MongoAutoSync\Relationships\EmbedsOneOrMany $relation */
-            // @phpstan-ignore-next-line
+            /** @var mixed $value */
             $value = $this->model->{$column};
 
             // When doing increment and decrements, Eloquent will automatically
             // sync the original attributes. We need to change the attribute
             // temporary in order to trigger an update query.
-            // @phpstan-ignore-next-line
             $this->model->{$column} = null;
 
             if (is_string($column)) {
                 $this->model->syncOriginalAttribute($column);
             }
 
-            // @phpstan-ignore-next-line
-            $result = $this->model->update([$column => $value]);
+            if (is_string($column)) {
+                /** @var array<string, mixed> $updateData */
+                $updateData = [$column => $value];
+                $result = $this->model->update($updateData);
+            } else {
+                $result = false;
+            }
 
             return (int) $result;
         }
@@ -136,24 +137,23 @@ class Builder extends MongoDbEloquentBuilder
     {
         // Intercept operations on embedded models and delegate logic
         // to the parent relation instance.
-        // @phpstan-ignore-next-line
         if (method_exists($this->model, 'getParentRelation') && $relation = $this->model->getParentRelation()) {
             /** @var \OfflineAgency\MongoAutoSync\Relationships\EmbedsOneOrMany $relation */
-            // @phpstan-ignore-next-line
+            /** @var mixed $value */
             $value = $this->model->{$column};
 
             // When doing increment and decrements, Eloquent will automatically
             // sync the original attributes. We need to change the attribute
             // temporary in order to trigger an update query.
-            // @phpstan-ignore-next-line
             $this->model->{$column} = null;
 
             if (is_string($column)) {
                 $this->model->syncOriginalAttribute($column);
+                /** @var array<string, mixed> $updateData */
+                $updateData = [$column => $value];
+                return (int) $this->model->update($updateData);
             }
-
-            // @phpstan-ignore-next-line
-            return (int) $this->model->update([$column => $value]);
+            return 0;
         }
 
         return EloquentBuilder::decrement($column, $amount, $extra);

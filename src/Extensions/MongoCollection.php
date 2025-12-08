@@ -33,7 +33,7 @@ class MongoCollection extends Collection
         $id = $obj->id;
 
         $out = $this->filter(function ($col) use ($id) {
-            // @phpstan-ignore-next-line
+            /** @var TModel $col */
             return isset($col->ref_id) && $col->ref_id == $id;
         });
 
@@ -54,7 +54,7 @@ class MongoCollection extends Collection
         
         $keyToMove = null;
         foreach ($this->items as $key => $item) {
-             // @phpstan-ignore-next-line
+            /** @var TModel $item */
             if (isset($item->ref_id) && $item->ref_id == $id) {
                 $keyToMove = $key;
                 break;
@@ -62,8 +62,13 @@ class MongoCollection extends Collection
         }
 
         if (! is_null($keyToMove)) {
+            /** @var TKey $keyToMove */
+            /** @var TModel|null $item */
             $item = $this->pull($keyToMove);
-            $this->prepend($item);
+            if ($item !== null) {
+                /** @var TModel $item */
+                $this->prepend($item);
+            }
         }
 
         return $this;

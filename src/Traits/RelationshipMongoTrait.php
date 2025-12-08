@@ -12,6 +12,12 @@ use OfflineAgency\MongoAutoSync\Helpers\SyncHelper;
 trait RelationshipMongoTrait
 {
     /**
+     * @param  Request  $request
+     * @param  string  $event
+     * @param  string  $parent
+     * @param  string  $counter
+     * @param  array<string, mixed>  $options
+     * @return void
      * @throws MongoAutoSyncException
      */
     public function processAllRelationships(Request $request, string $event, string $parent, string $counter, array $options)
@@ -53,7 +59,8 @@ trait RelationshipMongoTrait
             if ($is_skippable) {
                 continue;
             }
-            $current_request = $request->has($key) ? $request : $this->getPartialGeneratedRequest();
+            $partialRequest = $this->getPartialGeneratedRequest();
+            $current_request = $request->has($key) ? $request : ($partialRequest ?? $request);
 
             $value = $this->getRelationshipRequest($key, $current_request);
 
@@ -126,18 +133,24 @@ trait RelationshipMongoTrait
     }
 
     /**
+     * @param  object  $mini_model
+     * @param  string  $method_on_target
      * @param  bool  $is_EO_target
      * @param  bool  $is_EM_target
+     * @return void
      */
     public function updateRelationWithSync($mini_model, string $method_on_target, $is_EO_target, $is_EM_target)
     {
         if ($is_EM_target) {
             $new_values = [];
             foreach ($this->$method_on_target as $temp) {
+                /** @var \OfflineAgency\MongoAutoSync\Http\Models\MDModel $temp */
                 $new_values[] = $temp->attributes;
             }
+            /** @var \OfflineAgency\MongoAutoSync\Http\Models\MDModel $mini_model */
             $new_values[] = $mini_model->attributes;
         } else {
+            /** @var \OfflineAgency\MongoAutoSync\Http\Models\MDModel $mini_model */
             $new_values = $mini_model->attributes;
         }
 
@@ -146,15 +159,27 @@ trait RelationshipMongoTrait
     }
 
     /**
+     * @param  Request  $request
+     * @param  object  $obj
+     * @param  string  $type
+     * @param  string  $model
+     * @param  string  $method
+     * @param  string  $modelTarget
+     * @param  string  $methodOnTarget
+     * @param  string  $modelOnTarget
+     * @param  string  $event
+     * @param  bool  $hasTarget
      * @param  bool  $is_EO
      * @param  bool  $is_EM
      * @param  bool  $is_EO_target
      * @param  bool  $is_EM_target
+     * @param  int  $i
      * @param  bool  $is_embeds_has_to_be_updated
-     *
+     * @param  array<string, mixed>  $options
+     * @return void
      * @throws MongoAutoSyncException
      */
-    public function processOneEmbeddedRelationship(Request $request, $obj, $type, $model, $method, $modelTarget, $methodOnTarget, $modelOnTarget, $event, $hasTarget, $is_EO, $is_EM, $is_EO_target, $is_EM_target, $i, $is_embeds_has_to_be_updated, $options)
+    public function processOneEmbeddedRelationship(Request $request, $obj, $type, $model, $method, $modelTarget, $methodOnTarget, $modelOnTarget, $event, $hasTarget, $is_EO, $is_EM, $is_EO_target, $is_EM_target, $i, $is_embeds_has_to_be_updated, array $options)
     {
         if ($is_embeds_has_to_be_updated) {
             $this->processEmbedOnCurrentCollection($request, $obj, $type, $model, $method, $event, $is_EO, $is_EM, $i, $options);
@@ -165,6 +190,15 @@ trait RelationshipMongoTrait
         }
     }
 
+    /**
+     * @param  string  $method
+     * @param  string  $modelTarget
+     * @param  string  $methodOnTarget
+     * @param  bool  $is_EO
+     * @param  bool  $is_EO_target
+     * @param  bool  $is_EM_target
+     * @return void
+     */
     public function deleteTargetObj(string $method, string $modelTarget, string $methodOnTarget, bool $is_EO, bool $is_EO_target, bool $is_EM_target)
     {
         if (config('laravel-mongo-auto-sync.use_background_sync')) {
@@ -191,9 +225,18 @@ trait RelationshipMongoTrait
         }
     }
 
+    /**
+     * @param  array<int|string, mixed>  $targetIds
+     * @param  string  $modelTarget
+     * @param  string  $methodOnTarget
+     * @param  bool  $is_EO_target
+     * @param  bool  $is_EM_target
+     * @return void
+     */
     public function batchHandleSubTarget(array $targetIds, string $modelTarget, string $methodOnTarget, bool $is_EO_target, bool $is_EM_target)
     {
         if ($is_EM_target) {
+            /** @var \OfflineAgency\MongoAutoSync\Http\Models\MDModel $modelInstance */
             $modelInstance = new $modelTarget;
             // Use whereIn for batch retrieval
             $targets = $modelInstance->whereIn('id', $targetIds)->get();
@@ -221,9 +264,12 @@ trait RelationshipMongoTrait
     }
 
     /**
+     * @param  string|int  $target_id
+     * @param  string  $modelTarget
+     * @param  string  $methodOnTarget
      * @param  bool  $is_EO_target
      * @param  bool  $is_EM_target
-     *
+     * @return void
      * @deprecated Use batchHandleSubTarget instead
      */
     public function handleSubTarget($target_id, $modelTarget, $methodOnTarget, $is_EO_target, $is_EM_target)
@@ -232,6 +278,13 @@ trait RelationshipMongoTrait
         $this->batchHandleSubTarget([$target_id], $modelTarget, $methodOnTarget, $is_EO_target, $is_EM_target);
     }
 
+    /**
+     * @param  array<int, object>  $objs
+     * @param  string  $method
+     * @param  array<string, mixed>  $relation
+     * @param  bool  $is_HO
+     * @return void
+     */
     public function syncReferencedDelete($objs, $method, $relation, $is_HO)
     {
         $current = $this->$method;
@@ -270,7 +323,16 @@ trait RelationshipMongoTrait
         }
     }
 
-    public function processReferencedRelationship(Request $request, $objs, $method, $relation, $event, $options)
+    /**
+     * @param  Request  $request
+     * @param  array<int, object>  $objs
+     * @param  string  $method
+     * @param  array<string, mixed>  $relation
+     * @param  string  $event
+     * @param  array<string, mixed>  $options
+     * @return void
+     */
+    public function processReferencedRelationship(Request $request, $objs, $method, $relation, $event, array $options)
     {
         $modelClass = $relation['model'];
         $foreignKey = $relation['foreignKey'] ?? null;
@@ -280,12 +342,17 @@ trait RelationshipMongoTrait
             $attributes = (array) $obj;
             $id = $attributes['id'] ?? ($attributes['_id'] ?? null);
 
+            /** @var \OfflineAgency\MongoAutoSync\Http\Models\MDModel $child */
             $child = new $modelClass;
             if ($id) {
-                $child = $child->find($id);
+                $found = $child->find($id);
+                if ($found !== null) {
+                    /** @var \OfflineAgency\MongoAutoSync\Http\Models\MDModel $child */
+                    $child = $found;
+                }
             }
 
-            if ($child) {
+            if ($child instanceof \OfflineAgency\MongoAutoSync\Http\Models\MDModel) {
                 foreach ($attributes as $k => $v) {
                     if ($k !== 'id' && $k !== '_id') {
                         $child->$k = $v;
@@ -297,22 +364,23 @@ trait RelationshipMongoTrait
                     $child->$foreignKey = $this->$localKey;
                 }
 
-                if (method_exists($child, 'storeWithSync')) {
-                    $childRequest = new Request;
-                    $childRequest->merge($attributes);
+                $childRequest = new Request;
+                $childRequest->merge($attributes);
 
-                    if ($id) {
-                        $child->updateWithSync($childRequest);
-                    } else {
-                        $child->storeWithSync($childRequest);
-                    }
+                if ($id) {
+                    $child->updateWithSync($childRequest);
                 } else {
-                    $child->save();
+                    $child->storeWithSync($childRequest);
                 }
             }
         }
     }
 
+    /**
+     * @param  string  $method
+     * @param  bool  $is_HO
+     * @return void
+     */
     public function deleteReferencedObj($method, $is_HO)
     {
         $relationData = $this->$method;
@@ -330,11 +398,23 @@ trait RelationshipMongoTrait
     }
 
     /**
+     * @param  Request  $request
+     * @param  object|null  $obj
+     * @param  string  $type
+     * @param  string  $model
+     * @param  string  $method
+     * @param  string  $event
+     * @param  bool  $is_EO
+     * @param  bool  $is_EM
+     * @param  int  $i
+     * @param  array<string, mixed>  $options
+     * @return void
      * @throws MongoAutoSyncException
      */
-    private function processEmbedOnCurrentCollection(Request $request, $obj, $type, $model, $method, $event, $is_EO, $is_EM, $i, $options)
+    private function processEmbedOnCurrentCollection(Request $request, $obj, $type, $model, $method, $event, $is_EO, $is_EM, $i, array $options)
     {
         // Init the embed one model
+        /** @var \OfflineAgency\MongoAutoSync\Http\Models\MDModel $embedObj */
         $embedObj = new $model;
 
         $EOitems = $embedObj->getItems();
@@ -348,7 +428,8 @@ trait RelationshipMongoTrait
                 if ($is_ML) {
                     $embedObj->$EOkey = SyncHelper::ml([], $obj->$EOkey);
                 } elseif ($EOkey == 'updated_at' || $EOkey == 'created_at') {
-                    $embedObj->$EOkey = now();
+                    // These are dynamic properties managed by Laravel
+                    $embedObj->setAttribute($EOkey, now());
                 } elseif ($is_MD) {
                     if ($obj->$EOkey == '' || $obj->$EOkey == null) {
                         $embedObj->$EOkey = null;
@@ -373,24 +454,39 @@ trait RelationshipMongoTrait
         if ($is_EO) {
             $this->$method = $embedObj->attributes;
         } else {
-            $this->tempEM[] = $embedObj->attributes;
+            $tempEM = $this->tempEM;
+            if ($tempEM === null) {
+                $tempEM = [];
+            }
+            $tempEM[] = $embedObj->attributes;
+            $this->tempEM = $tempEM;
         }
     }
 
     /**
+     * @param  string  $modelTarget
+     * @param  object  $obj
+     * @param  string  $methodOnTarget
+     * @param  string  $modelOnTarget
      * @param  bool  $is_EO_target
      * @param  bool  $is_EM_target
-     *
+     * @param  Request|null  $request
+     * @param  string|null  $event
+     * @param  array<string, mixed>  $options
+     * @return void
      * @throws MongoAutoSyncException
      */
-    private function processEmbedOnTargetCollection($modelTarget, $obj, $methodOnTarget, $modelOnTarget, $is_EO_target, $is_EM_target, $request = null, $event = null, $options = [])
+    private function processEmbedOnTargetCollection($modelTarget, $obj, $methodOnTarget, $modelOnTarget, $is_EO_target, $is_EM_target, $request = null, $event = null, array $options = [])
     {
         if (config('laravel-mongo-auto-sync.use_background_sync')) {
             return;
         }
 
+        /** @var \stdClass $obj */
         $modelToBeSync = $this->getModelTobeSync($modelTarget, $obj);
         if (! is_null($modelToBeSync)) {
+            /** @var \OfflineAgency\MongoAutoSync\Http\Models\MDModel $modelToBeSync */
+            /** @var \OfflineAgency\MongoAutoSync\Http\Models\MDModel $miniModel */
             $miniModel = $this->getEmbedModel($modelOnTarget);
             $modelToBeSync->updateRelationWithSync($miniModel, $methodOnTarget, $is_EO_target, $is_EM_target);
             // Sync target on level > 1

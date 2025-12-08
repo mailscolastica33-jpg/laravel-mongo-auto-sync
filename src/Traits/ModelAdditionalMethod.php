@@ -16,20 +16,38 @@ use stdClass;
 
 trait ModelAdditionalMethod
 {
+    /**
+     * @var array<string, MDModel>|null
+     */
     protected $mini_models;
 
+    /**
+     * @var array<string, array<int, string>>
+     */
     protected static $mini_model_list_cache = [];
 
+    /**
+     * @param  array<int, \Illuminate\Database\Eloquent\Model>  $models
+     * @return \Illuminate\Database\Eloquent\Collection<int, static>
+     */
     public function newCollection(array $models = [])
     {
-        return new MongoCollection($models);
+        /** @var \Illuminate\Database\Eloquent\Collection<int, static> $collection */
+        $collection = new MongoCollection($models);
+        return $collection;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getItems(): array
     {
-        return $this->items;
+        return $this->items ?? [];
     }
 
+    /**
+     * @return array<string, array<string, mixed>>
+     */
     public function getMongoRelation(): array
     {
         if (! empty($this->mongoRelation)) {
@@ -59,6 +77,7 @@ trait ModelAdditionalMethod
             ]);
         });
 
+        /** @var \Traversable<int|string, mixed> $raw */
         $results = $this->hydrate(iterator_to_array($raw));
 
         if ($numberOfRandomRow == 1) {
@@ -80,15 +99,15 @@ trait ModelAdditionalMethod
     }
 
     /**
-     * @return array
+     * @return array<string, MDModel>
      */
     public function getMiniModels()
     {
-        return $this->mini_models;
+        return $this->mini_models ?? [];
     }
 
     /**
-     * @return array
+     * @return array<int, string>
      *
      * @throws InvalidConfigurationException
      */
@@ -161,7 +180,8 @@ trait ModelAdditionalMethod
     }
 
     /**
-     * @return mixed
+     * @param  array<int, string>  $miniModelList
+     * @return array<string, MDModel>
      *
      * @throws Exception
      */
@@ -192,7 +212,10 @@ trait ModelAdditionalMethod
     }
 
     /**
-     * @return array|mixed|UTCDateTime|null
+     * @param  string  $key
+     * @param  array<string, mixed>  $item
+     * @param  string  $mini_model_path
+     * @return array<string, mixed>|UTCDateTime|mixed|null
      *
      * @throws Exception
      */
@@ -205,10 +228,10 @@ trait ModelAdditionalMethod
 
         $value = $this->getObjValueToBeSaved($key, $mini_model_path);
         if ($is_ML) {
-            return is_array($value) ? $value : SyncHelper::ml([], $value);
+            return is_array($value) ? $value : SyncHelper::ml([], (string) $value);
         } elseif ($is_MD) {
-            if ($value == '' || is_null($value)) {
-                return;
+            if (empty($value)) {
+                return null;
             } else {
                 if ($value instanceof UTCDateTime) {
                     return $value;
@@ -239,14 +262,19 @@ trait ModelAdditionalMethod
     }
 
     /**
+     * @param  string  $mini_model_path
      * @return MDModel
      */
     public function getModelInstanceFromPath(string $mini_model_path)
     {
-        return new $mini_model_path;
+        /** @var MDModel $instance */
+        $instance = new $mini_model_path;
+        return $instance;
     }
 
     /**
+     * @param  string  $key
+     * @param  string  $mini_model_path
      * @param  bool  $rewrite_ref_id_key
      * @return mixed
      */
@@ -258,6 +286,9 @@ trait ModelAdditionalMethod
 
         $db_value = $this->getDbValue($key);
 
+        if ($request === null) {
+            return $db_value;
+        }
         return Arr::has($target_additional_data, $mini_model_path.'.'.$key) ? Arr::get($target_additional_data, $mini_model_path.'.'.$key) : // Search on target_additional_data [] 4th parameter of updateWithSync() / storeWithSync()
             ($request->has($key) ? $request->input($key) : $db_value); // Search on Main Request 1st parameter of updateWithSync() / storeWithSync() or directly on database
         // TODO: Add default value from Item Model
@@ -272,7 +303,8 @@ trait ModelAdditionalMethod
     }
 
     /**
-     * @return array
+     * @param  string  $key
+     * @return MDModel
      *
      * @throws InvalidConfigurationException
      */
@@ -281,14 +313,18 @@ trait ModelAdditionalMethod
         $embedModels = $this->getMiniModels();
 
         if (Arr::has($embedModels, $key)) {
-            return Arr::get($embedModels, $key);
+            /** @var MDModel $model */
+            $model = Arr::get($embedModels, $key);
+            return $model;
         } else {
             throw new InvalidConfigurationException('I cannot find an embedded model with key: '.$key.'. Check on your model configuration');
         }
     }
 
     /**
-     * @return false|string
+     * @param  string  $method
+     * @param  array<string, mixed>  $relationship
+     * @return string
      *
      * @throws InvalidRelationshipException
      */
@@ -305,10 +341,13 @@ trait ModelAdditionalMethod
             $obj->ref_id = $this->getObjValueToBeSaved($method, '', false);
             $objs[] = $obj;
         } elseif ($is_EM) {
-            if (! is_null($this->$method) > 0) {
-                foreach ($this->$method as $value) {
+            $methodValue = $this->$method;
+            if (! is_null($methodValue) && is_iterable($methodValue)) {
+                /** @var iterable<int, object> $methodValue */
+                foreach ($methodValue as $value) {
                     $obj = new stdClass;
-                    $obj->ref_id = $value->ref_id;
+                    /** @var object $value */
+                    $obj->ref_id = $value->ref_id ?? null;
                     $objs[] = $obj;
                 }
             }
@@ -316,6 +355,10 @@ trait ModelAdditionalMethod
             throw new InvalidRelationshipException('Relationship '.$method.' type '.$type.' is not valid! Possible values are: EmbedsMany and EmbedsOne');
         }
 
-        return json_encode($objs);
+        $result = json_encode($objs);
+        if ($result === false) {
+            return '';
+        }
+        return $result;
     }
 }

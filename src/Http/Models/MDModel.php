@@ -15,6 +15,9 @@ class MDModel extends Eloquent
 
     protected $connection = 'mongodb';
 
+    /**
+     * @var array<int, string>
+     */
     protected $dates = [
         'deleted_at',
         'created_at',
@@ -34,7 +37,7 @@ class MDModel extends Eloquent
      */
     public function getCollection()
     {
-        return $this->collection;
+        return $this->getTable();
     }
 
     /**

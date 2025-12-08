@@ -10,6 +10,10 @@ use OfflineAgency\MongoAutoSync\Helpers\SyncHelper;
 trait PlainMongoTrait
 {
     /**
+     * @param  Request  $request
+     * @param  string  $event
+     * @param  array<string, mixed>  $options
+     * @return void
      * @throws Exception
      */
     public function storeEditAllItems(Request $request, string $event, array $options)
@@ -46,7 +50,7 @@ trait PlainMongoTrait
                     if ($request->input($key) == '' || $request->input($key) == null) {
                         $this->$key = null;
                     } else {
-                        $this->$key = new UTCDateTime(new DateTime($request->input($key)));
+                        $this->$key = new UTCDateTime(new \DateTime($request->input($key)));
                     }
                 } else {
                     $this->$key = $request->input($key);

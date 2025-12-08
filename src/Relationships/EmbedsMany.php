@@ -9,6 +9,9 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use MongoDB\BSON\ObjectId;
 
+/**
+ * @extends EmbedsOneOrMany<\MongoDB\Laravel\Eloquent\Model, \MongoDB\Laravel\Eloquent\Model, \Illuminate\Database\Eloquent\Collection<int, \MongoDB\Laravel\Eloquent\Model>>
+ */
 class EmbedsMany extends EmbedsOneOrMany
 {
     /**
@@ -25,10 +28,14 @@ class EmbedsMany extends EmbedsOneOrMany
 
     /**
      * {@inheritdoc}
+     *
+     * @return \Illuminate\Database\Eloquent\Collection<int, \MongoDB\Laravel\Eloquent\Model>
      */
     public function getResults()
     {
-        return $this->toCollection($this->getEmbedded());
+        /** @var \Illuminate\Database\Eloquent\Collection<int, \MongoDB\Laravel\Eloquent\Model> $results */
+        $results = $this->toCollection($this->getEmbeddedAsIndexed());
+        return $results;
     }
 
     /**
@@ -51,7 +58,9 @@ class EmbedsMany extends EmbedsOneOrMany
         }
 
         // Push the new model to the database.
-        $result = $this->getBaseQuery()->push($this->localKey, $model->getAttributes(), true);
+        /** @var \MongoDB\Laravel\Query\Builder $baseQuery */
+        $baseQuery = $this->getBaseQuery();
+        $result = $baseQuery->push($this->localKey, $model->getAttributes(), true);
 
         // Attach the model to its parent.
         if ($result) {
@@ -64,9 +73,11 @@ class EmbedsMany extends EmbedsOneOrMany
     /**
      * Save an existing model and attach it to the parent model.
      *
+     * @param  Model  $model
+     * @param  array<string, mixed>  $values
      * @return Model|bool
      */
-    public function performUpdate(Model $model)
+    public function performUpdate(Model $model, array $values = [])
     {
         // For deeply nested documents, let the parent handle the changes.
         if ($this->isNested()) {
@@ -103,19 +114,21 @@ class EmbedsMany extends EmbedsOneOrMany
         if ($this->isNested()) {
             $this->dissociate($model);
 
-            return $this->parent->save();
+            return $this->parent->save() ? 1 : 0;
         }
 
         // Get the correct foreign key value.
         $foreignKey = $this->getForeignKeyValue($model);
 
-        $result = $this->getBaseQuery()->pull($this->localKey, [$model->getKeyName() => $foreignKey]);
+        /** @var \MongoDB\Laravel\Query\Builder $baseQuery */
+        $baseQuery = $this->getBaseQuery();
+        $result = $baseQuery->pull($this->localKey, [$model->getKeyName() => $foreignKey]);
 
         if ($result) {
             $this->dissociate($model);
         }
 
-        return $result;
+        return $result ? 1 : 0;
     }
 
     /**
@@ -125,7 +138,8 @@ class EmbedsMany extends EmbedsOneOrMany
      */
     public function associate(Model $model)
     {
-        if (! $this->contains($model)) {
+        $results = $this->getResults();
+        if (! $results->contains($model)) {
             return $this->associateNew($model);
         }
 
@@ -142,7 +156,7 @@ class EmbedsMany extends EmbedsOneOrMany
     {
         $ids = $this->getIdsArrayFrom($ids);
 
-        $records = $this->getEmbedded();
+        $records = $this->getEmbeddedAsIndexed();
 
         $primaryKey = $this->related->getKeyName();
 
@@ -174,7 +188,10 @@ class EmbedsMany extends EmbedsOneOrMany
         $ids = $this->getIdsArrayFrom($ids);
 
         // Get all models matching the given ids.
-        $models = $this->getResults()->only($ids);
+        $allModels = $this->getResults();
+        $models = $allModels->filter(function ($model) use ($ids) {
+            return in_array($model->getKey(), $ids);
+        });
 
         // Pull the documents from the database.
         foreach ($models as $model) {
@@ -217,18 +234,30 @@ class EmbedsMany extends EmbedsOneOrMany
     /**
      * Save alias.
      *
+     * @param  Model  $model
      * @return Model
+     */
+    /**
+     * @param  Model  $model
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function attach(Model $model)
     {
-        return $this->save($model);
+        /** @var \MongoDB\Laravel\Eloquent\Model $model */
+        $result = $this->save($model);
+        if ($result === false) {
+            /** @var \Illuminate\Database\Eloquent\Model $model */
+            return $model;
+        }
+        /** @var \Illuminate\Database\Eloquent\Model $result */
+        return $result;
     }
 
     /**
      * Associate a new model instance to the given parent, without saving it to the database.
      *
      * @param  Model  $model
-     * @return Model
+     * @return \Illuminate\Database\Eloquent\Model
      */
     protected function associateNew($model)
     {
@@ -237,24 +266,25 @@ class EmbedsMany extends EmbedsOneOrMany
             $model->setAttribute('_id', new ObjectId);
         }
 
-        $records = $this->getEmbedded();
+        $records = $this->getEmbeddedAsIndexed();
 
         // Add the new model to the embedded documents.
         $records[] = $model->getAttributes();
 
-        return $this->setEmbedded($records);
+        $this->setEmbedded($records);
+        return $model;
     }
 
     /**
      * Associate an existing model instance to the given parent, without saving it to the database.
      *
      * @param  Model  $model
-     * @return Model
+     * @return \Illuminate\Database\Eloquent\Model
      */
     protected function associateExisting($model)
     {
         // Get existing embedded documents.
-        $records = $this->getEmbedded();
+        $records = $this->getEmbeddedAsIndexed();
 
         $primaryKey = $this->related->getKeyName();
 
@@ -268,22 +298,23 @@ class EmbedsMany extends EmbedsOneOrMany
             }
         }
 
-        return $this->setEmbedded($records);
+        $this->setEmbedded($records);
+        return $model;
     }
 
     /**
-     * @param  null  $perPage
-     * @param  array  $columns
+     * @param  int|null  $perPage
+     * @param  array<int|string, string>  $columns
      * @param  string  $pageName
-     * @param  null  $page
-     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     * @param  int|null  $page
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator<int, \MongoDB\Laravel\Eloquent\Model>
      */
     public function paginate($perPage = null, $columns = ['*'], $pageName = 'page', $page = null)
     {
         $page = $page ?: Paginator::resolveCurrentPage($pageName);
         $perPage = $perPage ?: $this->related->getPerPage();
 
-        $results = $this->getEmbedded();
+        $results = $this->getEmbeddedAsIndexed();
         $results = $this->toCollection($results);
         $total = $results->count();
         $start = ($page - 1) * $perPage;
@@ -305,32 +336,93 @@ class EmbedsMany extends EmbedsOneOrMany
     }
 
     /**
-     * {@inheritdoc}
+     * Get embedded models for EmbedsMany relationship.
+     * This overrides the parent method to return the correct type.
+     *
+     * @return array<string, mixed>|null
      */
     protected function getEmbedded()
     {
-        return parent::getEmbedded() ?: [];
+        $embedded = parent::getEmbedded();
+        if ($embedded === null) {
+            return null;
+        }
+        // Ensure it's an array
+        if (! is_array($embedded)) {
+            return null;
+        }
+        // Return as-is, maintaining parent's type signature
+        return $embedded;
     }
 
     /**
-     * {@inheritdoc}
+     * Get embedded models as indexed array for EmbedsMany.
+     * This is a helper method that returns the indexed array format.
+     *
+     * @return array<int, array<string, mixed>>
+     */
+    protected function getEmbeddedAsIndexed()
+    {
+        $embedded = $this->getEmbedded();
+        if ($embedded === null) {
+            return [];
+        }
+        // Convert associative array to indexed array if needed
+        if (array_is_list($embedded)) {
+            /** @var array<int, array<string, mixed>> $embedded */
+            return $embedded;
+        }
+        // Convert to indexed array
+        $result = [];
+        foreach ($embedded as $value) {
+            if (is_array($value)) {
+                $result[] = $value;
+            }
+        }
+        return $result;
+    }
+
+    /**
+     * Set embedded models for EmbedsMany relationship.
+     * This overrides the parent method to accept the correct type.
+     *
+     * @param  array<int, array<string, mixed>>|array<string, mixed>|null  $models
+     * @return void
      */
     protected function setEmbedded($models)
     {
+        if ($models === null) {
+            parent::setEmbedded(null);
+            return;
+        }
         if (! is_array($models)) {
             $models = [$models];
         }
-
-        return parent::setEmbedded(array_values($models));
+        // Convert to the format expected by parent (array<string, mixed>|null)
+        // For EmbedsMany, we store as indexed array, but parent expects associative or null
+        // We need to convert the indexed array to an associative array
+        $associativeArray = [];
+        foreach ($models as $key => $value) {
+            if (is_array($value)) {
+                $associativeArray[(string) $key] = $value;
+            }
+        }
+        parent::setEmbedded($associativeArray);
     }
 
     /**
      * {@inheritdoc}
+     *
+     * @param  string  $method
+     * @param  array<int, mixed>  $parameters
+     * @return mixed
      */
     public function __call($method, $parameters)
     {
         if (method_exists(Collection::class, $method)) {
-            return call_user_func_array([$this->getResults(), $method], $parameters);
+            /** @var callable $callable */
+            $callable = [$this->getResults(), $method];
+            return call_user_func_array($callable, $parameters);
         }
 
         return parent::__call($method, $parameters);
