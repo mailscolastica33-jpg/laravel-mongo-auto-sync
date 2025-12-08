@@ -165,7 +165,7 @@ class Builder extends MongoDbEloquentBuilder
 
     /**
      * {@inheritdoc}
-     * @return \Illuminate\Database\Eloquent\Collection<int, TModel>|BSONDocument|TModel|array<mixed>
+     * @return \Illuminate\Database\Eloquent\Collection<int, TModel>|BSONDocument|TModel|array<mixed>|\Illuminate\Contracts\Database\Query\Expression
      */
     public function raw($expression = null)
     {
