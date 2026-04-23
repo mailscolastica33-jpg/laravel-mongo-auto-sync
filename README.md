@@ -16,11 +16,9 @@ This fork implements various fixes that makes the package work with at least PHP
 This update migrates the package from the deprecated `jenssegers/mongodb` driver to the official `mongodb/laravel-mongodb` package.  
 The migration required fixing breaking changes in service providers, namespace renames, BSON serialization behavior, and Eloquent embedded document hydration.  
 
-### Changelog
+## Changelog
 
-# Migration Changelog: `jenssegers/mongodb` → `mongodb/laravel-mongodb`
-
-## Changes
+### Migration Changelog: `jenssegers/mongodb` → `mongodb/laravel-mongodb`
 
 ### `tests/TestCase.php`
 - Removed `MongodbQueueServiceProvider` from providers and imports — the class no longer exists in the new package
