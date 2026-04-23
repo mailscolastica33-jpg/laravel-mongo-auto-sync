@@ -10,6 +10,75 @@
 This package provides a better support for [MongoDB](https://www.mongodb.com) relationships in [Laravel](https://laravel.com/) Projects.
 At low level all CRUD operations has been handled by [jenssegers/laravel-mongodb](https://github.com/jenssegers/laravel-mongodb)
 
+## About this Fork
+This fork implements various fixes that makes the package work with at least PHP 8.5 and Mongodb 7. [See Logs](log.txt)
+This update migrates the package from the deprecated `jenssegers/mongodb` driver to the official `mongodb/laravel-mongodb` package. 
+The migration required fixing breaking changes in service providers, namespace renames, BSON serialization behavior, and Eloquent embedded document hydration.
+
+### Changelog
+
+# Migration Changelog: `jenssegers/mongodb` → `mongodb/laravel-mongodb`
+
+## Changes
+
+### `tests/TestCase.php`
+- Removed `MongodbQueueServiceProvider` from providers and imports — the class no longer exists in the new package
+- Fixed typo: `MongodbServiceProvider` → `MongoDBServiceProvider`
+- Changed `queue.default` from `database` to `sync` to avoid requiring a MongoDB queue driver in tests
+
+---
+
+### `src/Http/Models/MDModel.php`
+- Added `getAttribute()` override to automatically hydrate embedded fields (`EmbedsOne` / `EmbedsMany`) from raw arrays into mini model objects
+- Handles unwrapping of scalar values stored as `[0 => "value"]` back to plain scalar values
+
+---
+
+### `src/Http/Models/DefaultMini.php`
+- Added `getAttribute()` to unwrap scalar values `[0 => "val"]` → `"val"` on all mini models, caused by the new driver's BSON deserialization behavior
+- Added `getRefIdAttribute()` to always normalize `ref_id` as a string, handling `MongoDB\BSON\ObjectId`, arrays with `$oid`, and numeric arrays
+
+---
+
+### `src/Traits/ModelAdditionalMethod.php`
+- Renamed `isArray()` → `isArrayCustom()` to avoid conflict with PHPUnit's `final` method `Assert::isArray()`
+- Updated `isArrayCustom()` to delegate to `assertIsArrayCustom()` from `Helper`, ensuring internal value types are also validated
+- Updated `castValueToBeSaved()`: replaced `$this->isArray()` with `is_array()` and added `is_object()` guard before calling `getAttributes()` to prevent `Call to getAttributes() on string` errors
+- Updated `getDbValue()`: added unwrap of `[0 => "val"]` → `"val"` for scalar values read from the database, preventing wrapped values from being re-saved into embedded documents
+
+---
+
+### `src/Traits/MainMongoTrait.php`
+- Updated `setRequest()`: replaced direct `(array)` cast with `json_decode(json_encode($value), true)` when converting `stdClass` objects, preventing null bytes in BSON keys caused by PHP's behavior when casting objects with private/protected properties to arrays
+
+---
+
+### `src/Traits/RelationshipMongoTrait.php`
+- Added `hydrateEmbedded()` helper method to hydrate raw arrays into mini model objects
+- Updated loop in `updateRelationWithSync()` to hydrate `$temp` when it is an array before accessing `->attributes`
+- Updated `deleteTargetObj()`: added string cast for `ref_id`, handling both `MongoDB\BSON\ObjectId` and array formats
+
+---
+
+### `src/Traits/ModelAdditionalMethod.php` — `getObjWithRefId()`
+- Added `is_array($value)` check in the `EmbedsMany` loop with cast to `(object)` before accessing `->ref_id`
+
+---
+
+### `tests/MongoSyncTraitTest.php`
+- Lines 80 and 159: changed `assertIsObject($navigation->target)` → `assertEmpty($navigation->target)` — `target` is a plain field and an empty `stdClass` is correctly stored and returned as an empty array
+
+---
+
+### `tests/Feature/ExampleTest.php`
+- Deleted — this was the default Pest placeholder test, not relevant for a package
+
+---
+
+### `phpunit.xml`
+- Run `./vendor/bin/pest --migrate-configuration` to update the deprecated XML schema (shown as a warning at test startup)
+
+
 ## Installation
 
 ```bash
