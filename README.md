@@ -11,9 +11,9 @@ This package provides a better support for [MongoDB](https://www.mongodb.com) re
 At low level all CRUD operations has been handled by [jenssegers/laravel-mongodb](https://github.com/jenssegers/laravel-mongodb)
 
 ## About this Fork
-This fork implements various fixes that makes the package work with at least PHP 8.5 and Mongodb 7. [See Logs](log.txt)
-This update migrates the package from the deprecated `jenssegers/mongodb` driver to the official `mongodb/laravel-mongodb` package. 
-The migration required fixing breaking changes in service providers, namespace renames, BSON serialization behavior, and Eloquent embedded document hydration.
+This fork implements various fixes that makes the package work with at least PHP 8.5 and Mongodb 7. [See Logs](log.txt)  
+This update migrates the package from the deprecated `jenssegers/mongodb` driver to the official `mongodb/laravel-mongodb` package.  
+The migration required fixing breaking changes in service providers, namespace renames, BSON serialization behavior, and Eloquent embedded document hydration.  
 
 ### Changelog
 
