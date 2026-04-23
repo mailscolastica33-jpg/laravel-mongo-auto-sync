@@ -16,16 +16,16 @@ class HelperTest extends SyncTestCase
         $article = new Article;
 
         //Check return true
-        $outBoolValue = $article->isArray($boolValue);
+        $outBoolValue = $article->isArrayCustom($boolValue);
         $this->assertTrue($outBoolValue);
 
         //Check return false
-        $outNotBoolValue = $article->isArray($emptyArray);
+        $outNotBoolValue = $article->isArrayCustom($emptyArray);
         $this->assertFalse($outNotBoolValue);
 
         //
         $this->expectExceptionMessage($stringValue.' is not a valid array!');
-        $article->isArray($stringValue);
+        $article->isArrayCustom($stringValue);
     }
 
     public function test_validateOptionValueException()
@@ -36,7 +36,7 @@ class HelperTest extends SyncTestCase
         $article = new Article;
         $expected = 'boolean';
         $this->expectExceptionMessage($notBoolValue['is-array'].' is not a valid '.$expected.' found '.gettype($notBoolValue['is-array']).'! Check on your model configurations.');
-        $article->isArray($notBoolValue);
+        $article->isArrayCustom($notBoolValue);
     }
 
     public function test_isCarbonDate()

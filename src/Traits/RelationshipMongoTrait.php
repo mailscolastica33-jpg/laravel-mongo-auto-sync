@@ -145,13 +145,11 @@ trait RelationshipMongoTrait
             $is_update_operation = false;
 
             foreach ($this->$method_on_target as $temp) {
-                throw_if(
-                    is_array($temp),
-                    new Exception(
-                        'Error during target update. Remember to declare '.$method_on_target.' as '.
-                        'EmbedsMany relationship on model '.get_class($this)
-                    )
-                );
+
+    if (is_array($temp)) {
+        $modelClass = get_class($mini_model);
+        $temp = $this->hydrateEmbedded($temp, $modelClass);
+    }
 
                 if (! is_null($temp)) {
                     if ($this->getIsPartialRequest()) {
@@ -370,4 +368,15 @@ trait RelationshipMongoTrait
 
         $this->is_partial_request = false;
     }
+    /**
+ * Hydrate raw array from MongoDB into a mini model object
+ */
+private function hydrateEmbedded(array $data, string $modelClass): object
+{
+    $instance = new $modelClass;
+    foreach ($data as $key => $value) {
+        $instance->$key = $value;
+    }
+    return $instance;
+}
 }

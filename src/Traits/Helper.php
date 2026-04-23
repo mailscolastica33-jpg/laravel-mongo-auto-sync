@@ -13,7 +13,7 @@ trait Helper
      *
      * @throws Exception
      */
-    public function isArray($options)
+    public function assertIsArrayCustom($options)
     {
         $this->validateOptions($options);
 

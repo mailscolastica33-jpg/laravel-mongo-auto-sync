@@ -132,7 +132,7 @@ trait ModelAdditionalMethod
     {
         $is_ML = isML($item);
         $is_MD = isMD($item);
-        $is_array = $this->isArray($item);
+        $is_array = is_array($item);
         $is_carbon_date = $this->isCarbonDate($item);
 
         $value = $this->getObjValueToBeSaved($key, $mini_model_path);
@@ -155,7 +155,7 @@ trait ModelAdditionalMethod
 
             return new UTCDateTime($value);
         } elseif ($is_array) {
-            return is_null($value) ? [] : (is_array($value) ? $value : $value->getAttributes());
+            return is_null($value) ? [] : (is_array($value) ? $value : (is_object($value) ? $value->getAttributes() : (array) $value));
         } else {
             return $value;
         }
@@ -177,26 +177,32 @@ trait ModelAdditionalMethod
      * @return mixed
      */
     public function getObjValueToBeSaved(string $key, string $mini_model_path, $rewrite_ref_id_key = true)
-    {
-        $key = $key === 'ref_id' && $rewrite_ref_id_key ? '_id' : $key;
-        $target_additional_data = $this->getTargetAdditionalData();
-        $request = $this->getRequest();
+{
+    $key = $key === 'ref_id' && $rewrite_ref_id_key ? '_id' : $key;
+    $target_additional_data = $this->getTargetAdditionalData();
+    $request = $this->getRequest();
+    $db_value = $this->getDbValue($key);
 
-        $db_value = $this->getDbValue($key);
+    $result = Arr::has($target_additional_data, $mini_model_path.'.'.$key) ?
+        Arr::get($target_additional_data, $mini_model_path.'.'.$key) :
+        ($request->has($key) ? $request->input($key) : $db_value);
 
-        return Arr::has($target_additional_data, $mini_model_path.'.'.$key) ? Arr::get($target_additional_data, $mini_model_path.'.'.$key) : // Search on target_additional_data [] 4th parameter of updateWithSync() / storeWithSync()
-            ($request->has($key) ? $request->input($key) : $db_value); // Search on Main Request 1st parameter of updateWithSync() / storeWithSync() or directly on database
-        //TODO: Add default value from Item Model
-    }
+    return $result;
+}
 
     /**
      * @param  string  $key
      * @return mixed
      */
     private function getDbValue(string $key)
-    {
-        return $this->$key;
+{
+    $value = $this->$key;
+    if (is_array($value) && count($value) === 1 && array_key_exists(0, $value)) {
+        return $value[0];
     }
+    
+    return $value;
+}
 
     /**
      * @param  string  $key
@@ -235,10 +241,13 @@ trait ModelAdditionalMethod
         } elseif ($is_EM) {
             if (! is_null($this->$method) > 0) {
                 foreach ($this->$method as $value) {
-                    $obj = new stdClass;
-                    $obj->ref_id = $value->ref_id;
-                    $objs[] = $obj;
-                }
+    if (is_array($value)) {
+        $value = (object) $value;
+    }
+    $obj = new stdClass;
+    $obj->ref_id = $value->ref_id;
+    $objs[] = $obj;
+}
             }
         } else {
             throw new Exception('Relationship '.$method.' type '.$type.' is not valid! Possible values are: EmbedsMany and EmbedsOne');
@@ -246,4 +255,12 @@ trait ModelAdditionalMethod
 
         return json_encode($objs);
     }
+public function isArrayCustom(mixed $value): bool
+{
+    if (is_string($value)) {
+        throw new \Exception($value . ' is not a valid array!');
+    }
+
+    return $this->assertIsArrayCustom($value);
+}
 }

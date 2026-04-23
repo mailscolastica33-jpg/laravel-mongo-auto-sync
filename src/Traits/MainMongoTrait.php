@@ -226,11 +226,16 @@ trait MainMongoTrait
      * @param  Request  $request
      * @param  array  $additionalData
      */
-    public function setRequest(Request $request, array $additionalData): void
-    {
-        $request = $request->merge($additionalData);
-        $this->request = $request;
-    }
+public function setRequest(Request $request, array $additionalData): void
+{
+    $additionalData = array_map(
+        fn($value) => is_object($value) ? json_decode(json_encode($value), true) : $value,
+        $additionalData
+    );
+
+    $request = $request->merge($additionalData);
+    $this->request = $request;
+}
 
     /**
      * @return Request

@@ -1,0 +1,98 @@
+
+   PASS  Tests\DropCollectionTest
+  ✓ drop collection with object                                                                                                           0.32s  
+  ✓ exception model not found                                                                                                             0.01s  
+  ✓ exception path not found                                                                                                              0.02s  
+
+   PASS  Tests\GenerateModelDocumentationTest
+  ✓ generate model documentation                                                                                                          0.02s  
+  ✓ generate model documentation for article                                                                                              0.01s  
+  ✓ exception model not found                                                                                                             0.01s  
+  ✓ exception path not found                                                                                                              0.01s  
+
+   PASS  Tests\HelperTest
+  ✓ is array                                                                                                                              0.03s  
+  ✓ validate option value exception                                                                                                       0.01s  
+  ✓ is carbon date                                                                                                                        0.01s  
+
+   PASS  Tests\MDModelTest
+  ✓ get id                                                                                                                                0.03s  
+  ✓ get collection                                                                                                                        0.01s  
+  ✓ get random                                                                                                                            0.08s  
+
+   PASS  Tests\MainMongoTraitTest
+  ✓ check property existence                                                                                                              0.02s  
+  ✓ check array existence                                                                                                                 0.01s  
+  ✓ check request existence                                                                                                               0.01s  
+
+   PASS  Tests\ModelAdditionalMethodTest
+  ✓ cast ml                                                                                                                               0.02s  
+  ✓ cast md                                                                                                                               0.01s  
+  ✓ cast carbon date                                                                                                                      0.01s  
+  ✓ cast array                                                                                                                            0.03s  
+  ✓ unique mini model                                                                                                                     0.02s  
+  ✓ obj with ref id                                                                                                                       0.01s  
+  ✓ embed model                                                                                                                           0.01s  
+
+   PASS  Tests\MongoCollectionTest
+  ✓ get by slug and status                                                                                                                0.33s  
+  ✓ get by slug                                                                                                                           0.08s  
+  ✓ get not deleted                                                                                                                       0.11s  
+  ✓ get published                                                                                                                         0.12s  
+  ✓ get public                                                                                                                            0.13s  
+  ✓ has item                                                                                                                              0.04s  
+  ✓ move first                                                                                                                            0.05s  
+  ✓ get active                                                                                                                            0.08s  
+  ✓ exist                                                                                                                                 0.06s  
+  ✓ find by a i d                                                                                                                         0.15s  
+  ✓ has permission                                                                                                                        0.08s  
+  ✓ has role                                                                                                                              0.06s  
+  ✓ check permission                                                                                                                      0.06s  
+
+   PASS  Tests\MongoSyncTraitTest
+  ✓ null value saved                                                                                                                      0.05s  
+  ✓ store with sync                                                                                                                       0.02s  
+  ✓ store different input type                                                                                                            0.02s  
+  ✓ update with sync with embeds one on target                                                                                            0.04s  
+  ✓ update with sync with embeds many on target                                                                                           0.03s  
+  ✓ update different input type                                                                                                           0.02s  
+  ✓ update null value on all field except text and code                                                                                   0.02s  
+  ✓ store item with relation                                                                                                              0.04s  
+  ✓ update navigation with items                                                                                                          0.03s  
+
+   PASS  Tests\StoreWIthSyncTest
+  ✓ store with embeds one on target                                                                                                       0.05s  
+  ✓ store with embeds many on target                                                                                                      0.06s  
+  ✓ store with embeds one on target just filled                                                                                           0.05s  
+
+   PASS  Tests\SyncUtilsTest
+  ✓ get translated content                                                                                                                0.02s  
+  ✓ cl                                                                                                                                    0.02s  
+  ✓ ml                                                                                                                                    0.01s  
+  ✓ is ml                                                                                                                                 0.01s  
+  ✓ is m d                                                                                                                                0.01s  
+  ✓ is e m                                                                                                                                0.02s  
+  ✓ is e o                                                                                                                                0.01s  
+  ✓ is h m                                                                                                                                0.02s  
+  ✓ is h o                                                                                                                                0.02s  
+  ✓ is editable                                                                                                                           0.02s  
+  ✓ has target                                                                                                                            0.02s  
+  ✓ is fillable                                                                                                                           0.01s  
+  ✓ get a i d                                                                                                                             0.05s  
+  ✓ get array with empty obj                                                                                                              0.02s  
+  ✓ get counter for relationships                                                                                                         0.02s  
+  ✓ get type on target                                                                                                                    0.02s  
+
+   PASS  Tests\Unit\ExampleTest
+  ✓ that true is true                                                                                                                     0.04s  
+
+   PASS  Tests\UpdateWithSyncTest
+  ✓ update with embeds one on target                                                                                                      0.05s  
+  ✓ update with embeds many on target                                                                                                     0.09s  
+  ✓ update with partial request updating embeds many on target                                                                            0.10s  
+  ✓ update with partial request plain field                                                                                               0.05s  
+  ✓ update with partial request relationship field                                                                                        0.13s  
+
+  Tests:    70 passed (264 assertions)
+  Duration: 3.51s
+

@@ -1,8 +1,7 @@
-version: '3'
+version: '3.8'
 
 services:
     tests:
-        container_name: tests
         build:
             context: .
             dockerfile: Dockerfile
@@ -10,11 +9,11 @@ services:
             - .:/code
         working_dir: /code
         depends_on:
-          - mongodb
+            - mongodb
+        command: tail -f /dev/null
+
     mongodb:
         container_name: mongodb_
-        image: mongo
+        image: mongo:7.0
         ports:
-            - 27017:27017
-        logging:
-            driver: none
+            - "27017:27017"
